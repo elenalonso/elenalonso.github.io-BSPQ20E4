@@ -4,7 +4,8 @@
 	-> En el cuadro donde pone "VCS user names, cambiar uno por vuestro nombre de Github
 	-> Darle al botón save (Debajo del campo "Personal Data")
 
-2-Este paso lo hago con tortoise.git como él lo tiene, también funciona con Github Desktop, se hace exactamente lo mismo
+2-Este paso lo hago con tortoise.git como él lo tiene, también funciona con Github Desktop, se hace exactamente lo mismo.
+También funcionará probablemente con línea de comandos solo hay que asegurarse de poner bien el texto en el mensaje, pero no lo he probado.
 
 En el repositorio local, al realizar un commit se pone como texto (puede ir precedido por lo que querais escribir) 
 #BSPQ20E4-10 add work 1h Development
