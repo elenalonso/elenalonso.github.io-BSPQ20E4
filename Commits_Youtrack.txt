@@ -4,12 +4,18 @@
 	-> En el cuadro donde pone "VCS user names, cambiar uno por vuestro nombre de Github
 	-> Darle al botón save (Debajo del campo "Personal Data")
 
-2-Este paso lo hago con tortoise.git como él lo tiene, miraré si se puede hacer con Github Desktop
+2-Este paso lo hago con tortoise.git como él lo tiene, también funciona con Github Desktop, se hace exactamente lo mismo
 
 En el repositorio local, al realizar un commit se pone como texto (puede ir precedido por lo que querais escribir) 
-#RCS17-11 add work 1h Development.
+#BSPQ20E4-10 add work 1h Development
 
 #<Nombre del Issue en Youtrack> add work <tiempo> Development
 
 3-Se puede ver si se ha registrado bien yendo a "Agile Boards", mirando el issue que habeis puesto y viendo si
 el campo "Real Time" se ha actualizado con lo que habeís puesto.
+
+4- Dependiendo del mensjae que pongas tambien se puede cambiar el estado de un Issue
+
+#BSPQ20E4-10 Done
+
+Este cierra el Issue, añadiré más comandos cuando los encuentre
