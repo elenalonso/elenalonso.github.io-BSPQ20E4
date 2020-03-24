@@ -1,0 +1,15 @@
+1- Cambiar el nombre de Youtrack al mismo de Github 
+	-> Arriba a la derecha en youtrack, seleccionar profile
+	-> Seleccionar "update personal information and manage logins"
+	-> En el cuadro donde pone "VCS user names, cambiar uno por vuestro nombre de Github
+	-> Darle al botón save (Debajo del campo "Personal Data")
+
+2-Este paso lo hago con tortoise.git como él lo tiene, miraré si se puede hacer con Github Desktop
+
+En el repositorio local, al realizar un commit se pone como texto (puede ir precedido por lo que querais escribir) 
+#RCS17-11 add work 1h Development.
+
+#<Nombre del Issue en Youtrack> add work <tiempo> Development
+
+3-Se puede ver si se ha registrado bien yendo a "Agile Boards", mirando el issue que habeis puesto y viendo si
+el campo "Real Time" se ha actualizado con lo que habeís puesto.
