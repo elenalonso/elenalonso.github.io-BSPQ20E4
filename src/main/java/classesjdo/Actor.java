@@ -1,7 +1,7 @@
-package server.jdo;
-	
-import javax.jdo.annotations.PersistenceCapable;
+package classesjdo;
 
+
+import javax.jdo.annotations.PersistenceCapable;
 
 
 import java.util.Date;
@@ -9,21 +9,19 @@ import java.util.Date;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 
-
+	
 	@PersistenceCapable
 	@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-
-public class Director {
-
+public class Actor {
 	    protected String name;
 
 	    protected String pic=null;
 
-	    protected Date bday=null;
+	    protected String bday=null;
 
 	   
 
-	    public Director(String name, String pic, Date bday)
+	    public Actor(String name, String pic, String bday)
 	    {
 	        this.name = name;
 	        this.pic=pic;
@@ -40,12 +38,12 @@ public class Director {
 	        return pic;
 	    }
 
-	    public Date getBday()
+	    public String getBday()
 	    {
 	        return bday;
 	    }
 
-	    public void setBday(Date bday)
+	    public void setBday(String bday)
 	    {
 	        this.bday = bday;
 	    }
@@ -59,7 +57,7 @@ public class Director {
 	    {
 	        this.pic = pic;
 	    }
-	}
+
 	  
 	
-
+}

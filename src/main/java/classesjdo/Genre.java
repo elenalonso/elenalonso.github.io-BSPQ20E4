@@ -1,4 +1,4 @@
-package server.jdo;
+package classesjdo;
 	import javax.jdo.annotations.PersistenceCapable;
 
 
