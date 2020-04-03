@@ -188,7 +188,7 @@
 	<profiles>
 		<!-- AQUÍ PODREMOS METER PERFIL DE ADMIN  -->
 		<!-- run as 'mvn exec:java -P<id_perfil>' -->
-<!--  		<profile>
+  		<profile>
 			<id>manager</id>
 			<build>
 				<plugins>
@@ -207,7 +207,7 @@
 				</plugins>
 			</build>
 		</profile>
--->
+
 		<profile>
 			<!-- run as 'mvn exec:java -Pclient' -->
 			<id>client</id>

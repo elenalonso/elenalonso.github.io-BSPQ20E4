@@ -113,7 +113,7 @@ public class Server {
 	@Path("/hello")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response sayHello() {
-		return Response.ok("Hello world!").build();
+		return Response.ok("Hola. Lo conseguiste").build();
 	}
 	
 //	public static void main(String[] args) {

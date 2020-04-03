@@ -24,7 +24,7 @@ public class ExampleClient {
 	}
 
 	public void registerUser(String login, String password) {
-		WebTarget registerUserWebTarget = webTarget.path("register");
+		WebTarget registerUserWebTarget = webTarget.path("server/register");
 		Invocation.Builder invocationBuilder = registerUserWebTarget.request(MediaType.APPLICATION_JSON);
 		
 		UserData userData = new UserData();
@@ -61,6 +61,21 @@ public class ExampleClient {
 			System.out.println("* Message coming from the server: '" + responseMessage + "'");
 		}
 	}
+	
+	//Método de prueba de conexión
+	public void saySomething(String message) {
+		WebTarget sayHelloWebTarget = webTarget.path("hello");
+		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.APPLICATION_JSON);
+
+		Response response = invocationBuilder.get();
+		System.out.println(message);
+		if (response.getStatus() != Status.OK.getStatusCode()) {
+			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+		} else {
+			String responseMessage = response.readEntity(String.class);
+			System.out.println("* Message coming from the server: '" + responseMessage + "'");
+		}
+	}
 
 	public static void main(String[] args) {
 		if (args.length != 2) {
@@ -72,7 +87,8 @@ public class ExampleClient {
 		String port = args[1];
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		exampleClient.registerUser("dipina", "dipina");
-		exampleClient.sayMessage("dipina", "dipina", "This is a test!...");
+		exampleClient.saySomething("Por lo menos hasta aquí llega");
+//		exampleClient.registerUser("egui", "egui");
+//		exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste");
 	}
 }

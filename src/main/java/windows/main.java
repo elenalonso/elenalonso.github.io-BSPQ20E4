@@ -5,6 +5,10 @@ public class main {
 		UserLogin u = new UserLogin();
 		u.setSize(500, 350);
 		u.setVisible(true);
+		
+		VentanaGeneral v = new VentanaGeneral();
+		v.setSize(500,350);
+		v.setVisible(true);
 	}
 }
 
