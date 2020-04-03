@@ -1,4 +1,4 @@
-package classesjdo;
+package easyFilminData;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;

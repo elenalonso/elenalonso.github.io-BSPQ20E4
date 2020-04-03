@@ -6,8 +6,6 @@ import javax.jdo.Query;
 import javax.jdo.JDOHelper;
 import javax.jdo.Transaction;
 
-import classesjdo.User;
-import classesjdo.Message;
 import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
@@ -19,6 +17,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import easyFilminData.Message;
+import easyFilminData.User;
 
 @Path("/server")
 @Produces(MediaType.APPLICATION_JSON)
