@@ -30,9 +30,9 @@ public class Server {
 	private Transaction tx=null;
 
 	public Server() {
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-		this.pm = pmf.getPersistenceManager();
-		this.tx = pm.currentTransaction();
+//		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+//		this.pm = pmf.getPersistenceManager();
+//		this.tx = pm.currentTransaction();
 	}
 
 
@@ -113,13 +113,9 @@ public class Server {
 	@Path("/hello")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response sayHello() {
-		return Response.ok("Hola. Lo conseguiste").build();
+		return Response.ok("Hola. Mensaje desde el servidor").build();
 	}
 	
-//	public static void main(String[] args) {
-//		Server serv = new Server();
-//		serv.sayHello();
-//	}
 }
 
 

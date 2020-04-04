@@ -188,7 +188,7 @@
 	<profiles>
 		<!-- AQUÍ PODREMOS METER PERFIL DE ADMIN  -->
 		<!-- run as 'mvn exec:java -P<id_perfil>' -->
-  		<profile>
+<!--  		<profile>
 			<id>manager</id>
 			<build>
 				<plugins>
@@ -207,7 +207,7 @@
 				</plugins>
 			</build>
 		</profile>
-
+-->
 		<profile>
 			<!-- run as 'mvn exec:java -Pclient' -->
 			<id>client</id>
@@ -228,6 +228,28 @@
 				</plugins>
 			</build>
 		</profile>
+		<!--  Prueba para clases de ventanas  -->
+		<profile>
+			<!-- run as 'mvn exec:java -Pprueba' -->
+			<id>prueba</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<mainClass>windows.main</mainClass>
+							<arguments>
+								<argument>${server.hostname}</argument>
+								<argument>${server.port}</argument>
+							</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
 	</profiles>
 </project>
 

@@ -20,7 +20,7 @@ public class ExampleClient {
 
 	public ExampleClient(String hostname, String port) {
 		client = ClientBuilder.newClient();
-		webTarget = client.target(String.format("http://%s:%s/rest/server", hostname, port));
+		webTarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 	}
 
 	public void registerUser(String login, String password) {
@@ -39,7 +39,7 @@ public class ExampleClient {
 	}
 
 	public void sayMessage(String login, String password, String message) {
-		WebTarget sayHelloWebTarget = webTarget.path("sayMessage");
+		WebTarget sayHelloWebTarget = webTarget.path("server/sayMessage");
 		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.APPLICATION_JSON);
 
 		DirectedMessage directedMessage = new DirectedMessage();
@@ -64,8 +64,8 @@ public class ExampleClient {
 	
 	//Método de prueba de conexión
 	public void saySomething(String message) {
-		WebTarget sayHelloWebTarget = webTarget.path("hello");
-		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.APPLICATION_JSON);
+		WebTarget sayHelloWebTarget = webTarget.path("server/hello");
+		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.TEXT_PLAIN);
 
 		Response response = invocationBuilder.get();
 		System.out.println(message);
@@ -87,8 +87,8 @@ public class ExampleClient {
 		String port = args[1];
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		exampleClient.saySomething("Por lo menos hasta aquí llega");
-//		exampleClient.registerUser("egui", "egui");
-//		exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste");
+		exampleClient.saySomething("Desde dentro de client-saySomething()"); // WORKING
+		exampleClient.registerUser("egui", "egui"); //err 500 por fallo de conexion con JDO
+		exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste"); //err 500 por fallo de conexion con JDO
 	}
 }
