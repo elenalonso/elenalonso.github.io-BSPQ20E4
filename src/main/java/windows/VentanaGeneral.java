@@ -29,7 +29,7 @@ public class VentanaGeneral extends JFrame{
 		
 		JLabel buscar = new JLabel("");
 		buscar.setBounds(404, 29, 45, 25);
-		buscar.setIcon(new ImageIcon("src\\Lupa.png"));
+		buscar.setIcon(new ImageIcon("src\\main\\resources\\Lupa.png"));
 		getContentPane().add(buscar);
 		
 		JButton nuevaLista = new JButton("New List");
@@ -47,7 +47,7 @@ public class VentanaGeneral extends JFrame{
 		
 		JLabel image = new JLabel("");
 		image.setBounds(10, 10, 68, 68);
-		image.setIcon(new ImageIcon("src\\image.png"));
+		image.setIcon(new ImageIcon("src\\main\\resources\\image.png"));
 		getContentPane().add(image);
 		
 		
