@@ -34,7 +34,12 @@ public class Server {
 //		this.pm = pmf.getPersistenceManager();
 //		this.tx = pm.currentTransaction();
 	}
-
+/*
+ * There is no connection with the DB yet, so all methods involving Transactions or PersistenceManagers won't 
+ * work for now.
+ * 
+ * However, it is perfectly working for methods that we can use as trials and practice.
+ */
 
 	@POST
 	@Path("/sayMessage")

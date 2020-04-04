@@ -1,6 +1,7 @@
 package client;
 
 import javax.ws.rs.client.Client;
+
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
@@ -13,12 +14,13 @@ import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
 
+
 public class ExampleClient {
 
-	private Client client;
-	private WebTarget webTarget;
+	private Client client; 
+	private WebTarget webTarget; 
 
-	public ExampleClient(String hostname, String port) {
+	public ExampleClient(String hostname, String port) { 
 		client = ClientBuilder.newClient();
 		webTarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 	}
