@@ -2,7 +2,9 @@ package easyFilminData;
 
 
 	import javax.jdo.annotations.PersistenceCapable;
-	import java.util.Date;
+
+import java.util.ArrayList;
+import java.util.Date;
 	import javax.jdo.annotations.Inheritance;
 	import javax.jdo.annotations.InheritanceStrategy;
 
@@ -17,13 +19,26 @@ public class Film {
 	protected String description;
 	protected Genre genre;
 	protected double rating;
-	protected Actor[] actors;
-	protected Director[] director;
+	protected ArrayList<Actor> actors;
+	protected ArrayList<Director> director;
 	
 	protected String trailer;
 	
+	public Film() {
+		
+		this.title= "";
+		this.poster="";
+		this.release=null;
+		this.description= "";
+		this.genre=null;
+		this.rating=0;
+		this.actors=new ArrayList<>();
+		this.director=new ArrayList<>();
+		
+		}
+	
 	public Film(String title,String poster, Date release, String description, 
-			Genre genre, double rating, Actor[] actors, Director[] director) {
+			Genre genre, double rating, ArrayList<Actor> actors, ArrayList<Director> director) {
 		
 		this.title= title;
 		this.poster=poster;
@@ -64,12 +79,12 @@ public class Film {
 	    return rating;
 	}
 	
-	public Actor[] getActors() //seguramente luego esto se cambie a ArrayList XD
+	public ArrayList<Actor> getActors() //seguramente luego esto se cambie a ArrayList XD
 	{
 	    return actors;
 	}
 
-	public Director[] getDirector()
+	public ArrayList<Director> getDirector()
 	{
 	    return director;
 	}
@@ -106,12 +121,12 @@ public class Film {
 	    this.genre = genre;
 	}
 	
-	public void setActors(Actor[] actors)
+	public void setActors(ArrayList<Actor> actors)
 	{
 	    this.actors = actors;
 	}
 
-	public void setDirector(Director[] director)
+	public void setDirector(ArrayList<Director> director)
 	{
 	    this.director = director;
 	}

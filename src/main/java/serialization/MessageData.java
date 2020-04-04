@@ -1,8 +1,11 @@
 package serialization;
 
+import java.util.Date;
+
 public class MessageData {
 
     private String message;
+  
 
     public MessageData() {
 

@@ -1,5 +1,8 @@
 package easyFilminData;
 import javax.jdo.annotations.PersistenceCapable;
+
+import java.util.Date;
+
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 
@@ -9,14 +12,22 @@ import javax.jdo.annotations.InheritanceStrategy;
 
 
 public class Comment {
-	protected User user;
+
 	protected Film film;
 	protected String text;
+	protected Date date;
 
-public Comment(User user,Film film,String text) {
-	this.user=user;
+	public Comment() {
+		
+		this.film=null;
+		this.text="";
+		this.date=null;
+		}
+public Comment(Film film,String text, Date date) {
+	
 	this.film=film;
 	this.text=text;
+	this.date=date;
 	}
 public String getText()
 {
@@ -28,9 +39,9 @@ public Film getFilm()
     return film;
 }
 
-public User getUser()
+public Date getDate()
 {
-    return user;
+    return date;
 }
 
 public void setText(String text)
@@ -43,10 +54,7 @@ public void setFilm(Film film)
     this.film = film;
 }
 
-public void setUser(User user)
-{
-    this.user = user;
-}
+
 
 
 

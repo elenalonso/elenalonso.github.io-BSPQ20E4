@@ -9,6 +9,8 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.Persistent;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 
 @PersistenceCapable
@@ -22,6 +24,8 @@ public class User {
 	@Persistent(mappedBy="user", dependentElement="true")
 	@Join
 	Set<Message> messages = new HashSet<Message>();
+	ArrayList<Film> movies = new ArrayList<>();
+	ArrayList<Comment> comments = new ArrayList<>();
 	
 	
 	
@@ -36,6 +40,34 @@ public class User {
 
 	public void removeMessage(Message message) {
 		messages.remove(message);
+	}
+	
+	public void postComment(Comment c) {
+		comments.add(c);
+	}
+
+	public void deleteComment(Comment c) {
+		comments.remove(c);
+	}
+	
+	
+	public void addMovie(Film movie) { //create a movie list when clicking Add button
+		movies.add(movie);
+	}
+
+	public void removeMovie(Film movie) { //remove movie from list
+		movies.remove(movie);
+	}
+	public ArrayList<Film> getMovies() { //display list of movies
+		return movies;
+	}
+	
+	public ArrayList<Comment> getComments() { //display list of comments
+		return comments;
+	}
+
+	public void setMovies(ArrayList<Film> movies) {
+		this.movies = movies;
 	}
 
 	public String getNickname() {
