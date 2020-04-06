@@ -25,13 +25,15 @@ public class ExampleClient {
 		webTarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 	}
 
-	public void registerUser(String login, String password) {
+	public void registerUser(String login, String icon, String email, String password) {
 		WebTarget registerUserWebTarget = webTarget.path("server/register");
 		Invocation.Builder invocationBuilder = registerUserWebTarget.request(MediaType.APPLICATION_JSON);
 		
 		UserData userData = new UserData();
 		userData.setLogin(login);
 		userData.setPassword(password);
+		userData.setEmail(email);
+		userData.setIcon(icon);
 		Response response = invocationBuilder.post(Entity.entity(userData, MediaType.APPLICATION_JSON));
 		if (response.getStatus() != Status.OK.getStatusCode()) {
 			System.out.println("Error connecting with the server. Code: " + response.getStatus());
@@ -90,7 +92,7 @@ public class ExampleClient {
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
 		exampleClient.saySomething("Desde dentro de client-saySomething()"); // WORKING
-		exampleClient.registerUser("egui", "egui"); //err 500 por fallo de conexion con JDO
-		exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste"); //err 500 por fallo de conexion con JDO
+		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); //err 500 por fallo de conexion con JDO
+		//exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste"); //err 500 por fallo de conexion con JDO
 	}
 }

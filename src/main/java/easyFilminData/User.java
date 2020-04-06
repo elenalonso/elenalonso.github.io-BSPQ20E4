@@ -28,9 +28,14 @@ public class User {
 	ArrayList<Comment> comments = new ArrayList<>();
 	
 	
-	
+	public User(String nickname, String password) {
+		this.nickname = nickname;
+		this.password = password;
+	}
 	public User(String nickname,String icon, String email, String password) {
 		this.nickname = nickname;
+		this.icon = icon;
+		this.email = email;
 		this.password = password;
 	}
 	
