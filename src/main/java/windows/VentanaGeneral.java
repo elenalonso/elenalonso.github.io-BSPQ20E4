@@ -20,6 +20,12 @@ public class VentanaGeneral extends JFrame{
 	private static final long serialVersionUID = -8709399093642804047L;
 	private JTextField busqueda;
 	public VentanaGeneral() {
+		this.setTitle( "EasyFilmin User");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
+		setSize(740,480);
+		setLocation(600,175);
+
+		
 		getContentPane().setLayout(null);
 		
 		busqueda = new JTextField();

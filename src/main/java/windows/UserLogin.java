@@ -16,6 +16,11 @@ public class UserLogin extends JFrame{
 	private JPasswordField passwordField;
 	private JButton exit;
 	public UserLogin() {
+		this.setTitle( "EasyFilmin Login");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
+		setSize(600,250);
+		setLocation(600,175);
+
 		getContentPane().setLayout(null);
 		
 		JLabel lblUser = new JLabel("Username");

@@ -15,7 +15,14 @@ public class VentanaAdmin extends JFrame {
 	private JTextField fileName;
 	private JButton addArchive;
 	private JButton exit;
-	public VentanaAdmin() {
+	public VentanaAdmin() { 
+		// Formato de la ventana
+		this.setTitle( "EasyFilmin Login");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
+		setSize(600,250);
+		setLocation(600,175);
+
+		
 		getContentPane().setLayout(null);
 		
 		fileName = new JTextField();
