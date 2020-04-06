@@ -4,7 +4,7 @@ public class UserData {
 
     private String login;
     private String password;
-    private String nickname;
+    private String icon;
     private String email;
 
 
@@ -32,12 +32,12 @@ public class UserData {
         return "[login=" + login + ", password=" + password + "]";
     }
     
-    public String getNickname() {
-		return nickname;
+	public String getIcon() {
+		return icon;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 	public String getEmail() {

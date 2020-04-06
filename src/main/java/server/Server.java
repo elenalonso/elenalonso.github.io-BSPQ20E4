@@ -18,6 +18,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import easyFilminDAO.EasyFilminJDO;
+import easyFilminDAO.IEasyFilminDAO;
 import easyFilminData.Message;
 import easyFilminData.User;
 
@@ -80,38 +82,14 @@ public class Server {
 	@POST
 	@Path("/register")
 	public Response registerUser(UserData userData) {
-		try
-        {	
-            tx.begin();
-            System.out.println("Checking whether the user already exits or not: '" + userData.getLogin() +"'");
-			User user = null;
-			try {
-				user = pm.getObjectById(User.class, userData.getLogin());
-			} catch (javax.jdo.JDOObjectNotFoundException jonfe) {
-				System.out.println("Exception launched: " + jonfe.getMessage());
-			}
-			System.out.println("User: " + user);
-			if (user != null) {
-				System.out.println("Setting password user: " + user);
-				user.setPassword(userData.getPassword());
-				System.out.println("Password set user: " + user);
-			} else {
-				System.out.println("Creating user: " + user);
-				user = new User(userData.getLogin(), userData.getPassword(), userData.getNickname(), userData.getEmail());
-				pm.makePersistent(user);					 
-				System.out.println("User created: " + user);
-			}
-			tx.commit();
-			return Response.ok().build();
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-      
-		}
+		
+		User user = null;
+		user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
+		IEasyFilminDAO iDAO = new EasyFilminJDO();
+		iDAO.saveUser(user);
+		return Response.ok().build();	
+        
+        
 	}
 
 	@GET
