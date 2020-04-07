@@ -19,11 +19,11 @@ public class Director {
 
 	    protected String pic=null;
 
-	    protected Date bday=null;
+	    protected String bday=null;
 
 	   
 
-	    public Director(String name, String pic, Date bday)
+	    public Director(String name, String pic, String bday)
 	    {
 	        this.name = name;
 	        this.pic=pic;
@@ -40,12 +40,12 @@ public class Director {
 	        return pic;
 	    }
 
-	    public Date getBday()
+	    public String getBday()
 	    {
 	        return bday;
 	    }
 
-	    public void setBday(Date bday)
+	    public void setBday(String bday)
 	    {
 	        this.bday = bday;
 	    }

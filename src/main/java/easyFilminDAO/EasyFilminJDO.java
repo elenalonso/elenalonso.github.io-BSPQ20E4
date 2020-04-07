@@ -1,12 +1,20 @@
 package easyFilminDAO;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import com.opencsv.CSVReader;
+
 import easyFilminData.Actor;
+import easyFilminData.Director;
 import easyFilminData.Film;
 import easyFilminData.User;
 
@@ -274,9 +282,73 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	@Override
 	public void startBD() {
 		// TODO Auto-generated method stub
+		try {
+			System.out.println("Holi llegamos hasta aqui?");
+			//CSVReader readFilms = new CSVReader(new FileReader("src\\main\\resources\\films.csv")); //csv not yet created
+			CSVReader readActors = new CSVReader(new FileReader("src\\main\\resources\\actors.csv"));
+			//CSVReader readDirectors = new CSVReader(new FileReader("src\\main\\resources\\directors.csv")); 
+			 
+			//ArrayList<Film> films = new ArrayList<Film>();
+			ArrayList<Actor> actors = new ArrayList<Actor>();
+			//ArrayList<Director> directors = new ArrayList<Director>();
+			
+			String[] values = null;
+		    try {
+				while ((values = readActors.readNext()) != null){
+					String name =values[0];
+					//String bday = values[1];
+					
+					System.out.println("Name:" +name+", bday:");
+					
+					actors.add(new Actor(name, null, null));
+					for (Actor actor : actors) {
+						//saveActor(actor);
+						
+					}
+					
+					
+					}
+				/*
+				while ((values = readDirectors.readNext()) != null){
+					String name =values[0];
+					String bday = values[1];
+					
+					directors.add(new Director(name,null,bday));
+					for (Director director : directors) {
+						saveDirector(director);
+						
+					}
+					
+					
+					} */
+				
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		//Here we need to read the .csv and insert the appropiate data (with saveFilm(), saveActor())
 		
 		
+	}
+
+
+	@Override
+	public void saveDirector(Director director) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Director loadDirector(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

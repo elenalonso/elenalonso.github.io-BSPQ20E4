@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import easyFilminDAO.EasyFilminJDO;
 import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
@@ -91,11 +92,13 @@ public class ExampleClient {
 		String port = args[1];
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		exampleClient.saySomething("Desde dentro de client-saySomething()"); 
-		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
-		exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
-		exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
-		exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
-		exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
+		//exampleClient.saySomething("Desde dentro de client-saySomething()"); 
+		//exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
+		//exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
+		//exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
+		//exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
+		//exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
+		EasyFilminJDO prueba= new EasyFilminJDO();
+		prueba.startBD();
 	}
 }

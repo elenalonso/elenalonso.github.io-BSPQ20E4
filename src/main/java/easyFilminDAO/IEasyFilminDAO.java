@@ -3,6 +3,7 @@ package easyFilminDAO;
 import java.util.List;
 
 import easyFilminData.Actor;
+import easyFilminData.Director;
 import easyFilminData.Film;
 import easyFilminData.User;
 
@@ -52,6 +53,9 @@ public interface IEasyFilminDAO {
 	 * @return      the film that matches the title.
 	 */
 	public Film loadFilm(String title);
+	
+	public void saveDirector(Director director);
+	public Director loadDirector(String name);
 	
 	/**
 	 * Loads the DB initially with predetermined data.
