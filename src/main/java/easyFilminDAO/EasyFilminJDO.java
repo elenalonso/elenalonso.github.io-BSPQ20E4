@@ -286,7 +286,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			System.out.println("Holi llegamos hasta aqui?");
 			//CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
 			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
-			//CSVReader readDirectors = new CSVReader(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
+			//CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
 			//ArrayList<Film> films = new ArrayList<Film>();
 			ArrayList<Actor> actors = new ArrayList<Actor>();
