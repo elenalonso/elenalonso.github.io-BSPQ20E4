@@ -104,7 +104,7 @@ public class ResgisterUser extends JFrame {
 		
 	}
 	public void sendRegistration(String username, String password, String icon, String email) {
-		WebTarget registerTarget = webtarget.path("collector/donations");
+		WebTarget registerTarget = webtarget.path("server/register");
 		Invocation.Builder invocationBuilder = registerTarget.request(MediaType.APPLICATION_JSON);
 		
 		UserData userdata = new UserData();

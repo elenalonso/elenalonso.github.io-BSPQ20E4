@@ -45,11 +45,11 @@ public class CreateList extends JFrame {
 		getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("SAVE");
-		btnNewButton_2.setBounds(250, 310, 60, 30);
+		btnNewButton_2.setBounds(245, 310, 60, 30);
 		getContentPane().add(btnNewButton_2);
 		
-		btnNewButton_3 = new JButton("Back");
-		btnNewButton_3.setBounds(10, 11, 23, 21);
+		btnNewButton_3 = new JButton("");
+		btnNewButton_3.setBounds(10, 10, 25, 25);
 		getContentPane().add(btnNewButton_3);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			
@@ -61,8 +61,8 @@ public class CreateList extends JFrame {
 			}
 		});
 		
-		btnNewButton_4 = new JButton("New button");
-		btnNewButton_4.setBounds(503, 9, 23, 21);
+		btnNewButton_4 = new JButton("");
+		btnNewButton_4.setBounds(500, 10, 25, 25);
 		getContentPane().add(btnNewButton_4);
 		btnNewButton_4.addActionListener(new ActionListener() {
 			

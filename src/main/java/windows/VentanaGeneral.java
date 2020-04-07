@@ -22,7 +22,8 @@ public class VentanaGeneral extends JFrame{
 	private static final long serialVersionUID = -8709399093642804047L;
 	private JTextField busqueda;
 	private JButton nuevaLista;
-	private JButton btnNewButton; 
+	private JButton btnNewButton;
+	private JButton misListas;
 	public VentanaGeneral() {
 		this.setTitle( "EasyFilmin User");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
@@ -56,9 +57,18 @@ public class VentanaGeneral extends JFrame{
 			}
 		});
 		
-		JButton misListas = new JButton("My Lists");
+		misListas = new JButton("My Lists");
 		misListas.setBounds(100, 242, 150, 30);
 		getContentPane().add(misListas);
+		misListas.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				MyLists u = new MyLists();
+				u.setVisible(true);
+			}
+		});
 		
 		JLabel profile = new JLabel("SomeName");
 		profile.setBounds(100, 10, 150, 13);
