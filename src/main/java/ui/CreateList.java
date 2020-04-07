@@ -1,4 +1,4 @@
-package windows;
+package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 public class CreateList extends JFrame {
 	private JButton btnNewButton;
 	private JButton btnNewButton_3;
-	private JButton btnNewButton_4;
  	public CreateList() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(550,400);
@@ -51,27 +50,16 @@ public class CreateList extends JFrame {
 		btnNewButton_3 = new JButton("");
 		btnNewButton_3.setBounds(10, 10, 25, 25);
 		getContentPane().add(btnNewButton_3);
-		btnNewButton_3.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				VentanaGeneral u = new VentanaGeneral();
-				u.setVisible(true);
-			}
-		});
-		
-		btnNewButton_4 = new JButton("");
-		btnNewButton_4.setBounds(500, 10, 25, 25);
-		getContentPane().add(btnNewButton_4);
-		btnNewButton_4.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
-		
+//		btnNewButton_3.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				dispose();
+//				UserUI u = new UserUI();
+//				u.setVisible(true);
+//			}
+//		});
+				
 		
 	}
 }

@@ -1,4 +1,4 @@
-package windows;
+package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -7,15 +7,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
+
+import easyFilminData.User;
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
-public class UserLogin extends JFrame{
+public class UserLog extends JFrame{
 	private JTextField textField;
 	private JButton btnNewButton;
 	private JPasswordField passwordField;
 	private JButton btnCreate;
-	public UserLogin() {
+	public UserLog() {
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,350);
@@ -51,7 +54,8 @@ public class UserLogin extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				VentanaGeneral vg = new VentanaGeneral();
+				User us = new User(null, null, null, null);
+				UserUI vg = new UserUI(us);
 				vg.setSize(720, 480);
 				vg.setVisible(true);
 			}
@@ -60,13 +64,13 @@ public class UserLogin extends JFrame{
 		btnCreate = new JButton();
 		btnCreate.setText("Register");
 		btnCreate.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnCreate.setBounds(30, 247, 100, 30);
+		btnCreate.setBounds(40, 247, 100, 30);
 		getContentPane().add(btnCreate);
 		btnCreate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				ResgisterUser u = new ResgisterUser(null,null);
+				UserReg u = new UserReg(null,null);
 				u.setVisible(true);
 				setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			}

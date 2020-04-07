@@ -1,4 +1,4 @@
-package windows;
+package ui;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 
 import serialization.UserData;
 
-public class ResgisterUser extends JFrame {
+public class UserReg extends JFrame {
 	private JTextField textField;
 	private WebTarget webtarget; 
 	private JButton btnNewButton;
@@ -28,12 +28,13 @@ public class ResgisterUser extends JFrame {
 	private Client client;
 	private JLabel lblEmail;
 	private JTextField textField_1;
-	public ResgisterUser(String hostname, String port) {
+	public UserReg(String hostname, String port) {
 		client = ClientBuilder.newClient();
 		webtarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,325);
 		setLocation(600,175);
+		setResizable(false);
 
 		getContentPane().setLayout(null);
 		
@@ -63,16 +64,16 @@ public class ResgisterUser extends JFrame {
 		btnNewButton.setBounds(376, 208, 100, 30);
 		getContentPane().add(btnNewButton);
 		
-		btnNewButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				UserLogin u = new UserLogin();
-				u.setSize(500, 350);
-				u.setVisible(true);
-			}
-		});
+//		btnNewButton.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				dispose();
+//				UserLog u = new UserLog();
+//				u.setSize(500, 350);
+//				u.setVisible(true);
+//			}
+//		});
 			
 		exit = new JButton("X");
 		exit.setFont(new Font("Tahoma", Font.PLAIN, 5));
@@ -96,7 +97,7 @@ public class ResgisterUser extends JFrame {
 				String email = textField_1.getText();
 				sendRegistration(username,password,username,email);
 				dispose();
-				ResgisterUser u = new ResgisterUser(null, null);
+				UserReg u = new UserReg(null, null);
 				u.setSize(500, 350);
 				u.setVisible(true);
 			}

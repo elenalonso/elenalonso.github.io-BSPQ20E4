@@ -1,7 +1,9 @@
-package windows;
+package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+
+import easyFilminData.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +14,6 @@ import javax.swing.JComboBox;
 
 public class MyLists extends JFrame{
 	private JButton btnNewButton;
-	private JButton btnNewButton_1;
 	public MyLists() {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(500,450);
@@ -31,21 +32,12 @@ public class MyLists extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				VentanaGeneral u = new VentanaGeneral();
+				User us = new User(null, null, null, null);
+				UserUI u = new UserUI(us);
 				u.setVisible(true);
 			}
 		});
 		
-		btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBounds(451, 10, 25, 25);
-		getContentPane().add(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
 		
 		JLabel lblNewLabel = new JLabel("My Lists:");
 		lblNewLabel.setBounds(40, 52, 45, 13);
