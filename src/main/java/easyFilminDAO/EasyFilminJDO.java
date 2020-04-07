@@ -286,29 +286,29 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			System.out.println("Holi llegamos hasta aqui?");
 			//CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
 			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
-			//CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
+			CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
 			//ArrayList<Film> films = new ArrayList<Film>();
 			ArrayList<Actor> actors = new ArrayList<Actor>();
-			//ArrayList<Director> directors = new ArrayList<Director>();
+			ArrayList<Director> directors = new ArrayList<Director>();
 			
 			String[] values = null;
 		    try {
 				while ((values = readActors.readNext()) != null){
 					String name =values[0];
-					//String bday = values[1];
+					String bday = values[1];
 					
-					System.out.println("Name:" +name+", bday:");
+					System.out.println("Name:" +name+", bday:"+bday);
 					
 					actors.add(new Actor(name, null, null));
 					for (Actor actor : actors) {
-						//saveActor(actor);
+						saveActor(actor);
 						
 					}
 					
 					
 					}
-				/*
+				
 				while ((values = readDirectors.readNext()) != null){
 					String name =values[0];
 					String bday = values[1];
@@ -320,7 +320,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					}
 					
 					
-					} */
+					} 
 				
 				
 			} catch (IOException e) {
