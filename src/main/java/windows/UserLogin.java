@@ -15,10 +15,11 @@ public class UserLogin extends JFrame{
 	private JButton btnNewButton;
 	private JPasswordField passwordField;
 	private JButton exit;
+	private JButton btnCreate;
 	public UserLogin() {
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
-		setSize(600,250);
+		setSize(500,350);
 		setLocation(600,175);
 
 		getContentPane().setLayout(null);
@@ -67,6 +68,27 @@ public class UserLogin extends JFrame{
 				dispose();
 			}
 		});
+		btnCreate = new JButton();
+		btnCreate.setText("Create");
+		btnCreate.setFont(new Font("Verdana", Font.BOLD, 12));
+		btnCreate.setBounds(10, 253, 100, 30);
+		getContentPane().add(btnCreate);
+		exit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCreate.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ResgisterUser u = new ResgisterUser(null,null);
+				u.setVisible(true);
+				setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+			}
+		});
 		
 	}
+		
 }
