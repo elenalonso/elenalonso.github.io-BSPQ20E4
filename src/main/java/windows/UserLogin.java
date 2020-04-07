@@ -14,14 +14,13 @@ public class UserLogin extends JFrame{
 	private JTextField textField;
 	private JButton btnNewButton;
 	private JPasswordField passwordField;
-	private JButton exit;
 	private JButton btnCreate;
 	public UserLogin() {
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,350);
 		setLocation(600,175);
-
+		setResizable(false);
 		getContentPane().setLayout(null);
 		
 		JLabel lblUser = new JLabel("Username");
@@ -44,7 +43,7 @@ public class UserLogin extends JFrame{
 		getContentPane().add(passwordField);
 		
 		btnNewButton = new JButton();
-		btnNewButton.setText("Accept");
+		btnNewButton.setText("Login");
 		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 12));
 		btnNewButton.setBounds(329, 247, 100, 30);
 		getContentPane().add(btnNewButton);
@@ -58,27 +57,11 @@ public class UserLogin extends JFrame{
 			}
 		});
 		
-		exit = new JButton("X");
-		exit.setFont(new Font("Tahoma", Font.PLAIN, 5));
-		exit.setBounds(441, 10, 35, 35);
-		getContentPane().add(exit);
-		exit.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
 		btnCreate = new JButton();
-		btnCreate.setText("Create");
+		btnCreate.setText("Register");
 		btnCreate.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnCreate.setBounds(10, 253, 100, 30);
+		btnCreate.setBounds(30, 247, 100, 30);
 		getContentPane().add(btnCreate);
-		exit.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
 		btnCreate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

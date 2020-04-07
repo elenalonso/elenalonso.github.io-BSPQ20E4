@@ -59,9 +59,14 @@ public class ExampleClient {
 		directedMessage.setMessageData(messageData);
 
 		Response response = invocationBuilder.post(Entity.entity(directedMessage, MediaType.APPLICATION_JSON));
-		if (response.getStatus() != Status.OK.getStatusCode()) {
+		if(response.getStatus() == Status.BAD_REQUEST.getStatusCode()) {
+			String responseMessage2 = response.readEntity(String.class);
+			System.out.println("* ERROR: '" + responseMessage2 + "'");
+			
+		}else if (response.getStatus() != Status.OK.getStatusCode()) {
 			System.out.println("Error connecting with the server. Code: " + response.getStatus());
-		} else {
+			
+		}else {
 			String responseMessage = response.readEntity(String.class);
 			System.out.println("* Message coming from the server: '" + responseMessage + "'");
 		}
@@ -92,12 +97,12 @@ public class ExampleClient {
 		String port = args[1];
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		//exampleClient.saySomething("Desde dentro de client-saySomething()"); 
-		//exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
-		//exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
-		//exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
-		//exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
-		//exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
+		exampleClient.saySomething("Desde dentro de client-saySomething()"); 
+		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
+		exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
+		exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
+		exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
+		exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
 		EasyFilminJDO prueba= new EasyFilminJDO();
 		prueba.startBD();
 	}
