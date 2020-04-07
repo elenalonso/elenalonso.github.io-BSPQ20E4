@@ -12,7 +12,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import com.opencsv.CSVReader;
-
+import com.opencsv.CSVReaderBuilder;
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
@@ -284,9 +284,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		// TODO Auto-generated method stub
 		try {
 			System.out.println("Holi llegamos hasta aqui?");
-			//CSVReader readFilms = new CSVReader(new FileReader("src\\main\\resources\\films.csv")); //csv not yet created
-			CSVReader readActors = new CSVReader(new FileReader("src\\main\\resources\\actors.csv"));
-			//CSVReader readDirectors = new CSVReader(new FileReader("src\\main\\resources\\directors.csv")); 
+			//CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
+			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
+			//CSVReader readDirectors = new CSVReader(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
 			//ArrayList<Film> films = new ArrayList<Film>();
 			ArrayList<Actor> actors = new ArrayList<Actor>();
