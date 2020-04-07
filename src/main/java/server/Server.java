@@ -28,47 +28,20 @@ import easyFilminData.User;
 public class Server {
 
 	private int cont = 0;
-	private PersistenceManager pm=null;
-	private Transaction tx=null;
+	private IEasyFilminDAO iDAO = null;
 
 	public Server() {
-//		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
-//		this.pm = pmf.getPersistenceManager();
-//		this.tx = pm.currentTransaction();
+		this.iDAO = new EasyFilminJDO();
 	}
-/*
- * There is no connection with the DB yet, so all methods involving Transactions or PersistenceManagers won't 
- * work for now.
- * 
- * However, it is perfectly working for methods that we can use as trials and practice.
- */
 
 	@POST
 	@Path("/sayMessage")
 	public Response sayMessage(DirectedMessage directedMessage) {
 		User user = null;
-		try{
-			tx.begin();
-			System.out.println("Creating query ...");
-			
-			Query<User> q = pm.newQuery("SELECT FROM " + User.class.getName() + " WHERE login == \"" + directedMessage.getUserData().getLogin() + "\" &&  password == \"" + directedMessage.getUserData().getPassword() + "\"");
-			q.setUnique(true);
-			user = (User)q.execute();
-			
-			System.out.println("User retrieved: " + user);
-			if (user != null)  {
-				Message message = new Message(directedMessage.getMessageData().getMessage());
-				user.getMessages().add(message);
-				pm.makePersistent(user);					 
-			}
-			tx.commit();
-		} finally {
-			if (tx.isActive()) {
-				tx.rollback();
-			}
-		}
+		//IEasyFilminDAO iDAO = new EasyFilminJDO();
+		user = iDAO.loadUser(directedMessage.getUserData().getLogin());
 		
-		if (user != null) {
+		if (user != null && directedMessage.getUserData().getPassword().equals(user.getPassword())) {
 			cont++;
 			System.out.println(" * Client number: " + cont);
 			MessageData messageData = new MessageData();
@@ -85,7 +58,7 @@ public class Server {
 		
 		User user = null;
 		user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
-		IEasyFilminDAO iDAO = new EasyFilminJDO();
+		//IEasyFilminDAO iDAO = new EasyFilminJDO();
 		iDAO.saveUser(user);
 		return Response.ok().build();	
         

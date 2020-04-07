@@ -91,8 +91,11 @@ public class ExampleClient {
 		String port = args[1];
 
 		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		exampleClient.saySomething("Desde dentro de client-saySomething()"); // WORKING
-		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); //err 500 por fallo de conexion con JDO
-		//exampleClient.sayMessage("egui", "egui", "Hola, lo conseguiste"); //err 500 por fallo de conexion con JDO
+		exampleClient.saySomething("Desde dentro de client-saySomething()"); 
+		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
+		exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
+		exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
+		exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
+		exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
 	}
 }

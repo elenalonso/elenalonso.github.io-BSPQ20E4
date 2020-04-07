@@ -79,9 +79,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			tx = pm.currentTransaction();		
 			//Start the transaction
 			tx.begin();
-
+			
 			Query<User> query = pm.newQuery(User.class);
-			query.setFilter("Username == '" + username + "'"); //we find the user by his username
+			query.setFilter("nickname == '" + username + "'"); //we find the user by his username
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			User user = (User) query.execute();
