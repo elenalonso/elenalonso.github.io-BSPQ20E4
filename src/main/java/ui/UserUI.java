@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
 import easyFilminData.User;
+import serialization.UserData;
 
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -34,7 +35,7 @@ public class UserUI extends JFrame{
 	private JTextField busqueda;
 	private JButton nuevaLista;
 	private JButton misListas;
-	public UserUI(User user) {
+	public UserUI(UserData user) {
 		this.setTitle( "EasyFilmin User");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(740,480);
@@ -87,7 +88,7 @@ public class UserUI extends JFrame{
 		JPanel pCentral = new JPanel();
 		JPanel pOpt = new JPanel();
 		JPanel pPic = new JPanel();
-		JLabel profile = new JLabel(user.getNickname());
+		JLabel profile = new JLabel(user.getLogin());
 		JLabel image = new JLabel("");
 		String pathPic = user.getIcon();
 		
@@ -110,7 +111,7 @@ public class UserUI extends JFrame{
 		
 	}
 	public static void main(String[] args) {
-		User u = new User("egui", "src\\main\\resources\\image.png", "egui", "");
+		UserData u = new UserData();
 		UserUI ui = new UserUI(u);
 		ui.setVisible(true);
 	}

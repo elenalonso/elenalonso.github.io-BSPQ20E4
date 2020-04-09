@@ -8,17 +8,23 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
 
+import client.EasyFilmController;
 import easyFilminData.User;
+import serialization.UserData;
 
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
 public class UserLog extends JFrame{
+	private EasyFilmController controller;
 	private JTextField textField;
 	private JButton btnNewButton;
 	private JPasswordField passwordField;
 	private JButton btnCreate;
-	public UserLog() {
+	public UserLog(String hostname, String port) {
+		
+		controller = new EasyFilmController(hostname, port);
+		
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,350);
@@ -54,7 +60,12 @@ public class UserLog extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				User us = new User(null, null, null, null);
+				// FUNCTIONALITY not implemented yet 
+					// ATTENTION THIS MUST BE REMOVED AFTER DOING THESE TRIALS
+				String pass = new String(passwordField.getPassword());
+					// END OF REMOVABLE PART
+				controller.login(textField.getText(), pass, "LoginHECHO");
+				UserData us = new UserData();
 				UserUI vg = new UserUI(us);
 				vg.setSize(720, 480);
 				vg.setVisible(true);
@@ -70,7 +81,7 @@ public class UserLog extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				UserReg u = new UserReg(null,null);
+				UserReg u = new UserReg(hostname,port);
 				u.setVisible(true);
 				setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			}

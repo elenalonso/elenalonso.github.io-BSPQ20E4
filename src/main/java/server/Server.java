@@ -23,6 +23,10 @@ import easyFilminDAO.IEasyFilminDAO;
 import easyFilminData.Message;
 import easyFilminData.User;
 
+/**
+ * This class is in charge of handling the calls from the controller and cast them to the Data Access Layer
+ *
+ */
 @Path("/server")
 @Produces(MediaType.APPLICATION_JSON)
 public class Server {
@@ -34,6 +38,10 @@ public class Server {
 		this.iDAO = new EasyFilminJDO();
 	}
 
+	/** This method returns a message 
+	 * @param directedMessage the message to be displayed
+	 * @return
+	 */
 	@POST
 	@Path("/sayMessage")
 	public Response sayMessage(DirectedMessage directedMessage) {
@@ -64,7 +72,29 @@ public class Server {
         
         
 	}
+	
+	@POST
+	@Path("/login")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response login(DirectedMessage directedMessage) {
+		User user = null;
+		user = iDAO.loadUser(directedMessage.getUserData().getLogin());
+		
+		if (user != null && directedMessage.getUserData().getPassword().equals(user.getPassword())) {
+			cont++;
+			
+			System.out.println(" * Client number: " + cont);
+			UserData usData = directedMessage.getUserData();
+			//messageData.setMessage(directedMessage.getMessageData().getMessage());
+			return Response.ok(usData).build();
+		} else {
+			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
+		}
 
+	}
+
+	// Example method
+	
 	@GET
 	@Path("/hello")
 	@Produces(MediaType.TEXT_PLAIN)

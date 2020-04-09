@@ -10,9 +10,11 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import easyFilminDAO.EasyFilminJDO;
+import easyFilminData.User;
 import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
+import ui.UserUI;
 
 public class EasyFilmController {
 
@@ -70,6 +72,38 @@ public class EasyFilmController {
 		}
 	}
 	
+	public void login(String login, String password, String message) {
+		WebTarget sayHelloWebTarget = webTarget.path("server/sayMessage");
+		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.APPLICATION_JSON);
+
+		DirectedMessage directedMessage = new DirectedMessage();
+		UserData userData = new UserData();
+		userData.setLogin(login);
+		userData.setPassword(password);
+
+		directedMessage.setUserData(userData);
+
+		MessageData messageData = new MessageData();
+		messageData.setMessage(message);
+		directedMessage.setMessageData(messageData);
+
+		Response response = invocationBuilder.post(Entity.entity(directedMessage, MediaType.APPLICATION_JSON));
+		if(response.getStatus() == Status.BAD_REQUEST.getStatusCode()) {
+			String responseMessage2 = response.readEntity(String.class);
+			System.out.println("* ERROR: '" + responseMessage2 + "'");
+			
+		}else if (response.getStatus() != Status.OK.getStatusCode()) {
+			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+			
+		}else {
+			//It seems that this doesnt work for now
+			UserData usData = response.readEntity(UserData.class);
+			UserUI ui = new UserUI(usData);
+			ui.setVisible(true);
+		}
+	}
+
+	
 	public static void main(String[] args) {
 		if (args.length != 2) {
 			System.out.println("Use: java Client.Client [host] [port]");
@@ -79,13 +113,12 @@ public class EasyFilmController {
 		String hostname = args[0];
 		String port = args[1];
 
-		ExampleClient exampleClient = new ExampleClient(hostname, port);
-		exampleClient.saySomething("Desde dentro de client-saySomething()"); 
-		exampleClient.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
-		exampleClient.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
-		exampleClient.sayMessage("egui2", "1234", "Hola, lo conseguiste"); 
-		exampleClient.sayMessage("Marcos", "1", "Esto no se debria ver");
-		exampleClient.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
+		EasyFilmController easFilCon = new EasyFilmController(hostname, port); 
+		easFilCon.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
+		easFilCon.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
+		easFilCon.login("egui2", "1234", "Hola, lo conseguiste"); 
+		easFilCon.sayMessage("Marcos", "1", "Esto no se debria ver");
+		easFilCon.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
 		EasyFilminJDO prueba= new EasyFilminJDO();
 		prueba.startBD();
 	}
