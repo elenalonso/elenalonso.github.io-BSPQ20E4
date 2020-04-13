@@ -1,21 +1,20 @@
 package easyFilminData;
 
 
-	import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PersistenceCapable;
 
 import java.util.ArrayList;
-import java.util.Date;
-	import javax.jdo.annotations.Inheritance;
-	import javax.jdo.annotations.InheritanceStrategy;
+import javax.jdo.annotations.Inheritance;
+import javax.jdo.annotations.InheritanceStrategy;
 
 	
 		@PersistenceCapable
 		@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 	
-public class Film {
+public class Film implements Comparable<Film> {
 	protected String title;
 	protected String poster;
-	protected Date release;
+	protected String release;
 	protected String description;
 	protected Genre genre;
 	protected double rating;
@@ -37,7 +36,7 @@ public class Film {
 		
 		}
 	
-	public Film(String title,String poster, Date release, String description, 
+	public Film(String title,String poster, String release, String description, 
 			Genre genre, double rating, ArrayList<Actor> actors, ArrayList<Director> director) {
 		
 		this.title= title;
@@ -60,7 +59,7 @@ public class Film {
 	    return poster;
 	}
 
-	public Date getRelease()
+	public String getRelease()
 	{
 	    return release;
 	}
@@ -79,7 +78,7 @@ public class Film {
 	    return rating;
 	}
 	
-	public ArrayList<Actor> getActors() //seguramente luego esto se cambie a ArrayList XD
+	public ArrayList<Actor> getActors() 
 	{
 	    return actors;
 	}
@@ -101,7 +100,7 @@ public class Film {
 	    this.poster = poster;
 	}
 
-	public void setRelease(Date release)
+	public void setRelease(String release)
 	{
 	    this.release = release;
 	}
@@ -129,5 +128,19 @@ public class Film {
 	public void setDirector(ArrayList<Director> director)
 	{
 	    this.director = director;
+	}
+
+	public int compareTo(Film f) {
+		
+		int i = this.title.compareTo(f.getTitle());
+		
+		if(i == 0) {
+			return 0;
+		}else if(i < 0){
+			return -1;
+		}else {
+			return 1;
+		}
+		
 	}
 }
