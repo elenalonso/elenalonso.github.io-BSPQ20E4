@@ -12,7 +12,7 @@ public class Filmography { //shows basic details of a film
 		private String title;
 		private int year;
 		private ArrayList<ActorData> actor;
-	    private ArrayList<DirectorData> director;
+//	    private ArrayList<DirectorData> director;
 	    private Genre genre;
 	    private String sipnosis;
 
@@ -23,7 +23,7 @@ public class Filmography { //shows basic details of a film
 	    public Filmography(Film f) {
 	    	this.title= f.getTitle();
 	    	this.sipnosis=f.getDescription();
-	    	this.year=f.getRelease().getYear();
+	 //   	this.year=f.getRelease().getYear();
 	 //   	this.actor=f.getActors().g;
 	    	this.genre=f.getGenre();
 	    }

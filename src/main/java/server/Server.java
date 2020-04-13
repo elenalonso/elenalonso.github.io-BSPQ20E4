@@ -13,6 +13,7 @@ import serialization.UserData;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -59,6 +60,23 @@ public class Server {
 			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
 		}
 	}
+
+	@POST
+	@Path("/login")
+	public Response login(UserData us) {
+		User user = null;
+		//IEasyFilminDAO iDAO = new EasyFilminJDO();
+		user = iDAO.loadUser(us.getLogin());
+		
+		if (user != null && us.getPassword().equals(user.getPassword())) {
+			cont++;
+			System.out.println(" * Client number: " + cont);
+			return Response.ok("Login OK").build();
+		} else {
+			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
+		}
+	}
+
 	
 	@POST
 	@Path("/register")
@@ -73,26 +91,20 @@ public class Server {
         
 	}
 	
-	@POST
-	@Path("/login")
-	@Produces(MediaType.TEXT_PLAIN)
-	public Response login(DirectedMessage directedMessage) {
+	@GET
+	@Path("/getUser/{nick}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public UserData login(@PathParam("nick") String login) {
 		User user = null;
-		user = iDAO.loadUser(directedMessage.getUserData().getLogin());
-		
-		if (user != null && directedMessage.getUserData().getPassword().equals(user.getPassword())) {
-			cont++;
-			
+		user = iDAO.loadUser(login);
+					
 			System.out.println(" * Client number: " + cont);
-			UserData usData = directedMessage.getUserData();
+			UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
 			//messageData.setMessage(directedMessage.getMessageData().getMessage());
-			return Response.ok(usData).build();
-		} else {
-			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
-		}
-
+			return usData;
 	}
 
+	
 	// Example method
 	
 	@GET

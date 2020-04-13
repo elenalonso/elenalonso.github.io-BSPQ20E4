@@ -59,16 +59,21 @@ public class UserLog extends JFrame{
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				// FUNCTIONALITY not implemented yet 
 					// ATTENTION THIS MUST BE REMOVED AFTER DOING THESE TRIALS
 				String pass = new String(passwordField.getPassword());
 					// END OF REMOVABLE PART
-				controller.login(textField.getText(), pass, "LoginHECHO");
-				UserData us = new UserData();
-				UserUI vg = new UserUI(us);
-				vg.setSize(720, 480);
-				vg.setVisible(true);
+				if(controller.login(textField.getText(), pass)) {
+					dispose();
+					UserData us = controller.getUser(textField.getText());
+					UserUI vg = new UserUI(us);
+					vg.setSize(720, 480);
+					vg.setVisible(true);
+				}else {
+					textField.setText("Login or Pass incorrect");
+				}
+				
+
 			}
 		});
 		

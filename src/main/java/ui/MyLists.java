@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 
 import easyFilminData.User;
+import serialization.UserData;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,8 +33,8 @@ public class MyLists extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				User us = new User(null, null, null, null);
-				UserUI u = new UserUI(us);
+				UserData usData = new UserData();
+				UserUI u = new UserUI(usData);
 				u.setVisible(true);
 			}
 		});

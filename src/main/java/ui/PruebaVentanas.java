@@ -2,13 +2,14 @@ package ui;
 
 import client.EasyFilmController;
 import client.ExampleClient;
+import easyFilminDAO.EasyFilminJDO;
 import easyFilminData.User;
 
 public class PruebaVentanas {
 	public static void main(String[] args) {
 		EasyFilmController e = new EasyFilmController(args[0], args[1]); 
-		e.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
-
+//		e.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
+		
 		UserLog u = new UserLog(args[0], args[1]);
 		u.setVisible(true);
 

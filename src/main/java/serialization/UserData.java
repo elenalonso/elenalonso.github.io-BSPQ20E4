@@ -7,11 +7,23 @@ public class UserData {
     private String icon;
     private String email;
 
-
+    //Default public constructor for serialization
 	public UserData() {
 
     }
-
+	
+	/** Constructor to use in the server 
+	 * @param login
+	 * @param password
+	 * @param icon
+	 * @param email
+	 */
+	public UserData(String login, String password, String icon, String email) {
+		this.login = login;
+		this.password = password;
+		this.icon = null; //CHANGE WHEN WE HAVE A WAY TO INSERT PROFILE IMAGES
+		this.email = email;
+	}
     public String getLogin() {
         return this.login;
     }
