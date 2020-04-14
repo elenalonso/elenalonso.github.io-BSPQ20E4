@@ -8,19 +8,60 @@ import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 
 	
-		@PersistenceCapable
-		@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-	
+
+/**
+ * Definition of a film. Extends Comparable for sorting purposes.
+ * @author BSPQ20E4
+ * @version 1.1
+ * @since 2020-04-14
+ */
+@PersistenceCapable
+@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)	
 public class Film implements Comparable<Film> {
+	
+	/**
+	 * This variable represents the title of a film
+	 */
 	protected String title;
+	
+	/**
+	 * This variable represents the poster of a film
+	 */
 	protected String poster;
+	
+	/**
+	 * This variable represents the release date of a film
+	 */
 	protected String release;
+	
+	/**
+	 * This variable represents a quick summary of the plot of the film
+	 */
 	protected String description;
+	
+	/**
+	 * This variable represents the genre to which a film belongs
+	 */
 	protected Genre genre;
+	
+	/**
+	 * This variable represents the average rating of a film
+	 */
 	protected double rating;
+	
+	/**
+	 * This variable represents the actors that have starred in a film
+	 */
 	protected ArrayList<Actor> actors;
+	
+	/**
+	 * This variable represents the directors that have taken part in a film
+	 */
 	protected ArrayList<Director> director;
 	
+	/**
+	 * This variable represents the trailer of a film
+	 */
 	protected String trailer;
 	
 	public Film() {
