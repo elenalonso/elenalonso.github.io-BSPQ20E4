@@ -1,6 +1,7 @@
 package easyFilminDAO;
 
 import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import com.opencsv.CSVReaderBuilder;
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
+import easyFilminData.Genre;
 import easyFilminData.User;
 
 
@@ -284,11 +286,11 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		// TODO Auto-generated method stub
 		try {
 			System.out.println("Holi llegamos hasta aqui?");
-			//CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
+			CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
 			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
 			CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
-			//ArrayList<Film> films = new ArrayList<Film>();
+			ArrayList<Film> films = new ArrayList<Film>();
 			ArrayList<Actor> actors = new ArrayList<Actor>();
 			ArrayList<Director> directors = new ArrayList<Director>();
 			
@@ -321,8 +323,29 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					
 					
 					} 
+				while ((values = readFilms.readNext()) != null){
+					String title =values[0];
+					String year = values[2];
+					String desc = values[3];
+					int dur = Integer.parseInt(values[4]);
+					String gen = values[5];
+					Genre g= new Genre(gen);
+					double rate = Double.parseDouble(values[6]);
+					String[] ac = values[7].toString().split("|");
+					for (String a : ac) {
+						actors.add(new Actor(a,null,null));
+					}
+					String[] dr =values[8].toString().split("|");
+					for (String d : dr) {
+						directors.add(new Director(d,null,null));
+					}
+					
+					films.add(new Film(title, null,year,desc,dur,g,rate,actors,directors));
+					for (Film film : films) {
+						saveFilm(film);
 				
-				
+					}
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -342,6 +365,41 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	@Override
 	public void saveDirector(Director director) {
 		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			System.out.println("Insert directors in the DB");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			pm.makePersistent(director);
+			
+			
+			//End the transaction
+			tx.commit();
+			System.out.println("Changes committed");
+			
+		} catch (Exception ex) {
+			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			ex.printStackTrace();
+		
+		}finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+				System.out.println("Changes rollbacked");
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				System.out.println("Closing the connection");
+				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
+			}
+		}
 		
 	}
 
@@ -349,6 +407,40 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	@Override
 	public Director loadDirector(String name) {
 		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			System.out.println("- Retrieving directors");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+
+			Query<Director> query = pm.newQuery(Director.class);
+			query.setFilter("Director == '" + name + "'"); //we find the film by his title
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			Director director = (Director) query.execute();
+
+			//End the transaction
+			tx.commit();
+			
+			
+			return director;
+		} catch (Exception ex) {
+			System.err.println(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
 		return null;
 	}
 }

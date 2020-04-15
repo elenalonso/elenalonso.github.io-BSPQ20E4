@@ -63,6 +63,12 @@ public class Film implements Comparable<Film> {
 	 * This variable represents the trailer of a film
 	 */
 	protected String trailer;
+	/**
+	 * This variable represents the duration of a film (in minutes)
+	 */
+	
+	
+	protected int dur;
 	
 	public Film() {
 		
@@ -70,6 +76,7 @@ public class Film implements Comparable<Film> {
 		this.poster="";
 		this.release=null;
 		this.description= "";
+		this.dur=0;
 		this.genre=null;
 		this.rating=0;
 		this.actors=new ArrayList<>();
@@ -77,19 +84,28 @@ public class Film implements Comparable<Film> {
 		
 		}
 	
-	public Film(String title,String poster, String release, String description, 
+	public Film(String title,String poster, String release, String description,int dur, 
 			Genre genre, double rating, ArrayList<Actor> actors, ArrayList<Director> director) {
 		
 		this.title= title;
 		this.poster=poster;
 		this.release=release;
 		this.description= description;
+		this.dur=dur;
 		this.genre=genre;
 		this.rating=rating;
 		this.actors=actors;
 		this.director=director;
 		
 		}
+	public int getDur() {
+		return dur;
+	}
+
+	public void setDur(int dur) {
+		this.dur = dur;
+	}
+
 	public String getTitle()
 	{
 	    return title;
@@ -129,7 +145,14 @@ public class Film implements Comparable<Film> {
 	    return director;
 	}
 	
-	
+	public String getTrailer() {
+		return trailer;
+	}
+
+	public void setTrailer(String trailer) {
+		this.trailer = trailer;
+	}
+
 	
 	public void setTitle(String title)
 	{
