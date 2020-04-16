@@ -63,13 +63,15 @@ public class Film implements Comparable<Film> {
 	 * This variable represents the trailer of a film
 	 */
 	protected String trailer;
+	
 	/**
 	 * This variable represents the duration of a film (in minutes)
 	 */
-	
-	
 	protected int dur;
 	
+	/**
+	 * Constructor for the Film class. Initializes an "empty" Film instance.
+	 */
 	public Film() {
 		
 		this.title= "";
@@ -84,6 +86,18 @@ public class Film implements Comparable<Film> {
 		
 		}
 	
+	/**
+	 * Parameterized constructor for the Film class receiving as parameters:
+	 * @param title       String corresponding to the title of a film
+	 * @param poster	  String corresponding to the poster of a film
+	 * @param release     String corresponding to the release date of a film
+	 * @param description String corresponding to the summary of the film
+	 * @param dur		  int corresponding to the duration of a film in minutes
+	 * @param genre       Genre to which the film belongs
+	 * @param rating      double corresponding to the average rating of a film
+	 * @param actors      ArrayList corresponding to the actors that have starred in a film
+	 * @param director    ArrayList corresponding to the directors that have taken part in the film
+	 */
 	public Film(String title,String poster, String release, String description,int dur, 
 			Genre genre, double rating, ArrayList<Actor> actors, ArrayList<Director> director) {
 		
@@ -98,102 +112,187 @@ public class Film implements Comparable<Film> {
 		this.director=director;
 		
 		}
+	/**
+	 * Getter for the duration of a film
+	 * @return the duration of a film in minutes
+	 */
 	public int getDur() {
 		return dur;
 	}
 
+	/**
+	 * Setter for the duration of a film
+	 * @param dur int corresponding to the duration of a film in minutes
+	 */
 	public void setDur(int dur) {
 		this.dur = dur;
 	}
 
+	/** 
+	 * Getter for the title of a film
+	 * @return a String with the title of the film
+	 */
 	public String getTitle()
 	{
 	    return title;
 	}
 
+	/**
+	 * Getter for the poster of a film
+	 * @return a String with the poster of the film
+	 */
 	public String getPoster()
 	{
 	    return poster;
 	}
 
+	/**
+	 * Getter for the duration of a film
+	 * @return a String with the release date of the film
+	 */
 	public String getRelease()
 	{
 	    return release;
 	}
+	/**
+	 * Getter for the description of a film
+	 * @return a String with the description of the film
+	 */
 	public String getDescription()
 	{
 	    return description;
 	}
 
+	/**
+	 * Getter for the genre of a film
+	 * @return Genre instance corresponding to the genre of the film
+	 */
 	public Genre getGenre()
 	{
 	    return genre;
 	}
 
+	/**
+	 * Getter for the rating of a film
+	 * @return double with the average rating of the film
+	 */
 	public double getRating()
 	{
 	    return rating;
 	}
 	
+	/**
+	 * Getter for the actors of a film
+	 * @return ArrayList of actors that starred in the film
+	 */
 	public ArrayList<Actor> getActors() 
 	{
 	    return actors;
 	}
 
+	/**
+	 * Getter for the directors of a film
+	 * @return ArrayList of directors that have taken part in the film
+	 */
 	public ArrayList<Director> getDirector()
 	{
 	    return director;
 	}
 	
+	/**
+	 * Getter for the trailer of a film
+	 * @return String with the trailer of the film
+	 */
 	public String getTrailer() {
 		return trailer;
 	}
 
+	/**
+	 * Setter for the trailer of a film
+	 * @param trailer String with the trailer of a film
+	 */
 	public void setTrailer(String trailer) {
 		this.trailer = trailer;
 	}
 
 	
+	/**
+	 * Setter for the title of a film
+	 * @param title String with the title of a film
+	 */
 	public void setTitle(String title)
 	{
 	    this.title = title;
 	}
 
+	/**
+	 * Setter for the poster of a film
+	 * @param poster String with the poster of a film
+	 */
 	public void setPoster(String poster)
 	{
 	    this.poster = poster;
 	}
 
+	/**
+	 * Setter for the release of a film
+	 * @param release String with the release date of a film
+	 */
 	public void setRelease(String release)
 	{
 	    this.release = release;
 	}
 
+	/**
+	 * Setter for the description of a film
+	 * @param description String with the description of a film
+	 */
 	public void setDescription(String description)
 	{
 	    this.description = description;
 	}
 
+	/**
+	 * Setter for the trailer of a film
+	 * @param rating double with the average rating of a film
+	 */
 	public void setRating(double rating)
 	{
 	    this.rating = rating;
 	}
 
+	/**
+	 * Setter for the genre of a film
+	 * @param genre Genre to which a film belongs
+	 */
 	public void setGenre(Genre genre)
 	{
 	    this.genre = genre;
 	}
 	
+	/**
+	 * Setter for the actors of a film
+	 * @param actors ArrayList of actors that have starred in a film
+	 */
 	public void setActors(ArrayList<Actor> actors)
 	{
 	    this.actors = actors;
 	}
 
+	/**
+	 * Setter for the directors of a film
+	 * @param director ArrayList of directors that have taken part on a film
+	 */
 	public void setDirector(ArrayList<Director> director)
 	{
 	    this.director = director;
 	}
 
+	/**
+	 * Compares a Film object to another Film object. The criteria to compare is alphabetical by title.
+	 * @param f Film to which the current Film object will be compared to.
+	 * @return returns 0 if both title are the same, -1 if it is before in the alphabet and 1 if it is later.
+	 */
 	public int compareTo(Film f) {
 		
 		int i = this.title.compareTo(f.getTitle());

@@ -1,0 +1,1246 @@
+16:50:56,835 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+16:50:56,966 (main) DEBUG [DataNucleus.General] - Registering bundle org.sonatype.inject version 2.3.0 at URL file:/C:/Users/marco/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar.
+16:50:57,073 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/marco/.m2/repository/org/sonatype/sisu/sisu-inject-bean/2.3.0/sisu-inject-bean-2.3.0.jar!/plugin.xml.
+16:50:57,089 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.2.2 at URL file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-core/5.2.2/datanucleus-core-5.2.2.jar.
+16:50:57,102 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-core/5.2.2/datanucleus-core-5.2.2.jar!/plugin.xml.
+16:50:57,167 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.2.3 at URL file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.3/datanucleus-api-jdo-5.2.3.jar.
+16:50:57,206 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-api-jdo/5.2.3/datanucleus-api-jdo-5.2.3.jar!/plugin.xml.
+16:50:57,241 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.2.2 at URL file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.2/datanucleus-rdbms-5.2.2.jar.
+16:50:57,254 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/C:/Users/marco/.m2/repository/org/datanucleus/datanucleus-rdbms/5.2.2/datanucleus-rdbms-5.2.2.jar!/plugin.xml.
+16:50:57,360 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+16:50:57,490 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+16:50:57,492 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+16:50:57,571 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+16:50:57,572 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+16:50:57,572 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+16:50:57,573 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Character,java.lang.Integer
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+16:50:57,574 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Double,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.sql.Timestamp,java.util.Date,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.util.Date,java.sql.Time,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,int[],java.sql.Date
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.sql.Timestamp,java.util.Date
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,int[],java.sql.Date
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,java.util.Date,java.sql.Timestamp,[Ljava.lang.Object;
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+16:50:57,575 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+16:50:57,577 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+16:50:57,580 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery), JDO-listener=false
+16:50:57,581 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.2) para el API "JDO" utilisando el JRE "{2}"
+16:50:57,581 (main) DEBUG [DataNucleus.Enhancer] - DataNucleus Enhancer : Classpath
+16:50:57,581 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\datanucleus\datanucleus-maven-plugin\5.0.2\datanucleus-maven-plugin-5.0.2.jar
+16:50:57,581 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.8\plexus-utils-3.0.8.jar
+16:50:57,582 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\maven\maven-artifact\3.0.4\maven-artifact-3.0.4.jar
+16:50:57,582 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\maven\maven-plugin-api\3.0.4\maven-plugin-api-3.0.4.jar
+16:50:57,582 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\maven\maven-model\3.0.4\maven-model-3.0.4.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\2.3.0\sisu-inject-plexus-2.3.0.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\sonatype\sisu\sisu-inject-bean\2.3.0\sisu-inject-bean-2.3.0.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\sonatype\sisu\sisu-guice\3.1.0\sisu-guice-3.1.0-no_aop.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\sonatype\sisu\sisu-guava\0.9.9\sisu-guava-0.9.9.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\codehaus\plexus\plexus-container-default\1.5.5\plexus-container-default-1.5.5.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.2\plexus-classworlds-2.2.2.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\xbean\xbean-reflect\3.4\xbean-reflect-3.4.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\commons-logging\commons-logging-api\1.1\commons-logging-api-1.1.jar
+16:50:57,583 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\google\collections\google-collections\1.0\google-collections-1.0.jar
+16:50:57,586 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar
+16:50:57,586 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes
+16:50:57,586 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\core\jersey-server\2.29\jersey-server-2.29.jar
+16:50:57,587 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\core\jersey-client\2.29\jersey-client-2.29.jar
+16:50:57,587 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\jakarta\ws\rs\jakarta.ws.rs-api\2.1.5\jakarta.ws.rs-api-2.1.5.jar
+16:50:57,587 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\media\jersey-media-jaxb\2.29\jersey-media-jaxb-2.29.jar
+16:50:57,587 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.4\jakarta.annotation-api-1.3.4.jar
+16:50:57,587 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\external\jakarta.inject\2.5.0\jakarta.inject-2.5.0.jar
+16:50:57,588 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar
+16:50:57,588 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.2\jakarta.xml.bind-api-2.3.2.jar
+16:50:57,590 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.1\jakarta.activation-api-1.2.1.jar
+16:50:57,590 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet\2.29\jersey-container-servlet-2.29.jar
+16:50:57,591 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\containers\jersey-container-servlet-core\2.29\jersey-container-servlet-core-2.29.jar
+16:50:57,593 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\core\jersey-common\2.29\jersey-common-2.29.jar
+16:50:57,593 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\osgi-resource-locator\1.0.3\osgi-resource-locator-1.0.3.jar
+16:50:57,593 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar
+16:50:57,593 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\inject\jersey-hk2\2.29\jersey-hk2-2.29.jar
+16:50:57,597 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\hk2-locator\2.5.0\hk2-locator-2.5.0.jar
+16:50:57,597 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\external\aopalliance-repackaged\2.5.0\aopalliance-repackaged-2.5.0.jar
+16:50:57,598 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\hk2-api\2.5.0\hk2-api-2.5.0.jar
+16:50:57,598 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\hk2\hk2-utils\2.5.0\hk2-utils-2.5.0.jar
+16:50:57,599 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\javassist\javassist\3.22.0-CR2\javassist-3.22.0-CR2.jar
+16:50:57,599 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\media\jersey-media-json-jackson\2.29\jersey-media-json-jackson-2.29.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\glassfish\jersey\ext\jersey-entity-filtering\2.29\jersey-entity-filtering-2.29.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.9\jackson-annotations-2.9.9.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9\jackson-databind-2.9.9.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.9.9\jackson-module-jaxb-annotations-2.9.9.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\opencsv\opencsv\4.0\opencsv-4.0.jar
+16:50:57,600 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\commons\commons-lang3\3.6\commons-lang3-3.6.jar
+16:50:57,601 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\apache\commons\commons-text\1.1\commons-text-1.1.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\mysql\mysql-connector-java\8.0.15\mysql-connector-java-8.0.15.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\datanucleus\javax.jdo\3.2.0-m13\javax.jdo-3.2.0-m13.jar
+16:50:57,602 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\javax\transaction\transaction-api\1.1\transaction-api-1.1.jar
+16:50:57,603 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\datanucleus\datanucleus-core\5.2.2\datanucleus-core-5.2.2.jar
+16:50:57,603 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\datanucleus\datanucleus-api-jdo\5.2.3\datanucleus-api-jdo-5.2.3.jar
+16:50:57,603 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\org\datanucleus\datanucleus-rdbms\5.2.2\datanucleus-rdbms-5.2.2.jar
+16:50:57,603 (main) DEBUG [DataNucleus.Enhancer] - >>  C:\Users\marco\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+16:50:57,603 (main) DEBUG [DataNucleus.Enhancer] - Reading fileListFile: C:\Users\marco\AppData\Local\Temp\enhancer-6679312590564785320.flf
+16:50:57,607 (main) DEBUG [DataNucleus.Enhancer] - Enhancing classes
+16:50:57,650 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata de las clases "[client.EasyFilmController$1, client.EasyFilmController, client.ExampleClient, easyFilminDAO.EasyFilminJDO, easyFilminDAO.IEasyFilminDAO, easyFilminData.Actor, easyFilminData.Comment, easyFilminData.Director, easyFilminData.Film, easyFilminData.FilmList, easyFilminData.Genre, easyFilminData.JDO_Test_Main, easyFilminData.Message, easyFilminData.User, serialization.ActorData, serialization.CommentInfo, serialization.DirectedMessage, serialization.DirectorData, serialization.Filmography, serialization.MessageData, serialization.UserData, serialization.UserProfile, server.Server, ui.AdminUI, ui.CreateList, ui.MyLists$1, ui.MyLists, ui.PruebaVentanas, ui.UserLog$1, ui.UserLog$2, ui.UserLog, ui.UserReg$1, ui.UserReg, ui.UserUI$1, ui.UserUI$2, ui.UserUI]" ...
+16:50:57,659 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1" en /META-INF/package.jdo
+16:50:57,661 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1" en /WEB-INF/package.jdo
+16:50:57,662 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1" en /package.jdo
+16:50:57,663 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1" en /client/package.jdo
+16:50:57,664 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1" en /client/EasyFilmController$1.jdo
+16:50:57,665 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "client.EasyFilmController$1"
+16:50:57,665 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "client.EasyFilmController$1" no tener Meta-Data
+16:50:57,665 (main) DEBUG [DataNucleus.MetaData] - La clase "client.EasyFilmController$1" no tiene MetaData o annotaciones.
+16:50:57,668 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController" en /META-INF/package.jdo
+16:50:57,670 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController" en /WEB-INF/package.jdo
+16:50:57,672 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController" en /package.jdo
+16:50:57,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController" en /client/package.jdo
+16:50:57,673 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.EasyFilmController" en /client/EasyFilmController.jdo
+16:50:57,673 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "client.EasyFilmController"
+16:50:57,673 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "client.EasyFilmController" no tener Meta-Data
+16:50:57,673 (main) DEBUG [DataNucleus.MetaData] - La clase "client.EasyFilmController" no tiene MetaData o annotaciones.
+16:50:57,687 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.ExampleClient" en /META-INF/package.jdo
+16:50:57,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.ExampleClient" en /WEB-INF/package.jdo
+16:50:57,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.ExampleClient" en /package.jdo
+16:50:57,688 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.ExampleClient" en /client/package.jdo
+16:50:57,692 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "client.ExampleClient" en /client/ExampleClient.jdo
+16:50:57,692 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "client.ExampleClient"
+16:50:57,692 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "client.ExampleClient" no tener Meta-Data
+16:50:57,692 (main) DEBUG [DataNucleus.MetaData] - La clase "client.ExampleClient" no tiene MetaData o annotaciones.
+16:50:57,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO" en /META-INF/package.jdo
+16:50:57,696 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO" en /WEB-INF/package.jdo
+16:50:57,700 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO" en /package.jdo
+16:50:57,704 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO" en /easyFilminDAO/package.jdo
+16:50:57,704 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO" en /easyFilminDAO/EasyFilminJDO.jdo
+16:50:57,717 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "easyFilminDAO.EasyFilminJDO"
+16:50:57,717 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "easyFilminDAO.EasyFilminJDO" no tener Meta-Data
+16:50:57,717 (main) DEBUG [DataNucleus.MetaData] - La clase "easyFilminDAO.EasyFilminJDO" no tiene MetaData o annotaciones.
+16:50:57,717 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO" en /META-INF/package.jdo
+16:50:57,720 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO" en /WEB-INF/package.jdo
+16:50:57,721 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO" en /package.jdo
+16:50:57,723 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO" en /easyFilminDAO/package.jdo
+16:50:57,724 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO" en /easyFilminDAO/IEasyFilminDAO.jdo
+16:50:57,724 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "easyFilminDAO.IEasyFilminDAO"
+16:50:57,724 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "easyFilminDAO.IEasyFilminDAO" no tener Meta-Data
+16:50:57,724 (main) DEBUG [DataNucleus.MetaData] - La clase "easyFilminDAO.IEasyFilminDAO" no tiene MetaData o annotaciones.
+16:50:57,827 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,832 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,837 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,838 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,844 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.FilmList" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,844 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Genre" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,850 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main" en /META-INF/package.jdo
+16:50:57,850 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main" en /WEB-INF/package.jdo
+16:50:57,851 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main" en /package.jdo
+16:50:57,851 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main" en /easyFilminData/package.jdo
+16:50:57,855 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main" en /easyFilminData/JDO_Test_Main.jdo
+16:50:57,855 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "easyFilminData.JDO_Test_Main"
+16:50:57,855 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "easyFilminData.JDO_Test_Main" no tener Meta-Data
+16:50:57,855 (main) DEBUG [DataNucleus.MetaData] - La clase "easyFilminData.JDO_Test_Main" no tiene MetaData o annotaciones.
+16:50:57,863 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,867 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" tiene anotaciones de JDO y vamos a usarlas.
+16:50:57,923 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.ActorData" en /META-INF/package.jdo
+16:50:57,925 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.ActorData" en /WEB-INF/package.jdo
+16:50:57,925 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.ActorData" en /package.jdo
+16:50:57,926 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.ActorData" en /serialization/package.jdo
+16:50:57,928 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.ActorData" en /serialization/ActorData.jdo
+16:50:57,928 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.ActorData"
+16:50:57,928 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.ActorData" no tener Meta-Data
+16:50:57,928 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.ActorData" no tiene MetaData o annotaciones.
+16:50:57,930 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.CommentInfo" en /META-INF/package.jdo
+16:50:57,931 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.CommentInfo" en /WEB-INF/package.jdo
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.CommentInfo" en /package.jdo
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.CommentInfo" en /serialization/package.jdo
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.CommentInfo" en /serialization/CommentInfo.jdo
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.CommentInfo"
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.CommentInfo" no tener Meta-Data
+16:50:57,932 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.CommentInfo" no tiene MetaData o annotaciones.
+16:50:57,936 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage" en /META-INF/package.jdo
+16:50:57,938 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage" en /WEB-INF/package.jdo
+16:50:57,938 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage" en /package.jdo
+16:50:57,939 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage" en /serialization/package.jdo
+16:50:57,940 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage" en /serialization/DirectedMessage.jdo
+16:50:57,940 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.DirectedMessage"
+16:50:57,940 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.DirectedMessage" no tener Meta-Data
+16:50:57,940 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.DirectedMessage" no tiene MetaData o annotaciones.
+16:50:57,943 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectorData" en /META-INF/package.jdo
+16:50:57,944 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectorData" en /WEB-INF/package.jdo
+16:50:57,944 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectorData" en /package.jdo
+16:50:57,945 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectorData" en /serialization/package.jdo
+16:50:57,945 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.DirectorData" en /serialization/DirectorData.jdo
+16:50:57,945 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.DirectorData"
+16:50:57,945 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.DirectorData" no tener Meta-Data
+16:50:57,945 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.DirectorData" no tiene MetaData o annotaciones.
+16:50:57,947 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.Filmography" en /META-INF/package.jdo
+16:50:57,947 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.Filmography" en /WEB-INF/package.jdo
+16:50:57,947 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.Filmography" en /package.jdo
+16:50:57,947 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.Filmography" en /serialization/package.jdo
+16:50:57,950 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.Filmography" en /serialization/Filmography.jdo
+16:50:57,950 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.Filmography"
+16:50:57,950 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.Filmography" no tener Meta-Data
+16:50:57,951 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.Filmography" no tiene MetaData o annotaciones.
+16:50:57,953 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.MessageData" en /META-INF/package.jdo
+16:50:57,954 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.MessageData" en /WEB-INF/package.jdo
+16:50:57,954 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.MessageData" en /package.jdo
+16:50:57,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.MessageData" en /serialization/package.jdo
+16:50:57,955 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.MessageData" en /serialization/MessageData.jdo
+16:50:57,955 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.MessageData"
+16:50:57,955 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.MessageData" no tener Meta-Data
+16:50:57,955 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.MessageData" no tiene MetaData o annotaciones.
+16:50:57,958 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserData" en /META-INF/package.jdo
+16:50:57,959 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserData" en /WEB-INF/package.jdo
+16:50:57,960 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserData" en /package.jdo
+16:50:57,960 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserData" en /serialization/package.jdo
+16:50:57,960 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserData" en /serialization/UserData.jdo
+16:50:57,960 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.UserData"
+16:50:57,961 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.UserData" no tener Meta-Data
+16:50:57,961 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.UserData" no tiene MetaData o annotaciones.
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserProfile" en /META-INF/package.jdo
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserProfile" en /WEB-INF/package.jdo
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserProfile" en /package.jdo
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserProfile" en /serialization/package.jdo
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "serialization.UserProfile" en /serialization/UserProfile.jdo
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "serialization.UserProfile"
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "serialization.UserProfile" no tener Meta-Data
+16:50:57,963 (main) DEBUG [DataNucleus.MetaData] - La clase "serialization.UserProfile" no tiene MetaData o annotaciones.
+16:50:57,981 (main) DEBUG [DataNucleus.MetaData] - Clase "server.Server" tiene anotaciones pero no hay ningún AnnotationReader registrado para este tipo de anotaciones. Por favor compruebe el CLASSPATH y las anotaciones para validez.
+16:50:57,981 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "server.Server" en /META-INF/package.jdo
+16:50:57,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "server.Server" en /WEB-INF/package.jdo
+16:50:57,982 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "server.Server" en /package.jdo
+16:50:57,993 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "server.Server" en /server/package.jdo
+16:50:57,994 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "server.Server" en /server/Server.jdo
+16:50:57,994 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "server.Server"
+16:50:57,994 (main) DEBUG [DataNucleus.MetaData] - Clase "server.Server" tiene anotaciones pero no hay ningún AnnotationReader registrado para este tipo de anotaciones. Por favor compruebe el CLASSPATH y las anotaciones para validez.
+16:50:57,994 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "server.Server" no tener Meta-Data
+16:50:57,994 (main) DEBUG [DataNucleus.MetaData] - La clase "server.Server" no tiene MetaData o annotaciones.
+16:50:58,011 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.AdminUI" en /META-INF/package.jdo
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.AdminUI" en /WEB-INF/package.jdo
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.AdminUI" en /package.jdo
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.AdminUI" en /ui/package.jdo
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.AdminUI" en /ui/AdminUI.jdo
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.AdminUI"
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.AdminUI" no tener Meta-Data
+16:50:58,012 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.AdminUI" no tiene MetaData o annotaciones.
+16:50:58,020 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.CreateList" en /META-INF/package.jdo
+16:50:58,020 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.CreateList" en /WEB-INF/package.jdo
+16:50:58,021 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.CreateList" en /package.jdo
+16:50:58,022 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.CreateList" en /ui/package.jdo
+16:50:58,023 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.CreateList" en /ui/CreateList.jdo
+16:50:58,023 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.CreateList"
+16:50:58,023 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.CreateList" no tener Meta-Data
+16:50:58,023 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.CreateList" no tiene MetaData o annotaciones.
+16:50:58,026 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists$1" en /META-INF/package.jdo
+16:50:58,026 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists$1" en /WEB-INF/package.jdo
+16:50:58,027 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists$1" en /package.jdo
+16:50:58,027 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists$1" en /ui/package.jdo
+16:50:58,028 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists$1" en /ui/MyLists$1.jdo
+16:50:58,028 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.MyLists$1"
+16:50:58,028 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.MyLists$1" no tener Meta-Data
+16:50:58,028 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.MyLists$1" no tiene MetaData o annotaciones.
+16:50:58,030 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists" en /META-INF/package.jdo
+16:50:58,031 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists" en /WEB-INF/package.jdo
+16:50:58,031 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists" en /package.jdo
+16:50:58,031 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists" en /ui/package.jdo
+16:50:58,032 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.MyLists" en /ui/MyLists.jdo
+16:50:58,032 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.MyLists"
+16:50:58,032 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.MyLists" no tener Meta-Data
+16:50:58,032 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.MyLists" no tiene MetaData o annotaciones.
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas" en /META-INF/package.jdo
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas" en /WEB-INF/package.jdo
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas" en /package.jdo
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas" en /ui/package.jdo
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas" en /ui/PruebaVentanas.jdo
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.PruebaVentanas"
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.PruebaVentanas" no tener Meta-Data
+16:50:58,034 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.PruebaVentanas" no tiene MetaData o annotaciones.
+16:50:58,040 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$1" en /META-INF/package.jdo
+16:50:58,040 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$1" en /WEB-INF/package.jdo
+16:50:58,040 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$1" en /package.jdo
+16:50:58,043 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$1" en /ui/package.jdo
+16:50:58,046 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$1" en /ui/UserLog$1.jdo
+16:50:58,047 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserLog$1"
+16:50:58,047 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserLog$1" no tener Meta-Data
+16:50:58,047 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserLog$1" no tiene MetaData o annotaciones.
+16:50:58,050 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$2" en /META-INF/package.jdo
+16:50:58,051 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$2" en /WEB-INF/package.jdo
+16:50:58,051 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$2" en /package.jdo
+16:50:58,051 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$2" en /ui/package.jdo
+16:50:58,052 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog$2" en /ui/UserLog$2.jdo
+16:50:58,052 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserLog$2"
+16:50:58,052 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserLog$2" no tener Meta-Data
+16:50:58,052 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserLog$2" no tiene MetaData o annotaciones.
+16:50:58,055 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog" en /META-INF/package.jdo
+16:50:58,055 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog" en /WEB-INF/package.jdo
+16:50:58,057 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog" en /package.jdo
+16:50:58,057 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog" en /ui/package.jdo
+16:50:58,060 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserLog" en /ui/UserLog.jdo
+16:50:58,060 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserLog"
+16:50:58,060 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserLog" no tener Meta-Data
+16:50:58,060 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserLog" no tiene MetaData o annotaciones.
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg$1" en /META-INF/package.jdo
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg$1" en /WEB-INF/package.jdo
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg$1" en /package.jdo
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg$1" en /ui/package.jdo
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg$1" en /ui/UserReg$1.jdo
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserReg$1"
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserReg$1" no tener Meta-Data
+16:50:58,063 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserReg$1" no tiene MetaData o annotaciones.
+16:50:58,067 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg" en /META-INF/package.jdo
+16:50:58,067 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg" en /WEB-INF/package.jdo
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg" en /package.jdo
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg" en /ui/package.jdo
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserReg" en /ui/UserReg.jdo
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserReg"
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserReg" no tener Meta-Data
+16:50:58,068 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserReg" no tiene MetaData o annotaciones.
+16:50:58,071 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$1" en /META-INF/package.jdo
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$1" en /WEB-INF/package.jdo
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$1" en /package.jdo
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$1" en /ui/package.jdo
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$1" en /ui/UserUI$1.jdo
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserUI$1"
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserUI$1" no tener Meta-Data
+16:50:58,072 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserUI$1" no tiene MetaData o annotaciones.
+16:50:58,078 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$2" en /META-INF/package.jdo
+16:50:58,079 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$2" en /WEB-INF/package.jdo
+16:50:58,080 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$2" en /package.jdo
+16:50:58,080 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$2" en /ui/package.jdo
+16:50:58,083 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI$2" en /ui/UserUI$2.jdo
+16:50:58,083 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserUI$2"
+16:50:58,083 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserUI$2" no tener Meta-Data
+16:50:58,083 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserUI$2" no tiene MetaData o annotaciones.
+16:50:58,085 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI" en /META-INF/package.jdo
+16:50:58,086 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI" en /WEB-INF/package.jdo
+16:50:58,086 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI" en /package.jdo
+16:50:58,086 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI" en /ui/package.jdo
+16:50:58,088 (main) DEBUG [DataNucleus.MetaData] - No encontramos el MetaData del tipo "jdo" por la clase "ui.UserUI" en /ui/UserUI.jdo
+16:50:58,088 (main) DEBUG [DataNucleus.MetaData] - No hemos encontrado el MetaData del tipo "jdo" por la clase "ui.UserUI"
+16:50:58,088 (main) DEBUG [DataNucleus.MetaData] - Registrando la clase "ui.UserUI" no tener Meta-Data
+16:50:58,088 (main) DEBUG [DataNucleus.MetaData] - La clase "ui.UserUI" no tiene MetaData o annotaciones.
+16:50:58,088 (main) DEBUG [DataNucleus.MetaData] - Populación del MetaData ...
+16:50:58,089 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" : Populando Meta-Data
+16:50:58,090 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,090 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" campo "pic" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,090 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" campo "bday" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,091 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" : Populando Meta-Data
+16:50:58,091 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" campo "film" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,091 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" campo "text" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" campo "date" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" : Populando Meta-Data
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" campo "pic" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" campo "bday" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" : Populando Meta-Data
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "title" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "poster" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "release" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "description" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "genre" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "rating" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "actors" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "director" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,092 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" campo "trailer" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,109 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.FilmList" : Populando Meta-Data
+16:50:58,109 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.FilmList" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,109 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.FilmList" campo "filmList" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,110 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Genre" : Populando Meta-Data
+16:50:58,110 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Genre" campo "name" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,111 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" : Populando Meta-Data
+16:50:58,112 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" campo "user" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,112 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" campo "text" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,112 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" campo "timestamp" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" : Populando Meta-Data
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" campo "icon" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" campo "email" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" campo "password" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" campo "movies" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" campo "comments" : añadiendo el Meta-Data por el campo como no estaba en la definición de Meta-Data.
+16:50:58,113 (main) DEBUG [DataNucleus.MetaData] - Inicialisación del MetaData ...
+16:50:58,118 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Actor" : Inicializando Meta-Data
+16:50:58,120 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Comment" : Inicializando Meta-Data
+16:50:58,120 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Director" : Inicializando Meta-Data
+16:50:58,120 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Film" : Inicializando Meta-Data
+16:50:58,121 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.FilmList" : Inicializando Meta-Data
+16:50:58,121 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Genre" : Inicializando Meta-Data
+16:50:58,121 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.Message" : Inicializando Meta-Data
+16:50:58,121 (main) DEBUG [DataNucleus.MetaData] - Clase "easyFilminData.User" : Inicializando Meta-Data
+16:50:58,122 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+16:50:58,133 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Actor" empezando ...
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,170 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,171 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,172 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,173 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,173 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Actor" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,197 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.<init> : ignorando enhance de set del campo "easyFilminData.Actor.pic"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.<init> : ignorando enhance de set del campo "easyFilminData.Actor.bday"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.<init> : ignorando enhance de set del campo "easyFilminData.Actor.name"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.<init> : ignorando enhance de set del campo "easyFilminData.Actor.pic"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.<init> : ignorando enhance de set del campo "easyFilminData.Actor.bday"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.getName, cambiando el uso del campo "easyFilminData.Actor.name" para utilisar "dnGetname()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.getPic, cambiando el uso del campo "easyFilminData.Actor.pic" para utilisar "dnGetpic()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.getBday, cambiando el uso del campo "easyFilminData.Actor.bday" para utilisar "dnGetbday()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.setBday, cambiando el uso del campo "easyFilminData.Actor.bday" para utilisar "dnSetbday()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.setName, cambiando el uso del campo "easyFilminData.Actor.name" para utilisar "dnSetname()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Actor.setPrice, cambiando el uso del campo "easyFilminData.Actor.pic" para utilisar "dnSetpic()"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,201 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,207 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,208 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.Actor()"
+16:50:58,210 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,210 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,211 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,211 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,211 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,212 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,212 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,213 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,217 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,217 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,217 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,218 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,218 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,218 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Actor obj, int index)"
+16:50:58,219 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,219 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,219 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,219 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,221 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,221 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetbday(easyFilminData.Actor objPC)"
+16:50:58,222 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetbday(easyFilminData.Actor objPC, java.lang.String val)"
+16:50:58,222 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetname(easyFilminData.Actor objPC)"
+16:50:58,222 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetname(easyFilminData.Actor objPC, java.lang.String val)"
+16:50:58,222 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetpic(easyFilminData.Actor objPC)"
+16:50:58,222 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetpic(easyFilminData.Actor objPC, java.lang.String val)"
+16:50:58,224 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Actor.class" con definicion enhanced
+16:50:58,226 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Actor
+16:50:58,226 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Actor" ha terminado
+16:50:58,226 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Comment" empezando ...
+16:50:58,228 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,228 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,228 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,228 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,228 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,230 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,231 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Comment" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,232 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,232 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.film"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.text"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.date"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.film"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.text"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.<init> : ignorando enhance de set del campo "easyFilminData.Comment.date"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.getText, cambiando el uso del campo "easyFilminData.Comment.text" para utilisar "dnGettext()"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.getFilm, cambiando el uso del campo "easyFilminData.Comment.film" para utilisar "dnGetfilm()"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.getDate, cambiando el uso del campo "easyFilminData.Comment.date" para utilisar "dnGetdate()"
+16:50:58,233 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.setText, cambiando el uso del campo "easyFilminData.Comment.text" para utilisar "dnSettext()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Comment.setFilm, cambiando el uso del campo "easyFilminData.Comment.film" para utilisar "dnSetfilm()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,234 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,237 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Comment obj, int index)"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,238 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,239 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.Date dnGetdate(easyFilminData.Comment objPC)"
+16:50:58,239 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetdate(easyFilminData.Comment objPC, java.util.Date val)"
+16:50:58,240 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "easyFilminData.Film dnGetfilm(easyFilminData.Comment objPC)"
+16:50:58,241 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetfilm(easyFilminData.Comment objPC, easyFilminData.Film val)"
+16:50:58,241 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGettext(easyFilminData.Comment objPC)"
+16:50:58,241 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSettext(easyFilminData.Comment objPC, java.lang.String val)"
+16:50:58,242 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Comment.class" con definicion enhanced
+16:50:58,244 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Comment
+16:50:58,244 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Comment" ha terminado
+16:50:58,244 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Director" empezando ...
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,246 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,247 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,248 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Director" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,249 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.<init> : ignorando enhance de set del campo "easyFilminData.Director.pic"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.<init> : ignorando enhance de set del campo "easyFilminData.Director.bday"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.<init> : ignorando enhance de set del campo "easyFilminData.Director.name"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.<init> : ignorando enhance de set del campo "easyFilminData.Director.pic"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.<init> : ignorando enhance de set del campo "easyFilminData.Director.bday"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.getName, cambiando el uso del campo "easyFilminData.Director.name" para utilisar "dnGetname()"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.getPic, cambiando el uso del campo "easyFilminData.Director.pic" para utilisar "dnGetpic()"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.getBday, cambiando el uso del campo "easyFilminData.Director.bday" para utilisar "dnGetbday()"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.setBday, cambiando el uso del campo "easyFilminData.Director.bday" para utilisar "dnSetbday()"
+16:50:58,250 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.setName, cambiando el uso del campo "easyFilminData.Director.name" para utilisar "dnSetname()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Director.setPrice, cambiando el uso del campo "easyFilminData.Director.pic" para utilisar "dnSetpic()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.Director()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,251 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,252 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Director obj, int index)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,253 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetbday(easyFilminData.Director objPC)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetbday(easyFilminData.Director objPC, java.lang.String val)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetname(easyFilminData.Director objPC)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetname(easyFilminData.Director objPC, java.lang.String val)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetpic(easyFilminData.Director objPC)"
+16:50:58,254 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetpic(easyFilminData.Director objPC, java.lang.String val)"
+16:50:58,257 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Director.class" con definicion enhanced
+16:50:58,258 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Director
+16:50:58,258 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Director" ha terminado
+16:50:58,258 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Film" empezando ...
+16:50:58,260 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,262 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,263 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Film" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,265 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.title"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.poster"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.release"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.description"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.genre"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.rating"
+16:50:58,266 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.actors"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.director"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.title"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.poster"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.release"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.description"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.genre"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.rating"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.actors"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.<init> : ignorando enhance de set del campo "easyFilminData.Film.director"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getTitle, cambiando el uso del campo "easyFilminData.Film.title" para utilisar "dnGettitle()"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getPoster, cambiando el uso del campo "easyFilminData.Film.poster" para utilisar "dnGetposter()"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getRelease, cambiando el uso del campo "easyFilminData.Film.release" para utilisar "dnGetrelease()"
+16:50:58,267 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getDescription, cambiando el uso del campo "easyFilminData.Film.description" para utilisar "dnGetdescription()"
+16:50:58,268 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getGenre, cambiando el uso del campo "easyFilminData.Film.genre" para utilisar "dnGetgenre()"
+16:50:58,268 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getRating, cambiando el uso del campo "easyFilminData.Film.rating" para utilisar "dnGetrating()"
+16:50:58,268 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getActors, cambiando el uso del campo "easyFilminData.Film.actors" para utilisar "dnGetactors()"
+16:50:58,268 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.getDirector, cambiando el uso del campo "easyFilminData.Film.director" para utilisar "dnGetdirector()"
+16:50:58,268 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setTitle, cambiando el uso del campo "easyFilminData.Film.title" para utilisar "dnSettitle()"
+16:50:58,269 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setPoster, cambiando el uso del campo "easyFilminData.Film.poster" para utilisar "dnSetposter()"
+16:50:58,269 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setRelease, cambiando el uso del campo "easyFilminData.Film.release" para utilisar "dnSetrelease()"
+16:50:58,269 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setDescription, cambiando el uso del campo "easyFilminData.Film.description" para utilisar "dnSetdescription()"
+16:50:58,269 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setRating, cambiando el uso del campo "easyFilminData.Film.rating" para utilisar "dnSetrating()"
+16:50:58,269 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setGenre, cambiando el uso del campo "easyFilminData.Film.genre" para utilisar "dnSetgenre()"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setActors, cambiando el uso del campo "easyFilminData.Film.actors" para utilisar "dnSetactors()"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.setDirector, cambiando el uso del campo "easyFilminData.Film.director" para utilisar "dnSetdirector()"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Film.compareTo, cambiando el uso del campo "easyFilminData.Film.title" para utilisar "dnGettitle()"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,270 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,271 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Film obj, int index)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.ArrayList dnGetactors(easyFilminData.Film objPC)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetactors(easyFilminData.Film objPC, java.util.ArrayList val)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetdescription(easyFilminData.Film objPC)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetdescription(easyFilminData.Film objPC, java.lang.String val)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.ArrayList dnGetdirector(easyFilminData.Film objPC)"
+16:50:58,272 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetdirector(easyFilminData.Film objPC, java.util.ArrayList val)"
+16:50:58,276 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "easyFilminData.Genre dnGetgenre(easyFilminData.Film objPC)"
+16:50:58,276 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetgenre(easyFilminData.Film objPC, easyFilminData.Genre val)"
+16:50:58,276 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetposter(easyFilminData.Film objPC)"
+16:50:58,276 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetposter(easyFilminData.Film objPC, java.lang.String val)"
+16:50:58,276 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "double dnGetrating(easyFilminData.Film objPC)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetrating(easyFilminData.Film objPC, double val)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetrelease(easyFilminData.Film objPC)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetrelease(easyFilminData.Film objPC, java.lang.String val)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGettitle(easyFilminData.Film objPC)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSettitle(easyFilminData.Film objPC, java.lang.String val)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGettrailer(easyFilminData.Film objPC)"
+16:50:58,277 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSettrailer(easyFilminData.Film objPC, java.lang.String val)"
+16:50:58,278 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Film.class" con definicion enhanced
+16:50:58,280 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Film
+16:50:58,280 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Film" ha terminado
+16:50:58,280 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.FilmList" empezando ...
+16:50:58,283 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,283 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,283 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,283 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,284 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.FilmList" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,287 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,287 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.<init> : ignorando enhance de set del campo "easyFilminData.FilmList.name"
+16:50:58,288 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.<init> : ignorando enhance de set del campo "easyFilminData.FilmList.filmList"
+16:50:58,288 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.addFilm, cambiando el uso del campo "easyFilminData.FilmList.filmList" para utilisar "dnGetfilmList()"
+16:50:58,288 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.removeFilm, cambiando el uso del campo "easyFilminData.FilmList.filmList" para utilisar "dnGetfilmList()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.sortFilmList, cambiando el uso del campo "easyFilminData.FilmList.filmList" para utilisar "dnGetfilmList()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.getName, cambiando el uso del campo "easyFilminData.FilmList.name" para utilisar "dnGetname()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.getFilmList, cambiando el uso del campo "easyFilminData.FilmList.filmList" para utilisar "dnGetfilmList()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.setName, cambiando el uso del campo "easyFilminData.FilmList.name" para utilisar "dnSetname()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.FilmList.setFilmList, cambiando el uso del campo "easyFilminData.FilmList.filmList" para utilisar "dnSetfilmList()"
+16:50:58,289 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.FilmList()"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,290 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,291 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,292 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.FilmList obj, int index)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.ArrayList dnGetfilmList(easyFilminData.FilmList objPC)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetfilmList(easyFilminData.FilmList objPC, java.util.ArrayList val)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetname(easyFilminData.FilmList objPC)"
+16:50:58,293 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetname(easyFilminData.FilmList objPC, java.lang.String val)"
+16:50:58,294 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\FilmList.class" con definicion enhanced
+16:50:58,298 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.FilmList
+16:50:58,299 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.FilmList" ha terminado
+16:50:58,299 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Genre" empezando ...
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,304 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,305 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Genre" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,307 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,307 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Genre.<init> : ignorando enhance de set del campo "easyFilminData.Genre.name"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Genre.getName, cambiando el uso del campo "easyFilminData.Genre.name" para utilisar "dnGetname()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Genre.setName, cambiando el uso del campo "easyFilminData.Genre.name" para utilisar "dnSetname()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.Genre()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,308 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,309 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Genre obj, int index)"
+16:50:58,310 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetname(easyFilminData.Genre objPC)"
+16:50:58,311 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetname(easyFilminData.Genre objPC, java.lang.String val)"
+16:50:58,312 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Genre.class" con definicion enhanced
+16:50:58,317 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Genre
+16:50:58,318 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Genre" ha terminado
+16:50:58,318 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Message" empezando ...
+16:50:58,320 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,320 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,321 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,322 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.Message" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.<init> : ignorando enhance de set del campo "easyFilminData.Message.user"
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.<init> : ignorando enhance de set del campo "easyFilminData.Message.text"
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.<init> : ignorando enhance de set del campo "easyFilminData.Message.text"
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.<init> : ignorando enhance de set del campo "easyFilminData.Message.timestamp"
+16:50:58,324 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.getUser, cambiando el uso del campo "easyFilminData.Message.user" para utilisar "dnGetuser()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.setUser, cambiando el uso del campo "easyFilminData.Message.user" para utilisar "dnSetuser()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.toString, cambiando el uso del campo "easyFilminData.Message.text" para utilisar "dnGettext()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.Message.toString, cambiando el uso del campo "easyFilminData.Message.timestamp" para utilisar "dnGettimestamp()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.Message()"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,325 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,326 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,328 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,331 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,331 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,331 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,334 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,339 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,339 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,339 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,339 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.Message obj, int index)"
+16:50:58,340 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGettext(easyFilminData.Message objPC)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSettext(easyFilminData.Message objPC, java.lang.String val)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "long dnGettimestamp(easyFilminData.Message objPC)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSettimestamp(easyFilminData.Message objPC, long val)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "easyFilminData.User dnGetuser(easyFilminData.Message objPC)"
+16:50:58,341 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetuser(easyFilminData.Message objPC, easyFilminData.User val)"
+16:50:58,341 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\Message.class" con definicion enhanced
+16:50:58,342 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.Message
+16:50:58,343 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.Message" ha terminado
+16:50:58,343 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.User" empezando ...
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no implementa el interfaz "org.datanucleus.enhancement.Persistable"!
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el campo "dnStateManager" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el campo "dnInheritedFieldCount" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el campo "dnFlags" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el campo "dnFieldNames" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnReplaceField" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetStateManager" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsTransactional" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnNewInstance" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnProvideFields" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "___dn$loadClass" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetManagedFieldCount" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsDirty" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnReplaceStateManager" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnReplaceFlags" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsDetached" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnMakeDirty" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsDeleted" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnProvideField" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnPreSerialize" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetVersion" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetTransactionalObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsNew" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyKeyFieldsToObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyField" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyKeyFieldsFromObjectId" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnGetExecutionContext" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnCopyFields" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "__dnGetInheritedFieldCount" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnNewObjectIdInstance" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnIsPersistent" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "dnReplaceFields" pero lo necesita
+16:50:58,347 (main) DEBUG [DataNucleus.Enhancer] - La clase "easyFilminData.User" no tiene el metodo "__dnFieldNamesInit" pero lo necesita
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Agregando el interfaz: org.datanucleus.enhancement.Persistable
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.nickname"
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.password"
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.messages"
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.movies"
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.comments"
+16:50:58,351 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.nickname"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.password"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.nickname"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.password"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.messages"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.movies"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.comments"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.nickname"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.icon"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.email"
+16:50:58,352 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.<init> : ignorando enhance de set del campo "easyFilminData.User.password"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.addMessage, cambiando el uso del campo "easyFilminData.User.messages" para utilisar "dnGetmessages()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.removeMessage, cambiando el uso del campo "easyFilminData.User.messages" para utilisar "dnGetmessages()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.postComment, cambiando el uso del campo "easyFilminData.User.comments" para utilisar "dnGetcomments()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.deleteComment, cambiando el uso del campo "easyFilminData.User.comments" para utilisar "dnGetcomments()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.addMovie, cambiando el uso del campo "easyFilminData.User.movies" para utilisar "dnGetmovies()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.removeMovie, cambiando el uso del campo "easyFilminData.User.movies" para utilisar "dnGetmovies()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getMovies, cambiando el uso del campo "easyFilminData.User.movies" para utilisar "dnGetmovies()"
+16:50:58,353 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getComments, cambiando el uso del campo "easyFilminData.User.comments" para utilisar "dnGetcomments()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.setMovies, cambiando el uso del campo "easyFilminData.User.movies" para utilisar "dnSetmovies()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getNickname, cambiando el uso del campo "easyFilminData.User.nickname" para utilisar "dnGetnickname()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getPassword, cambiando el uso del campo "easyFilminData.User.password" para utilisar "dnGetpassword()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.setPassword, cambiando el uso del campo "easyFilminData.User.password" para utilisar "dnSetpassword()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getIcon, cambiando el uso del campo "easyFilminData.User.icon" para utilisar "dnGeticon()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.setIcon, cambiando el uso del campo "easyFilminData.User.icon" para utilisar "dnSeticon()"
+16:50:58,354 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getEmail, cambiando el uso del campo "easyFilminData.User.email" para utilisar "dnGetemail()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.setEmail, cambiando el uso del campo "easyFilminData.User.email" para utilisar "dnSetemail()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.getMessages, cambiando el uso del campo "easyFilminData.User.messages" para utilisar "dnGetmessages()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.toString, cambiando el uso del campo "easyFilminData.User.messages" para utilisar "dnGetmessages()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.toString, cambiando el uso del campo "easyFilminData.User.nickname" para utilisar "dnGetnickname()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Enhancing metodo original easyFilminData.User.toString, cambiando el uso del campo "easyFilminData.User.password" para utilisar "dnGetpassword()"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "org.datanucleus.enhancement.StateManager dnStateManager"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "byte dnFlags"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "[Ljava.lang.String; dnFieldNames"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Agregando el campo "int dnInheritedFieldCount"
+16:50:58,355 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void <clinit>()"
+16:50:58,356 (main) DEBUG [DataNucleus.Enhancer] - Agregando el constructor "easyFilminData.User()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldConsumer fc, java.lang.Object oid)"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsFromObjectId(java.lang.Object oid)"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(java.lang.Object oid)"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyKeyFieldsToObjectId(org.datanucleus.enhancement.Persistable$ObjectIdFieldSupplier fs, java.lang.Object oid)"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetObjectId()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetVersion()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnPreSerialize()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.ExecutionContextReference dnGetExecutionContext()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.StateManager dnGetStateManager()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnGetTransactionalObjectId()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDeleted()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDirty()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsNew()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsPersistent()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsTransactional()"
+16:50:58,357 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnMakeDirty(java.lang.String fieldName)"
+16:50:58,360 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance()"
+16:50:58,361 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Object dnNewObjectIdInstance(java.lang.Object key)"
+16:50:58,361 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideFields([I indices)"
+16:50:58,361 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFields([I indices)"
+16:50:58,361 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceFlags()"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceStateManager(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "boolean dnIsDetached()"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "org.datanucleus.enhancement.Persistable dnNewInstance(org.datanucleus.enhancement.StateManager sm, java.lang.Object obj)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnReplaceField(int index)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnProvideField(int index)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyField(easyFilminData.User obj, int index)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnCopyFields(java.lang.Object obj, [I indices)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "[Ljava.lang.String; __dnFieldNamesInit()"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int __dnGetInheritedFieldCount()"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "int dnGetManagedFieldCount()"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.Class ___dn$loadClass(java.lang.String className)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.ArrayList dnGetcomments(easyFilminData.User objPC)"
+16:50:58,362 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetcomments(easyFilminData.User objPC, java.util.ArrayList val)"
+16:50:58,366 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetemail(easyFilminData.User objPC)"
+16:50:58,366 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetemail(easyFilminData.User objPC, java.lang.String val)"
+16:50:58,366 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGeticon(easyFilminData.User objPC)"
+16:50:58,370 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSeticon(easyFilminData.User objPC, java.lang.String val)"
+16:50:58,370 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.Set dnGetmessages(easyFilminData.User objPC)"
+16:50:58,370 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetmessages(easyFilminData.User objPC, java.util.Set val)"
+16:50:58,370 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.util.ArrayList dnGetmovies(easyFilminData.User objPC)"
+16:50:58,373 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetmovies(easyFilminData.User objPC, java.util.ArrayList val)"
+16:50:58,373 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetnickname(easyFilminData.User objPC)"
+16:50:58,373 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetnickname(easyFilminData.User objPC, java.lang.String val)"
+16:50:58,373 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "java.lang.String dnGetpassword(easyFilminData.User objPC)"
+16:50:58,373 (main) DEBUG [DataNucleus.Enhancer] - Agregando el metodo "void dnSetpassword(easyFilminData.User objPC, java.lang.String val)"
+16:50:58,373 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\marco\eclipse-workspace\BSPQ20-E4\target\classes\easyFilminData\User.class" con definicion enhanced
+16:50:58,384 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : easyFilminData.User
+16:50:58,384 (main) DEBUG [DataNucleus.Enhancer] - Enhance de la clase "easyFilminData.User" ha terminado
+16:50:58,389 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases. Tiempos : input=515 ms, enhance=262 ms, total=777 ms. Compruebe el LOG para los detalles
