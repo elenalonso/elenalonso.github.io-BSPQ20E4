@@ -27,6 +27,11 @@ public class User {
 	ArrayList<Film> movies = new ArrayList<>();
 	ArrayList<Comment> comments = new ArrayList<>();
 	
+	//AQUÍ HAY QUE METER LAS LISTAS + WATCHLIST y WATCHED
+	ArrayList<FilmList> lists = null;
+	Watched watched = new Watched("Watched");
+	WatchList watchList = new WatchList("WatchList");
+	
 	
 	public User(String nickname, String password) {
 		this.nickname = nickname;
