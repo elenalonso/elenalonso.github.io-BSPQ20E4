@@ -53,9 +53,13 @@ public interface IEasyFilminDAO {
 	 * @return      the film that matches the title.
 	 */
 	public Film loadFilm(String title);
-	
+	/***
+	 * Returns a director obkect after searching fot it in the DB
+	 * @param name a string that matches the name o 
+	 */
+		public Director loadDirector(String name);
 	public void saveDirector(Director director);
-	public Director loadDirector(String name);
+
 	
 	/**
 	 * Loads the DB initially with predetermined data.
