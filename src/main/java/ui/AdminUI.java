@@ -2,6 +2,9 @@ package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import client.EasyFilmController;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,12 +17,15 @@ public class AdminUI extends JFrame {
 	private static final long serialVersionUID = 2536273181002934434L;
 	private JTextField fileName;
 	private JButton addArchive;
-	public AdminUI() { 
+	private EasyFilmController controller;
+	public AdminUI(EasyFilmController e) {
+		this.controller = e;
 		// Formato de la ventana
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(600,250);
 		setLocation(600,175);
+		setResizable(false);
 
 		
 		getContentPane().setLayout(null);
@@ -83,7 +89,8 @@ public class AdminUI extends JFrame {
 */
 	
 	public static void main(String[] args) {
-		AdminUI va = new AdminUI();
+		EasyFilmController e = new EasyFilmController(args[0], args[1]);
+		AdminUI va = new AdminUI(e);
 		va.setSize(600, 250);
 		va.setVisible(true);
 	}

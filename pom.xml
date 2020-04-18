@@ -191,10 +191,13 @@
 		</plugins>
 	</build>
 	<profiles>
-		<!-- AQUÍ PODREMOS METER PERFIL DE ADMIN  -->
-		<!-- run as 'mvn exec:java -P<id_perfil>' -->
-<!--  		<profile>
-			<id>manager</id>
+	<!-- Profiles for running different classes  -->
+	<!-- run as 'mvn exec:java -P<id_perfil>' -->
+	
+		<!-- Main for Admin User  -->
+		<!-- run as 'mvn exec:java -Padmin' -->
+  		<profile>
+			<id>admin</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -202,7 +205,7 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<configuration>
-							<mainClass>server.Server</mainClass>
+							<mainClass>client.EasyFilminAdmin</mainClass>
 							<arguments>
 								<argument>${server.hostname}</argument>
 								<argument>${server.port}</argument>
@@ -212,9 +215,10 @@
 				</plugins>
 			</build>
 		</profile>
--->
+
+		<!--  Main for regular User  -->
+		<!-- run as 'mvn exec:java -Pclient' -->
 		<profile>
-			<!-- run as 'mvn exec:java -Pclient' -->
 			<id>client</id>
 			<build>
 				<plugins>
@@ -223,7 +227,7 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<configuration>
-							<mainClass>client.ExampleClient</mainClass>
+							<mainClass>client.EasyFilmin</mainClass>
 							<arguments>
 								<argument>${server.hostname}</argument>
 								<argument>${server.port}</argument>
@@ -234,27 +238,6 @@
 									<value>file:${config.files.dir}/log4j.properties</value>
 								</systemProperty>
 							</systemProperties>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<!--  Prueba para clases de ventanas  -->
-		<profile>
-			<!-- run as 'mvn exec:java -Pprueba' -->
-			<id>prueba</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.2.1</version>
-						<configuration>
-							<mainClass>ui.PruebaVentanas</mainClass>
-							<arguments>
-								<argument>${server.hostname}</argument>
-								<argument>${server.port}</argument>
-							</arguments>
 						</configuration>
 					</plugin>
 				</plugins>

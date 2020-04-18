@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response.Status;
 
 import easyFilminDAO.EasyFilminJDO;
 import easyFilminData.User;
-import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
 import ui.UserUI;
@@ -27,6 +26,12 @@ public class EasyFilmController {
 		webTarget = client.target(String.format("http://%s:%s/rest", hostname, port));
 	}
 
+	/** REGISTERS a new User in the db giving its parameters 
+	 * @param login
+	 * @param icon
+	 * @param email
+	 * @param password
+	 */
 	public void registerUser(String login, String icon, String email, String password) {
 		WebTarget registerUserWebTarget = webTarget.path("server/register");
 		Invocation.Builder invocationBuilder = registerUserWebTarget.request(MediaType.APPLICATION_JSON);
@@ -44,35 +49,12 @@ public class EasyFilmController {
 		}
 	}
 
-	public void sayMessage(String login, String password, String message) {
-		WebTarget sayHelloWebTarget = webTarget.path("server/sayMessage");
-		Invocation.Builder invocationBuilder = sayHelloWebTarget.request(MediaType.APPLICATION_JSON);
-
-		DirectedMessage directedMessage = new DirectedMessage();
-		UserData userData = new UserData();
-		userData.setLogin(login);
-		userData.setPassword(password);
-
-		directedMessage.setUserData(userData);
-
-		MessageData messageData = new MessageData();
-		messageData.setMessage(message);
-		directedMessage.setMessageData(messageData);
-
-		Response response = invocationBuilder.post(Entity.entity(directedMessage, MediaType.APPLICATION_JSON));
-		if(response.getStatus() == Status.BAD_REQUEST.getStatusCode()) {
-			String responseMessage2 = response.readEntity(String.class);
-			System.out.println("* ERROR: '" + responseMessage2 + "'");
-			
-		}else if (response.getStatus() != Status.OK.getStatusCode()) {
-			System.out.println("Error connecting with the server. Code: " + response.getStatus());
-			
-		}else {
-			String responseMessage = response.readEntity(String.class);
-			System.out.println("* Message coming from the server: '" + responseMessage + "'");
-		}
-	}
 	
+	/** CHECKS if the login is correct
+	 * @param login
+	 * @param password
+	 * @return boolean for login ok or no 
+	 */
 	public boolean login(String login, String password) {
 		WebTarget loginWebTarget = webTarget.path("server/login");		
 		Invocation.Builder invocationBuilder = loginWebTarget.request(MediaType.APPLICATION_JSON);
@@ -92,14 +74,16 @@ public class EasyFilmController {
 			return false;
 			
 		}else {
-			// THIS IS SUPPOSE TO RETRIEVE an UserData Object from the server that is passed in the login
 			return true;
 		}
 	}
 
 
+	/** RETRIEVES an UserData Object from the server that is passed in the login
+	 * @param nick
+	 * @return
+	 */
 	public UserData getUser(String nick) {
-		// THIS IS SUPPOSE TO RETRIEVE an UserData Object from the server that is passed in the login
 		WebTarget getUserWebTarget = webTarget.path("server/getUser"+"/"+nick);
 		GenericType<UserData> genericType = new GenericType<UserData>() {};
 		UserData usData = getUserWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
@@ -117,12 +101,12 @@ public class EasyFilmController {
 		String hostname = args[0];
 		String port = args[1];
 
+		//Some example methods 
 		EasyFilmController easFilCon = new EasyFilmController(hostname, port); 
 		easFilCon.registerUser("egui2", "Image2", "11111@opendeusto.es","1234"); 
 		easFilCon.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
 		easFilCon.login("egui2", "1234"); 
-		easFilCon.sayMessage("Marcos", "1", "Esto no se debria ver");
-		easFilCon.sayMessage("Marcos", "1235", "Sup guys, Marcos here");
+		easFilCon.login("Marcos", "1235");
 		EasyFilminJDO prueba= new EasyFilminJDO();
 		prueba.startBD();
 	}

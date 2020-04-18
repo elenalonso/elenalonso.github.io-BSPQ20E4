@@ -6,7 +6,6 @@ import javax.jdo.Query;
 import javax.jdo.JDOHelper;
 import javax.jdo.Transaction;
 
-import serialization.DirectedMessage;
 import serialization.MessageData;
 import serialization.UserData;
 
@@ -39,28 +38,11 @@ public class Server {
 		this.iDAO = new EasyFilminJDO();
 	}
 
-	/** This method returns a message 
-	 * @param directedMessage the message to be displayed
-	 * @return
-	 */
-	@POST
-	@Path("/sayMessage")
-	public Response sayMessage(DirectedMessage directedMessage) {
-		User user = null;
-		//IEasyFilminDAO iDAO = new EasyFilminJDO();
-		user = iDAO.loadUser(directedMessage.getUserData().getLogin());
-		
-		if (user != null && directedMessage.getUserData().getPassword().equals(user.getPassword())) {
-			cont++;
-			System.out.println(" * Client number: " + cont);
-			MessageData messageData = new MessageData();
-			messageData.setMessage(directedMessage.getMessageData().getMessage());
-			return Response.ok(messageData).build();
-		} else {
-			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
-		}
-	}
 
+	/** Checks if the login is correct
+	 * @param us
+	 * @return a Response with an OK/Not OK message 
+	 */
 	@POST
 	@Path("/login")
 	public Response login(UserData us) {
@@ -78,6 +60,10 @@ public class Server {
 	}
 
 	
+	/** REGISTERS a new User in the db 
+	 * @param userData
+	 * @return Reponse saying if Register is OK or NOT
+	 */
 	@POST
 	@Path("/register")
 	public Response registerUser(UserData userData) {
@@ -91,6 +77,10 @@ public class Server {
         
 	}
 	
+	/** 
+	 * @param login
+	 * @return
+	 */
 	@GET
 	@Path("/getUser/{nick}")
 	@Produces(MediaType.APPLICATION_JSON)
