@@ -24,6 +24,8 @@ import easyFilminData.User;
 public class EasyFilminJDO implements IEasyFilminDAO{
 	
 	private PersistenceManagerFactory pmf = null;
+	private ArrayList<Actor> actores;
+	private ArrayList<Director> directores;
 	
 	/**
 	 * Initializes the attribute pmf (PersistenceManagerFactory).
@@ -281,12 +283,26 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	}
 
 	
+	@SuppressWarnings("null")
 	@Override
 	public void startBD() {
 		// TODO Auto-generated method stub
+		
+		/**This method reads data from csv files to save it into the DB.
+		 * 
+		 * @param actores --> arrayList containing the actors' names which have been read from the 'Actors' field in films.csv
+		 * @param directores --> arrayList containing the directors' names which have been read from the 'Directors' field in films.csv
+		 * 
+		 * each time a new row is read both arrayLists are set null so that it does not store actors/directors from previously read films
+		 * 
+		 * 
+		 * 
+		 * @param actors/directors -> arrayList used specifically to saveActor/Director (might not be used later on)
+		 */
+			
 		try {
 			
-			CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); //csv not yet created
+			CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); 
 			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
 			CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
@@ -324,6 +340,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					
 					} 
 				while ((values = readFilms.readNext()) != null){
+					actores =null;
+					directores=null;
 					String title =values[0];
 					String year = values[2];
 					String desc = values[3];
@@ -333,14 +351,14 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					double rate = Double.parseDouble(values[6]);
 					String[] ac = values[7].toString().split("|");
 					for (String a : ac) {
-						actors.add(new Actor(a,null,null));
+						actores.add(new Actor(a,null,null));
 					}
 					String[] dr =values[8].toString().split("|");
 					for (String d : dr) {
-						directors.add(new Director(d,null,null));
+						directores.add(new Director(d,null,null));
 					}
 					
-					films.add(new Film(title, null,year,desc,dur,g,rate,actors,directors));
+					films.add(new Film(title, null,year,desc,dur,g,rate,actores,directores));
 					for (Film film : films) {
 						saveFilm(film);
 				

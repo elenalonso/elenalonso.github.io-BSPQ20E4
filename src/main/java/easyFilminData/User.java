@@ -51,32 +51,47 @@ public class User {
 	public void removeMessage(Message message) {
 		messages.remove(message);
 	}
-	
+	/**
+	 * 
+	 * @param c: comment posted by a user when clicking 'Post' button,
+	 * comments will be displayed in a film's profile showing the user (nickname & icon) who wrote it
+	 */
 	public void postComment(Comment c) {
 		comments.add(c);
 	}
-
+	/*
+	 * deletes a comment posted by a user and will be deleted both from a film's and user's profile
+	 */
 	public void deleteComment(Comment c) {
 		comments.remove(c);
 	}
 	
-	
-	public void addMovie(Film movie) { //create a movie list when clicking Add button
+	/**
+	 * 
+	 * @param movie: the film is added into a list when clicking 'Add' button
+	 */
+	public void addMovie(Film movie) { 
 		movies.add(movie);
 	}
-
-	public void removeMovie(Film movie) { //remove movie from list
+	/**
+	 * 
+	 * @param movie: the film is removed from a list when clicking 'Remove' button
+	 */
+	public void removeMovie(Film movie) { 
 		movies.remove(movie);
 	}
-	public ArrayList<Film> getMovies() { //display list of movies
+	public ArrayList<Film> getMovies() { //will be replaced by Watched/WatchList
 		return movies;
 	}
-	
-	public ArrayList<Comment> getComments() { //display list of comments
+	/**
+	 * displays a user's list of posted comments
+	 * @return all comments written by a user in different movie profiles
+	 */
+	public ArrayList<Comment> getComments() { 
 		return comments;
 	}
 
-	public void setMovies(ArrayList<Film> movies) {
+	public void setMovies(ArrayList<Film> movies) { 
 		this.movies = movies;
 	}
 

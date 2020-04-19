@@ -23,6 +23,14 @@ public class Comment {
 		this.text="";
 		this.date=null;
 		}
+	
+	/**
+	 * 
+	 * @param film: references the film on which the user is commenting
+	 * @param text: data that contains what the message says
+	 * @param date -represents the date when the comment was posted. It takes system's date
+	 */
+	
 public Comment(Film film,String text, Date date) {
 	
 	this.film=film;

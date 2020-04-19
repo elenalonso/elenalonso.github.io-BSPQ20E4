@@ -2,6 +2,7 @@ package easyFilminDAO;
 
 import java.util.List;
 
+
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
@@ -53,17 +54,26 @@ public interface IEasyFilminDAO {
 	 * @return      the film that matches the title.
 	 */
 	public Film loadFilm(String title);
-	/***
-	 * Returns a director obkect after searching fot it in the DB
-	 * @param name a string that matches the name o 
+	
+	/**
+	 * Returns a director object after searching for it in the DB
+	 * @param name a string that matches the name of the returned director. 
+	 * @return     the director that matches the name
 	 */
-		public Director loadDirector(String name);
+	public Director loadDirector(String name);
+	
+	/**
+	 * Stores the director received in a Database. 
+	 * The type of storage may differ depending on the instance of this interface created.
+	 * @param director the director object whose data will be stored.
+	 * @see Director
+	 */
 	public void saveDirector(Director director);
 
 	
 	/**
 	 * Loads the DB initially with predetermined data.
-	 * This data mainly consists in Actors, Films and Genres.
+	 * This data mainly consists in Actors, Films and Directors.
 	 */
 	public void startBD();
 	
