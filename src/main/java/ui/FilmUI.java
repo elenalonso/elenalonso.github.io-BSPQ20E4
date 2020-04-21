@@ -35,13 +35,13 @@ public class FilmUI extends JFrame{
 	private JLabel actorName;
 	private JButton addWatchlist;
 	private JLabel watched;
-	
 	private JButton post;
 	private JList list;
 	private JTextField textField;
 	private JButton upbtn;
 	private JButton downbtn;
 	private JLabel lblNewLabel;
+
 
 	
 	public FilmUI(FilmData film) {
@@ -167,11 +167,10 @@ public class FilmUI extends JFrame{
 		downbtn = new JButton("");
 		downbtn.setBounds(50, 270, 25, 25);
 		getContentPane().add(downbtn);
-		
+
 	}
 	public static void main(String[] args) {
-		FilmData f = new FilmData();
-		FilmUI fu = new FilmUI(f);
+		FilmUI fu = new FilmUI();
 		fu.setVisible(true);
 	}
 }
