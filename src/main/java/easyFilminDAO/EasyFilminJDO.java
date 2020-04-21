@@ -19,6 +19,8 @@ import easyFilminData.Director;
 import easyFilminData.Film;
 import easyFilminData.Genre;
 import easyFilminData.User;
+import easyFilminData.WatchList;
+import easyFilminData.Watched;
 
 
 public class EasyFilminJDO implements IEasyFilminDAO{
@@ -175,7 +177,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			tx.begin();
 
 			Query<Actor> query = pm.newQuery(Actor.class);
-			query.setFilter("Actor == '" + name + "'"); //we find the actor by his name
+			query.setFilter("name == '" + name + "'"); //we find the actor by his name
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			Actor actor = (Actor) query.execute();
@@ -258,7 +260,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			tx.begin();
 
 			Query<Film> query = pm.newQuery(Film.class);
-			query.setFilter("Film == '" + title + "'"); //we find the film by his title
+			query.setFilter("title == '" + title + "'"); //we find the film by his title
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			Film film = (Film) query.execute();
@@ -438,7 +440,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			tx.begin();
 
 			Query<Director> query = pm.newQuery(Director.class);
-			query.setFilter("Director == '" + name + "'"); //we find the film by his title
+			query.setFilter("name == '" + name + "'"); //we find the film by his title
 			query.setUnique(true);
 			@SuppressWarnings("unchecked")
 			Director director = (Director) query.execute();
@@ -460,5 +462,171 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			}
 		}
 		return null;
+	}
+
+
+	@Override
+	public Watched loadWatched(String name) {
+		// TODO Auto-generated method stub
+				PersistenceManager pm = null;
+				Transaction tx = null;
+				
+				try {
+					System.out.println("- Retrieving watched");			
+					//Get the Persistence Manager
+					pm = pmf.getPersistenceManager();
+					//Obtain the current transaction
+					tx = pm.currentTransaction();		
+					//Start the transaction
+					tx.begin();
+
+					Query<Watched> query = pm.newQuery(Watched.class);
+					query.setFilter("name == '" + name + "'"); 
+					query.setUnique(true);
+					@SuppressWarnings("unchecked")
+					Watched watched = (Watched) query.execute();
+
+					//End the transaction
+					tx.commit();
+					
+					
+					return watched;
+				} catch (Exception ex) {
+					System.err.println(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
+				} finally {
+					if (tx != null && tx.isActive()) {
+						tx.rollback();
+					}
+					
+					if (pm != null && !pm.isClosed()) {
+						pm.close();
+					}
+				}
+				return null;
+		
+	}
+
+
+	@Override
+	public void saveWatched(Watched watched) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			System.out.println("Insert watched in the DB");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			pm.makePersistent(watched);
+			
+			
+			//End the transaction
+			tx.commit();
+			System.out.println("Changes committed");
+			
+		} catch (Exception ex) {
+			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			ex.printStackTrace();
+		
+		}finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+				System.out.println("Changes rollbacked");
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				System.out.println("Closing the connection");
+				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
+			}
+		}
+	}
+
+
+	@Override
+	public WatchList loadWatchList(String name) {
+		// TODO Auto-generated method stub
+				PersistenceManager pm = null;
+				Transaction tx = null;
+				
+				try {
+					System.out.println("- Retrieving WatchList");			
+					//Get the Persistence Manager
+					pm = pmf.getPersistenceManager();
+					//Obtain the current transaction
+					tx = pm.currentTransaction();		
+					//Start the transaction
+					tx.begin();
+
+					Query<WatchList> query = pm.newQuery(WatchList.class);
+					query.setFilter("name == '" + name + "'"); 
+					query.setUnique(true);
+					@SuppressWarnings("unchecked")
+					WatchList watchlist = (WatchList) query.execute();
+
+					//End the transaction
+					tx.commit();
+					
+					
+					return watchlist;
+				} catch (Exception ex) {
+					System.err.println(" $ Error retrieving WatchList using a 'Query': " + ex.getMessage());
+				} finally {
+					if (tx != null && tx.isActive()) {
+						tx.rollback();
+					}
+					
+					if (pm != null && !pm.isClosed()) {
+						pm.close();
+					}
+				}
+				return null;
+		
+	}
+
+
+	@Override
+	public void saveWatchList(WatchList watchlist) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			System.out.println("Insert watchlist in the DB");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			pm.makePersistent(watchlist);
+			
+			
+			//End the transaction
+			tx.commit();
+			System.out.println("Changes committed");
+			
+		} catch (Exception ex) {
+			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			ex.printStackTrace();
+		
+		}finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+				System.out.println("Changes rollbacked");
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				System.out.println("Closing the connection");
+				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
+			}
+		}
 	}
 }
