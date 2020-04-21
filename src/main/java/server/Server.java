@@ -44,7 +44,7 @@ public class Server {
 
 
 	/** Checks if the login is correct
-	 * @param us
+	 * @param us few
 	 * @return a Response with an OK/Not OK message 
 	 */
 	@POST
@@ -65,7 +65,7 @@ public class Server {
 
 	
 	/** REGISTERS a new User in the db 
-	 * @param userData
+	 * @param userData fdsadsf
 	 * @return Reponse saying if Register is OK or NOT
 	 */
 	@POST
@@ -82,8 +82,8 @@ public class Server {
 	}
 	
 	/** 
-	 * @param login
-	 * @return
+	 * @param login aaaaaaaaaaa
+	 * @return fewfwe
 	 */
 	@GET
 	@Path("/getUser/{nick}")
@@ -98,8 +98,8 @@ public class Server {
 	}
 
 	/** 
-	 * @param login
-	 * @return
+	 * @param name aaaaaaaaaaaa
+	 * @return aaaaaaaaa
 	 */
 	@GET
 	@Path("/getFilm/{name}")
@@ -117,8 +117,8 @@ public class Server {
 	}
 
 	/** 
-	 * @param login
-	 * @return
+	 * @param name aaaaaaaaa
+	 * @return aaaaaaaaaaaaaaa
 	 */
 	@GET
 	@Path("/getUser/{name}")

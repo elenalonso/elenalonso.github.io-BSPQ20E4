@@ -29,10 +29,10 @@ public class EasyFilmController {
 	}
 
 	/** REGISTERS a new User in the db giving its parameters 
-	 * @param login
-	 * @param icon
-	 * @param email
-	 * @param password
+	 * @param login adafaa
+	 * @param icon  vasfsf
+	 * @param email afghbsgr
+	 * @param password avdavf
 	 */
 	public void registerUser(String login, String icon, String email, String password) {
 		WebTarget registerUserWebTarget = webTarget.path("server/register");
@@ -53,8 +53,8 @@ public class EasyFilmController {
 
 	
 	/** CHECKS if the login is correct
-	 * @param login
-	 * @param password
+	 * @param login vsfvs
+	 * @param password vwfessdfsv
 	 * @return boolean for login ok or no 
 	 */
 	public boolean login(String login, String password) {
@@ -82,8 +82,8 @@ public class EasyFilmController {
 
 
 	/** RETRIEVES an UserData Object from the server that is passed in the login
-	 * @param nick
-	 * @return
+	 * @param nick vfdssdsd
+	 * @return UserData vsdfsfssvf
 	 */
 	public UserData getUser(String nick) {
 		WebTarget getUserWebTarget = webTarget.path("server/getUser"+"/"+nick);

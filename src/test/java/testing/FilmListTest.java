@@ -38,42 +38,39 @@ public class FilmListTest {
 		list1 = new FilmList("Favourite films");
 		list3 = new FilmList("Favourite films");
 		ArrayList<Film> films = new ArrayList<Film>();
+		ArrayList<Film> films2 = new ArrayList<Film>();
 		films.add(film3);
-		list3.setFilmList(films);
 		films.add(film4);
 		list1.setFilmList(films);
+		films2.add(film3);
+		list3.setFilmList(films2);
 	}
 	@Before
 	public void setUp() throws Exception {
-		listName = "Favourite films";
-		film1 = new Film();
-		film1.setTitle("Attack");
-		film2 = new Film();
-		film2.setTitle("Counter");
-		list2 = new FilmList(listName);
+		list2 = new FilmList("Favourite films");
 	}
 
 	@Test
 	public void testAddFilm() {
-		list2.addFilm(film1);
-		list2.addFilm(film2);
-		assertEquals(list1, list2);
+		list2.addFilm(film3);
+		list2.addFilm(film4);
+		assertEquals(list1.getFilmList(), list2.getFilmList());
 	}
 	
 	@Test
 	public void testRemoveFilm() {
-		list2.addFilm(film1);
-		list2.addFilm(film2);
+		list2.addFilm(film3);
+		list2.addFilm(film4);
 		list2.removeFilm("Counter");
-		assertEquals(list3, list2);
+		assertEquals(list3.getFilmList(), list2.getFilmList());
 	}
 	
 	@Test
 	public void testSortFilmList() {
-		list2.addFilm(film2);
-		list2.addFilm(film1);
+		list2.addFilm(film4);
+		list2.addFilm(film3);
 		list2.sortFilmList();
-		assertEquals(list1, list2);
+		assertEquals(list1.getFilmList(), list2.getFilmList());
 	}
 
 }
