@@ -10,6 +10,12 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
+import easyFilminData.Actor;
+import easyFilminData.Director;
+import easyFilminData.Film;
+import serialization.FilmData;
+
 import javax.swing.JList;
 import java.awt.Font;
 
@@ -18,7 +24,7 @@ public class FilmUI extends JFrame{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JLabel film;
+	private JLabel poster;
 	private JButton backbtn;
 	private JButton exitbtn;
 	private JLabel titleLabel;
@@ -30,7 +36,15 @@ public class FilmUI extends JFrame{
 	private JButton addWatchlist;
 	private JLabel watched;
 	
-	public FilmUI() {
+	private JButton post;
+	private JList list;
+	private JTextField textField;
+	private JButton upbtn;
+	private JButton downbtn;
+	private JLabel lblNewLabel;
+
+	
+	public FilmUI(FilmData film) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(650,450);
 		setLocation(600,175);
@@ -40,10 +54,12 @@ public class FilmUI extends JFrame{
 		/** Creates an UI to be able to see every film available in our DB
 		 * 
 		 */
-		film = new JLabel("");
-		film.setBounds(10, 50, 145, 200);
-		film.setIcon(new ImageIcon("src\\main\\resources\\inglorious_basterds.png"));
-		getContentPane().add(film);
+		poster = new JLabel();
+		poster.setBounds(10, 50, 145, 200);
+		poster.setIcon(new ImageIcon("src\\main\\resources\\inglorious_basterds.png")); //Example
+		//Uncomment when FilmData is retrieved from server
+		//poster.setIcon(new ImageIcon(film.getPoster()));
+		getContentPane().add(poster);
 		
 		backbtn = new JButton("New button");
 		backbtn.setBounds(10, 10, 25, 25);
@@ -84,7 +100,17 @@ public class FilmUI extends JFrame{
 		directorLabel.setBounds(165, 73, 54, 13);
 		getContentPane().add(directorLabel);
 		
-		directorName = new JLabel("Quentin Tarantino");
+		directorName = new JLabel("Quentin Tarantino"); //Example
+		//Uncomment when FilmData is retrieved from server
+//		String directors ="";
+//		for(Director a : film.getDirector()) {
+//			if(directors.equals("")) {
+//				directors += a.getName();	
+//			}else {
+//				directors += ", " + a.getName();
+//			}
+//		}		
+//		directorName = new JLabel(directors);
 		directorName.setBounds(220, 73, 285, 13);
 		getContentPane().add(directorName);
 		
@@ -93,12 +119,22 @@ public class FilmUI extends JFrame{
 		actorLabel.setBounds(165, 96, 45, 13);
 		getContentPane().add(actorLabel);
 		
-		actorName = new JLabel("Brad Pitt, Christoph Waltz");
+		actorName = new JLabel("Brad Pitt, Christoph Waltz"); //Example
+		//Uncomment when FilmData is retrieved from server
+//		String actors ="";
+//		for(Actor a : film.getActors()) {
+//			if(actors.equals("")) {
+//				actors += a.getName();	
+//			}else {
+//				actors += ", " + a.getName();
+//			}
+//		}		
+//		actorName = new JLabel(actors);
 		actorName.setBounds(220, 96, 285, 13);
 		getContentPane().add(actorName);
 		
 		addWatchlist = new JButton("");
-		addWatchlist.setIcon(new ImageIcon("src\\main\\resources\\Watchlist.png"));
+		addWatchlist.setIcon(new ImageIcon("src\\main\\resources\\Watchlist.png")); 
 		addWatchlist.setBounds(165, 229, 35, 35);
 		getContentPane().add(addWatchlist);
 		
@@ -107,9 +143,35 @@ public class FilmUI extends JFrame{
 		watched.setBounds(220, 229, 35, 35);
 		getContentPane().add(watched);
 		
+		textField = new JTextField();
+		textField.setBounds(10, 300, 575, 30);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		list = new JList();
+		list.setBounds(10, 335, 615, 75);
+		getContentPane().add(list);
+		
+		post = new JButton("");
+		post.setBounds(600, 300, 25, 21);
+		getContentPane().add(post);
+		
+		upbtn = new JButton("");
+		upbtn.setBounds(10, 270, 25, 25);
+		getContentPane().add(upbtn);
+		
+		lblNewLabel = new JLabel("5");
+		lblNewLabel.setBounds(40, 275, 20, 13);
+		getContentPane().add(lblNewLabel);
+		
+		downbtn = new JButton("");
+		downbtn.setBounds(50, 270, 25, 25);
+		getContentPane().add(downbtn);
+		
 	}
 	public static void main(String[] args) {
-		FilmUI fu = new FilmUI();
+		FilmData f = new FilmData();
+		FilmUI fu = new FilmUI(f);
 		fu.setVisible(true);
 	}
 }
