@@ -29,6 +29,9 @@ public class FilmUI extends JFrame{
 	private JLabel actorName;
 	private JButton addWatchlist;
 	private JLabel watched;
+	private JButton post;
+	private JList list;
+	private JTextField textField;
 	
 	public FilmUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
@@ -106,6 +109,20 @@ public class FilmUI extends JFrame{
 		watched.setIcon(new ImageIcon("src\\main\\resources\\Watch.png"));
 		watched.setBounds(220, 229, 35, 35);
 		getContentPane().add(watched);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 300, 575, 30);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		list = new JList();
+		list.setBounds(10, 335, 615, 75);
+		getContentPane().add(list);
+		
+		post = new JButton("");
+		post.setBounds(600, 300, 25, 21);
+		getContentPane().add(post);
+						
 		
 	}
 	public static void main(String[] args) {
