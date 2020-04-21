@@ -13,6 +13,8 @@ import javax.ws.rs.core.Response.Status;
 import easyFilminDAO.EasyFilminJDO;
 import easyFilminData.User;
 import serialization.MessageData;
+import serialization.FilmData;
+import serialization.FilmListData;
 import serialization.UserData;
 import ui.UserUI;
 
@@ -90,7 +92,28 @@ public class EasyFilmController {
 		return usData;
 		}
 	
-	
+	/** RETRIEVES a FilmData object from the server
+	 * @param name of the film
+	 * @return film (serialized)
+	 */
+	public FilmData getFilm(String name) {
+		WebTarget getFilmWebTarget = webTarget.path("server/getFilm"+"/"+name); 
+		GenericType<FilmData> genericType = new GenericType<FilmData>() {};
+		FilmData film = getFilmWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		return film;
+	}
+
+	/** RETRIEVES a FilmListData object from the server
+	 * @param name of the filmList
+	 * @return list of films (serialized)
+	 */
+	public FilmListData getFilmList(String name) {
+		WebTarget getFilmListWebTarget = webTarget.path("server/getFilmList"+"/"+name); 
+		GenericType<FilmListData> genericType = new GenericType<FilmListData>() {};
+		FilmListData film = getFilmListWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		return film;
+	}
+
 	
 	public static void main(String[] args) {
 		if (args.length != 2) {

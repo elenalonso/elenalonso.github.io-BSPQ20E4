@@ -6,6 +6,8 @@ import javax.jdo.Query;
 import javax.jdo.JDOHelper;
 import javax.jdo.Transaction;
 
+import serialization.FilmData;
+import serialization.FilmListData;
 import serialization.MessageData;
 import serialization.UserData;
 
@@ -20,6 +22,8 @@ import javax.ws.rs.core.Response.Status;
 
 import easyFilminDAO.EasyFilminJDO;
 import easyFilminDAO.IEasyFilminDAO;
+import easyFilminData.Film;
+import easyFilminData.FilmList;
 import easyFilminData.Message;
 import easyFilminData.User;
 
@@ -90,8 +94,45 @@ public class Server {
 					
 			System.out.println(" * Client number: " + cont);
 			UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
-			//messageData.setMessage(directedMessage.getMessageData().getMessage());
 			return usData;
+	}
+
+	/** 
+	 * @param login
+	 * @return
+	 */
+	@GET
+	@Path("/getFilm/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public FilmData getFilm(@PathParam("name") String name) {
+		Film f = null;
+		//f = iDAO.loadFilm(name);
+					
+			System.out.println(" * Client number: " + cont);
+			FilmData fData = null;
+			//Uncomment when is possible to get the film 
+			//Constructor is needed, and think about how to pass this Data
+			//fData =	new FilmData(name, f.getActors(), f.getDirector(), f.getPoster());
+			return fData;
+	}
+
+	/** 
+	 * @param login
+	 * @return
+	 */
+	@GET
+	@Path("/getUser/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public FilmListData getFilmList(@PathParam("name") String name) {
+		FilmList fl = null;
+		//fl = iDAO.loadFilmList(name);
+					
+			System.out.println(" * Client number: " + cont);
+			FilmListData flData = null;
+			//Uncomment when is possible to get the film 
+			//Constructor is needed, and think about how to pass this Data
+			//flData =	new FilmListData(name, fl.getFilms());
+			return flData;
 	}
 
 	
