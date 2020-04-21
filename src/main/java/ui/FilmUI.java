@@ -32,6 +32,9 @@ public class FilmUI extends JFrame{
 	private JButton post;
 	private JList list;
 	private JTextField textField;
+	private JButton upbtn;
+	private JButton downbtn;
+	private JLabel lblNewLabel;
 	
 	public FilmUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
@@ -122,6 +125,18 @@ public class FilmUI extends JFrame{
 		post = new JButton("");
 		post.setBounds(600, 300, 25, 21);
 		getContentPane().add(post);
+		
+		upbtn = new JButton("");
+		upbtn.setBounds(10, 270, 25, 25);
+		getContentPane().add(upbtn);
+		
+		lblNewLabel = new JLabel("5");
+		lblNewLabel.setBounds(40, 275, 20, 13);
+		getContentPane().add(lblNewLabel);
+		
+		downbtn = new JButton("");
+		downbtn.setBounds(50, 270, 25, 25);
+		getContentPane().add(downbtn);
 						
 		
 	}
