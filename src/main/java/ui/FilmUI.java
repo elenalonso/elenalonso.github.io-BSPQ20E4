@@ -170,7 +170,8 @@ public class FilmUI extends JFrame{
 
 	}
 	public static void main(String[] args) {
-		FilmUI fu = new FilmUI();
+		FilmData f = new FilmData();
+		FilmUI fu = new FilmUI(f);
 		fu.setVisible(true);
 	}
 }
