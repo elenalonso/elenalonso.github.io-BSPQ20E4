@@ -6,7 +6,10 @@ import java.util.List;
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
+import easyFilminData.FilmList;
 import easyFilminData.User;
+import easyFilminData.WatchList;
+import easyFilminData.Watched;
 
 public interface IEasyFilminDAO {
 	
@@ -69,8 +72,14 @@ public interface IEasyFilminDAO {
 	 * @see Director
 	 */
 	public void saveDirector(Director director);
-
 	
+	public Watched loadWatched(String name);
+	
+	public void saveWatched(Watched watched);
+	
+	public WatchList loadWatchList(String name);
+	
+	public void saveWatchList(WatchList watchlist);
 	/**
 	 * Loads the DB initially with predetermined data.
 	 * This data mainly consists in Actors, Films and Directors.

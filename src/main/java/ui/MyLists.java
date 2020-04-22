@@ -48,4 +48,11 @@ public class MyLists extends JFrame{
 		comboBox.setBounds(220, 44, 220, 21);
 		getContentPane().add(comboBox);
 	}
+	
+	public static void main(String[] args) {
+		
+		MyLists ui = new MyLists();
+		ui.setVisible(true);
+	}
+
 }

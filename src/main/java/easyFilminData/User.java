@@ -54,7 +54,7 @@ public class User {
 	/**
 	 * 
 	 * @param c: comment posted by a user when clicking 'Post' button,
-	 * comments will be displayed in a film's profile showing the user (nickname & icon) who wrote it
+	 * comments will be displayed in a film's profile showing the user (nickname and icon) who wrote it
 	 */
 	public void postComment(Comment c) {
 		comments.add(c);

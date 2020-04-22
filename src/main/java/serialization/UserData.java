@@ -13,10 +13,10 @@ public class UserData {
     }
 	
 	/** Constructor to use in the server 
-	 * @param login
-	 * @param password
-	 * @param icon
-	 * @param email
+	 * @param login faefse
+	 * @param password fssdsfd
+	 * @param icon fsdfsd
+	 * @param email fsdfss
 	 */
 	public UserData(String login, String password, String icon, String email) {
 		this.login = login;
