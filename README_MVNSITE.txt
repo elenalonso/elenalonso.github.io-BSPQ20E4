@@ -27,3 +27,16 @@ JAVADOC:
 JACOCO:
 	-Representa el porcentaje de líneas de código que están "probadas" por un test.
 	-Va por paquetes
+
+LOGGING:
+	-En la clase en la que se pretenda utilizar el logger para sustituir System.out.println():
+		1-Realizar estos 2 imports
+			import org.apache.log4j.Logger;
+			import org.apache.log4j.PropertyConfigurator;
+		2-Declarar un logger 
+			static Logger logger = Logger.getLogger(FilmListTest.class.getName()); (Cambiar FilmListTest por el nombre de la clase en la que se use)
+		3-Utilizar statements
+			logger.debug("Lo que sea");   (Los de nivel "debug" no se mostrarán por consola pero quedarán registrados en el archivo)
+			logger.info("Lo que sea");
+			logger.warn("Lo que sea");
+			logger.error("Lo que sea");

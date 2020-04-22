@@ -11,6 +11,9 @@ import org.junit.Test;
 
 import easyFilminData.Film;
 import easyFilminData.FilmList;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 
 public class FilmListTest {
 	
@@ -22,6 +25,8 @@ public class FilmListTest {
 	private static FilmList list1;
 	private FilmList list2;
 	private static FilmList list3;
+	
+	static Logger logger = Logger.getLogger(FilmListTest.class.getName());
 	
 	
 	public static junit.framework.Test suite() {
@@ -44,10 +49,12 @@ public class FilmListTest {
 		list1.setFilmList(films);
 		films2.add(film3);
 		list3.setFilmList(films2);
+		logger.info("Set up before class finished");
 	}
 	@Before
 	public void setUp() throws Exception {
 		list2 = new FilmList("Favourite films");
+		logger.info("Set up finished");
 	}
 
 	@Test
@@ -55,6 +62,7 @@ public class FilmListTest {
 		list2.addFilm(film3);
 		list2.addFilm(film4);
 		assertEquals(list1.getFilmList(), list2.getFilmList());
+		logger.debug("Add Film tested");
 	}
 	
 	@Test
@@ -63,6 +71,7 @@ public class FilmListTest {
 		list2.addFilm(film4);
 		list2.removeFilm("Counter");
 		assertEquals(list3.getFilmList(), list2.getFilmList());
+		logger.debug("Remove Film tested");
 	}
 	
 	@Test
@@ -71,6 +80,7 @@ public class FilmListTest {
 		list2.addFilm(film3);
 		list2.sortFilmList();
 		assertEquals(list1.getFilmList(), list2.getFilmList());
+		logger.debug("Sort Film tested");
 	}
 
 }
