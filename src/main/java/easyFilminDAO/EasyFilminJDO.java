@@ -367,6 +367,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (com.opencsv.exceptions.CsvValidationException cve) {
+				cve.printStackTrace();
 			}
 		    
 			
