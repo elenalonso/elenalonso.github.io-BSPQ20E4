@@ -29,10 +29,10 @@ public class EasyFilmController {
 	}
 
 	/** REGISTERS a new User in the db giving its parameters 
-	 * @param login adafaa
-	 * @param icon  vasfsf
-	 * @param email afghbsgr
-	 * @param password avdavf
+	 * @param login - nick of the user
+	 * @param icon  - icon of the user
+	 * @param email - email of the user
+	 * @param password - pass of the user
 	 */
 	public void registerUser(String login, String icon, String email, String password) {
 		WebTarget registerUserWebTarget = webTarget.path("server/register");
@@ -53,9 +53,9 @@ public class EasyFilmController {
 
 	
 	/** CHECKS if the login is correct
-	 * @param login vsfvs
-	 * @param password vwfessdfsv
-	 * @return boolean for login ok or no 
+	 * @param login - login of the user
+	 * @param password - pass of the user
+	 * @return boolean - if correct true else false 
 	 */
 	public boolean login(String login, String password) {
 		WebTarget loginWebTarget = webTarget.path("server/login");		
@@ -82,8 +82,8 @@ public class EasyFilmController {
 
 
 	/** RETRIEVES an UserData Object from the server that is passed in the login
-	 * @param nick vfdssdsd
-	 * @return UserData vsdfsfssvf
+	 * @param nick - nick of user
+	 * @return UserData - UserData object from that user
 	 */
 	public UserData getUser(String nick) {
 		WebTarget getUserWebTarget = webTarget.path("server/getUser"+"/"+nick);
@@ -93,8 +93,8 @@ public class EasyFilmController {
 		}
 	
 	/** RETRIEVES a FilmData object from the server
-	 * @param name of the film
-	 * @return film (serialized)
+	 * @param name - title of the film
+	 * @return film - FilmData (serialized)
 	 */
 	public FilmData getFilm(String name) {
 		WebTarget getFilmWebTarget = webTarget.path("server/getFilm"+"/"+name); 
@@ -104,8 +104,8 @@ public class EasyFilmController {
 	}
 
 	/** RETRIEVES a FilmListData object from the server
-	 * @param name of the filmList
-	 * @return list of films (serialized)
+	 * @param name -name of the filmList
+	 * @return list - list of films (serialized) FilmListData
 	 */
 	public FilmListData getFilmList(String name) {
 		WebTarget getFilmListWebTarget = webTarget.path("server/getFilmList"+"/"+name); 

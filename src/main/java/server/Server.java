@@ -44,8 +44,8 @@ public class Server {
 
 
 	/** Checks if the login is correct
-	 * @param us few
-	 * @return a Response with an OK/Not OK message 
+	 * @param us - UserData for a particular User
+	 * @return a - Response with an OK/Not OK message 
 	 */
 	@POST
 	@Path("/login")
@@ -65,8 +65,8 @@ public class Server {
 
 	
 	/** REGISTERS a new User in the db 
-	 * @param userData fdsadsf
-	 * @return Reponse saying if Register is OK or NOT
+	 * @param userData - UserData in order to register a user
+	 * @return Reponse - replying if Register is OK or NOT
 	 */
 	@POST
 	@Path("/register")
@@ -81,9 +81,9 @@ public class Server {
         
 	}
 	
-	/** 
-	 * @param login aaaaaaaaaaa
-	 * @return fewfwe
+	/** GETs a particular User by its nick
+	 * @param login - nick of the user
+	 * @return usData - return a UserData corresponding to the user
 	 */
 	@GET
 	@Path("/getUser/{nick}")
@@ -97,9 +97,9 @@ public class Server {
 			return usData;
 	}
 
-	/** 
-	 * @param name aaaaaaaaaaaa
-	 * @return aaaaaaaaa
+	/** GETs a particular film by title 
+	 * @param name - title of the film
+	 * @return fData - film (serialized)
 	 */
 	@GET
 	@Path("/getFilm/{name}")
@@ -116,12 +116,12 @@ public class Server {
 			return fData;
 	}
 
-	/** 
-	 * @param name aaaaaaaaa
-	 * @return aaaaaaaaaaaaaaa
+	/** GETs a particular filmlist by name
+	 * @param name - name of the filmlist
+	 * @return flData - filmListData (serialized)
 	 */
 	@GET
-	@Path("/getUser/{name}")
+	@Path("/getFilmList/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public FilmListData getFilmList(@PathParam("name") String name) {
 		FilmList fl = null;

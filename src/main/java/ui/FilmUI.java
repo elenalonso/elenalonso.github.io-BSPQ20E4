@@ -41,10 +41,11 @@ public class FilmUI extends JFrame{
 	private JButton upbtn;
 	private JButton downbtn;
 	private JLabel lblNewLabel;
-
+	private FilmData film;
 
 	
 	public FilmUI(FilmData film) {
+		this.film = film;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(650,450);
 		setLocation(600,175);
