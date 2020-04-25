@@ -26,6 +26,8 @@ import easyFilminData.Film;
 import easyFilminData.FilmList;
 import easyFilminData.Message;
 import easyFilminData.User;
+import easyFilminData.WatchList;
+import easyFilminData.Watched;
 
 /**
  * This class is in charge of handling the calls from the controller and cast them to the Data Access Layer
@@ -77,8 +79,7 @@ public class Server {
 		//IEasyFilminDAO iDAO = new EasyFilminJDO();
 		iDAO.saveUser(user);
 		return Response.ok().build();	
-        
-        
+                
 	}
 	
 	/** GETs a particular User by its nick
@@ -135,7 +136,54 @@ public class Server {
 			return flData;
 	}
 
-	
+
+	/** Adds a given film to a particular list (REGULAR LIST NOT IMPLEMENTED YET) 
+	 * @param listName - the name of the list is passed implicitly as a String
+	 * @param filmTitle - title of the film is passed explicitly in the path
+	 * @return A Response whether is successfully added OK or not BAD.RESPONSE 
+	 */
+	@POST
+	@Path("/addToList/{title}")
+	public Response addToList(String listName, @PathParam("title") String filmTitle) {
+		boolean repeated = false;
+		if(listName.contentEquals("watchlist")) {
+			WatchList w = iDAO.loadWatchList("watchlist");
+			for(Film f : w.getFilmList()) {
+				if (f.getTitle().contentEquals(filmTitle)){ //If not repeated we add it to watchlist
+					repeated = true;
+					break;
+				}
+			}
+			if(!repeated) w.addFilm(iDAO.loadFilm(filmTitle));
+			iDAO.saveWatchList(w);
+
+		} else if(listName.contentEquals("watched")) {
+
+			Watched w = iDAO.loadWatched("watched");
+			for(Film f : w.getFilmList()) {
+				if (f.getTitle().contentEquals(filmTitle)){
+					repeated = true;
+					break;
+				}
+				if(!repeated) {
+					w.addFilm(iDAO.loadFilm(filmTitle)); //If not repeated we add it to watched
+					WatchList wl = iDAO.loadWatchList("watchlist");
+					for(Film fl : wl.getFilmList()) {
+						if (fl.getTitle().contentEquals(filmTitle)){ 
+							wl.removeFilm(filmTitle);
+							break;
+						}
+					}
+				}
+				iDAO.saveWatched(w);
+			}
+			//		else {
+			//			FilmList fl = iDAO.loadFilmList(listName);
+			//		}	      
+		}
+		if(!repeated) return Response.ok().build();
+		else return Response.status(Status.BAD_REQUEST).entity("This film is already on your filmList").build();
+	}
 	// Example method
 	
 	@GET

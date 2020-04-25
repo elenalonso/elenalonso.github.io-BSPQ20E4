@@ -35,6 +35,7 @@ public class FilmUI extends JFrame{
 	private JLabel actorLabel;
 	private JLabel actorName;
 	private JButton addWatchlist;
+	private JButton addWatched;
 	private JLabel watched;
 	private JButton post;
 	private JList list;
@@ -65,8 +66,8 @@ public class FilmUI extends JFrame{
 		//poster.setIcon(new ImageIcon(film.getPoster()));
 		getContentPane().add(poster);
 		
-		backbtn = new JButton("New button");
-		backbtn.setBounds(10, 10, 25, 25);
+		backbtn = new JButton("<-");
+		backbtn.setBounds(10, 10, 30, 25);
 		getContentPane().add(backbtn);
 		backbtn.addActionListener(new ActionListener() {
 			
@@ -78,8 +79,8 @@ public class FilmUI extends JFrame{
 			}
 		});
 		
-		exitbtn = new JButton("New button");
-		exitbtn.setBounds(601, 10, 25, 25);
+		exitbtn = new JButton("x");
+		exitbtn.setBounds(601, 10, 30, 25);
 		getContentPane().add(exitbtn);
 		exitbtn.addActionListener(new ActionListener() {
 			
@@ -160,18 +161,36 @@ public class FilmUI extends JFrame{
 		post.setBounds(600, 300, 25, 21);
 		getContentPane().add(post);
 		
-		upbtn = new JButton("");
-		upbtn.setBounds(10, 270, 25, 25);
+		upbtn = new JButton(">");
+		upbtn.setBounds(10, 270, 30, 25);
 		getContentPane().add(upbtn);
 		
 		lblNewLabel = new JLabel("5");
 		lblNewLabel.setBounds(40, 275, 20, 13);
 		getContentPane().add(lblNewLabel);
 		
-		downbtn = new JButton("");
-		downbtn.setBounds(50, 270, 25, 25);
+		downbtn = new JButton("<");
+		downbtn.setBounds(50, 270, 30, 25);
 		getContentPane().add(downbtn);
-
+		
+		//Action Listeners Watchlist / Watched
+		addWatched.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.addToList("watched", film.getTitle());
+				
+			}
+		});
+		addWatchlist.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.addToList("watchlist", film.getTitle());
+				
+			}
+		});
+		
 	}
 	public static void main(String[] args) {
 		FilmData f = new FilmData();

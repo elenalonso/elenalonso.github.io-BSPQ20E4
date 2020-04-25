@@ -51,7 +51,6 @@ public class EasyFilmController {
 		}
 	}
 
-	
 	/** CHECKS if the login is correct
 	 * @param login - login of the user
 	 * @param password - pass of the user
@@ -112,6 +111,18 @@ public class EasyFilmController {
 		GenericType<FilmListData> genericType = new GenericType<FilmListData>() {};
 		FilmListData film = getFilmListWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		return film;
+	}
+
+	/**
+	 * @param filmTitle - title of the film to add
+	 * @return confirmation that it has been successfully added or not
+	 */
+	public boolean addToList(String listName, String filmTitle) {
+		WebTarget addToListWebTarget = webTarget.path("server/addToList"+"/"+filmTitle); 
+		Invocation.Builder invocationBuilder = addToListWebTarget.request(MediaType.APPLICATION_JSON);
+		Response response = invocationBuilder.post(Entity.entity(listName, MediaType.APPLICATION_JSON));
+		
+		return true;
 	}
 
 	
