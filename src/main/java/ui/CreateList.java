@@ -2,6 +2,10 @@ package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+
+import client.EasyFilmController;
+import serialization.UserData;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -9,47 +13,81 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class CreateList extends JFrame {
-	private JButton btnNewButton;
-	private JButton btnNewButton_3;
- 	public CreateList() {
+	private JButton addFilm;
+	private JButton exit;
+	private JButton removeFilm;
+	private JButton back;
+	private JList list;
+	private JList filmList;
+	private JLabel available;
+	private JLabel newList;
+	
+	public CreateList(UserData user, EasyFilmController controller) {
+		
+		/** This is the info of the creation of the window
+		 * 
+		 */
+		 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(550,400);
 		setLocation(600,175);
+		setResizable(false);
 		getContentPane().setLayout(null);
 		
-		JList list = new JList();
+		/** This is a Window that allows the user to create lists from scratch by moving films to one side to the other
+		 * 
+		 */
+		
+		/** This List loads every film available
+		 * 
+		 */
+		
+		list = new JList();
 		list.setBounds(40, 40, 200, 300);
 		getContentPane().add(list);
 		
-		JList list_1 = new JList();
-		list_1.setBounds(311, 40, 200, 300);
-		getContentPane().add(list_1);
+		available = new JLabel("Available Films");
+		available.setFont(new Font("Verdana", Font.BOLD, 12));
+		available.setBounds(40, 10, 200, 20);
+		getContentPane().add(available);
 		
-		JLabel lblNewLabel = new JLabel("Your New List");
-		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblNewLabel.setBounds(311, 10, 200, 20);
-		getContentPane().add(lblNewLabel);
+		/** This list shows every film that will be a part of the list
+		 * 
+		 */
 		
-		JLabel lblNewLabel_1 = new JLabel("Available Films");
-		lblNewLabel_1.setFont(new Font("Verdana", Font.BOLD, 12));
-		lblNewLabel_1.setBounds(40, 10, 200, 20);
-		getContentPane().add(lblNewLabel_1);
+		filmList = new JList();
+		filmList.setBounds(311, 40, 200, 300);
+		getContentPane().add(filmList);
 		
-		btnNewButton = new JButton(">");
-		btnNewButton.setBounds(255, 130, 39, 39);
-		getContentPane().add(btnNewButton);
+		newList = new JLabel("Your New List");
+		newList.setFont(new Font("Verdana", Font.BOLD, 12));
+		newList.setBounds(311, 10, 200, 20);
+		getContentPane().add(newList);
 		
-		JButton btnNewButton_1 = new JButton("<");
-		btnNewButton_1.setBounds(255, 179, 39, 39);
-		getContentPane().add(btnNewButton_1);
+		/** This buttons allow to move films to one list to the other
+		 * 
+		 */
+		
+		addFilm = new JButton(">");
+		addFilm.setBounds(255, 130, 39, 39);
+		getContentPane().add(addFilm);
+		
+		removeFilm = new JButton("<");
+		removeFilm.setBounds(255, 179, 39, 39);
+		getContentPane().add(removeFilm);
 		
 		JButton btnNewButton_2 = new JButton("SAVE");
 		btnNewButton_2.setBounds(245, 310, 60, 30);
 		getContentPane().add(btnNewButton_2);
 		
-		btnNewButton_3 = new JButton("");
-		btnNewButton_3.setBounds(10, 10, 25, 25);
-		getContentPane().add(btnNewButton_3);
+		back = new JButton("");
+		back.setBounds(10, 10, 25, 25);
+		getContentPane().add(back);
+		
+		exit = new JButton("");
+		exit.setBounds(500, 11, 25, 25);
+		getContentPane().add(exit);
+		
 //		btnNewButton_3.addActionListener(new ActionListener() {
 //			
 //			@Override
@@ -59,7 +97,29 @@ public class CreateList extends JFrame {
 //				u.setVisible(true);
 //			}
 //		});
+		
+		/** This part contains the different listeners of the window
+		 * 
+		 */
 				
+		exit.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				
+			}
+		});
+		
+		back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				UserUI ui = new UserUI(null, controller);
+				ui.setVisible(true);
+			}
+		});
 		
 	}
 }
