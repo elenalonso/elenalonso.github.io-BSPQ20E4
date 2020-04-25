@@ -12,6 +12,9 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import easyFilminData.Actor;
@@ -21,6 +24,7 @@ import easyFilminData.Genre;
 import easyFilminData.User;
 import easyFilminData.WatchList;
 import easyFilminData.Watched;
+import ui.FilmListUI;
 
 
 public class EasyFilminJDO implements IEasyFilminDAO{
@@ -28,7 +32,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	private PersistenceManagerFactory pmf = null;
 	private ArrayList<Actor> actores;
 	private ArrayList<Director> directores;
-	
+	static int contVueltas =0;
+	static Logger logger = Logger.getLogger(FilmListUI.class.getName());
 	/**
 	 * Initializes the attribute pmf (PersistenceManagerFactory).
 	 * It is necessary in order to execute all the operations related to a JDO Database.
@@ -136,8 +141,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			tx.begin();
 			
 			pm.makePersistent(actor);
-			
-			
+						
 			//End the transaction
 			tx.commit();
 			System.out.println("Changes committed");
@@ -314,7 +318,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			String[] values = null;
 		    try {
-				while ((values = readActors.readNext()) != null){
+		    	logger.warn("We need to FIX this method");
+				while ((values = readActors.readNext()) != null&&contVueltas<10){
 					String name =values[0];
 					String bday = values[1];
 					
@@ -323,49 +328,59 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					actors.add(new Actor(name, null, null));
 					for (Actor actor : actors) {
 						saveActor(actor);
-						
+						contVueltas++;	
 					}
 					
 					
-					}
-				
-				while ((values = readDirectors.readNext()) != null){
+				}
+				contVueltas =0;
+				while ((values = readDirectors.readNext()) != null&&contVueltas<10){
 					String name =values[0];
 					String bday = values[1];
 					
 					directors.add(new Director(name,null,bday));
 					for (Director director : directors) {
 						saveDirector(director);
-						
 					}
-					
-					
-					} 
-				while ((values = readFilms.readNext()) != null){
+					contVueltas++;
+				} 
+				contVueltas = 0;
+				while ((values = readFilms.readNext()) != null&&contVueltas<10){
 					actores =null;
 					directores=null;
 					String title =values[0];
-					String year = values[2];
-					String desc = values[3];
-					int dur = Integer.parseInt(values[4]);
-					String gen = values[5];
-					Genre g= new Genre(gen);
-					double rate = Double.parseDouble(values[6]);
-					String[] ac = values[7].toString().split("|");
-					for (String a : ac) {
-						actores.add(new Actor(a,null,null));
-					}
-					String[] dr =values[8].toString().split("|");
-					for (String d : dr) {
-						directores.add(new Director(d,null,null));
-					}
+					//This doesnt work
+					logger.warn("VALUES from FILMS in BD are not well retrieved");
+//					String year = values[2];
+//					String desc = values[3];
+//					int dur = Integer.parseInt(values[4]);
+//					String gen = values[5];
+					Genre g = null;
+					double rate = 2.5;
+					String[] ac = {" ",""};
+					String[] dr = {" ",""};
+//					Genre g= new Genre(gen);
+//					double rate = Double.parseDouble(values[6]);
+//					String[] ac = values[7].toString().split("|");
+//					for (String a : ac) {
+//						actores.add(new Actor(a,null,null));
+//					}
+//					String[] dr =values[8].toString().split("|");
+//					for (String d : dr) {
+//						directores.add(new Director(d,null,null));
+//					}
+					//Uncomment when fixed 
 					
-					films.add(new Film(title, null,year,desc,dur,g,rate,actores,directores));
+//					films.add(new Film(title, null,year,desc,dur,g,rate,actores,directores));
+					films.add(new Film(title, null,null,null,1,null,rate,null,null));
 					for (Film film : films) {
 						saveFilm(film);
 				
 					}
+					logger.error("Without this cuentavueltas goes into an infinite loop");
+					contVueltas++;
 				}
+				contVueltas =0;
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -152,7 +152,7 @@ public class EasyFilmController {
 		easFilCon.login("egui2", "1234"); 
 		easFilCon.login("Marcos", "1235");
 		EasyFilminJDO prueba= new EasyFilminJDO();
-		prueba.startBD();
+		//prueba.startBD();
 	}
 
 }

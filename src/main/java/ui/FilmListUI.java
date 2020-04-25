@@ -62,10 +62,10 @@ public class FilmListUI extends JFrame{
 		liFilms = new JList<String>(dlmFilms);
 		if(!filmList.getFilmList().isEmpty()) {
 			for(String f: filmList.getFilmList()) dlmFilms.addElement(f);		
-			logger.debug("Displaying FILMS of FilmList "+filmList.getName() );
+			logger.info("Displaying FILMS of FilmList "+filmList.getName() );
 		}else {
 			//This logger doesnt work yet
-			logger.debug("No Films in this FilmList yet");
+			logger.info("No Films in this FilmList yet");
 		}
 
 		liFilms.setBounds(220,200,100,100);
