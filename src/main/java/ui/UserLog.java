@@ -66,7 +66,7 @@ public class UserLog extends JFrame{
 				if(controller.login(textField.getText(), pass)) {
 					dispose();
 					UserData us = controller.getUser(textField.getText());
-					UserUI vg = new UserUI(us);
+					UserUI vg = new UserUI(us, controller);
 					vg.setSize(720, 480);
 					vg.setVisible(true);
 				}else {

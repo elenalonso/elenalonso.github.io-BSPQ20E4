@@ -6,6 +6,7 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
+import client.EasyFilmController;
 import easyFilminData.User;
 import serialization.UserData;
 
@@ -35,12 +36,13 @@ public class UserUI extends JFrame{
 	private JTextField busqueda;
 	private JButton nuevaLista;
 	private JButton misListas;
-	public UserUI(UserData user) {
+	private EasyFilmController controller;
+	public UserUI(UserData user, EasyFilmController controller) {
 		this.setTitle( "EasyFilmin User");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(740,480);
 		setLocation(600,175);
-
+		this.controller = controller;
 		getContentPane().setLayout(new BorderLayout());
 		
 		busqueda = new JTextField();
@@ -79,7 +81,7 @@ public class UserUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				MyLists u = new MyLists();
+				MyLists u = new MyLists(controller);
 				u.setVisible(true);
 			}
 		});
@@ -112,7 +114,9 @@ public class UserUI extends JFrame{
 	}
 	public static void main(String[] args) {
 		UserData u = new UserData();
-		UserUI ui = new UserUI(u);
+		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
+
+		UserUI ui = new UserUI(u, e);
 		ui.setVisible(true);
 	}
 	

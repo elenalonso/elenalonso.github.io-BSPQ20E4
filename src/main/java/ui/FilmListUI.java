@@ -1,6 +1,9 @@
 package ui;
 
 import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
@@ -8,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.text.Position;
 
 import serialization.FilmData;
 import serialization.FilmListData;
@@ -15,20 +19,28 @@ import serialization.FilmListData;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import client.EasyFilmController;
+
 public class FilmListUI extends JFrame{
 
+	private EasyFilmController controller;
+	
 	private JList<String> liFilms;
 	public static DefaultListModel<String> dlmFilms;
 	private JButton backbtn;
 	private JButton addFilm;
 	private JButton deleteFilm;
-	private FilmListData filmList; 
+	private FilmListData filmList;
+	
+	private int editionPos;
+	private int selectPos;
 
 	static Logger logger = Logger.getLogger(FilmListUI.class.getName());
 
-	public FilmListUI(FilmListData flData) {
+	public FilmListUI(FilmListData flData, EasyFilmController controller) {
 		this.filmList = flData;
 		this.setTitle(flData.getName());
+		this.controller = controller;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(640,380);
 		setLocation(600,175);
@@ -61,13 +73,42 @@ public class FilmListUI extends JFrame{
 		pCentral.add(liFilms);
 		
 		getContentPane().add(pCentral);
-		
+	
+		liFilms.addMouseListener(new MouseAdapter() {
+			
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount()==1){
+					editionPos = liFilms.locationToIndex(e.getPoint());
+				}
+				if (e.getClickCount()==2){
+					if (liFilms.getSelectedIndex()!= -1) {
+						selectPos = liFilms.locationToIndex(e.getPoint());
+						toFilmUI();			
+					}
+				}
+			}
+
+		});
 	}
 	
+	/** Calls the controller to open a FilmUI window with the info of this list
+	 * 
+	 */
+	private void toFilmUI() {
+
+		if (dlmFilms.getElementAt(selectPos) != null){
+			String title = dlmFilms.getElementAt(selectPos);
+			FilmData f = controller.getFilm(title);
+			FilmUI u = new FilmUI(f, controller);
+		}
+		
+	}
 	public static void main(String[] args) {
 		
 		FilmListData flData = new FilmListData();
 		ArrayList<FilmData> fl = new ArrayList<>();
+		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
+
 		for(int i=0;i<5;i++) {
 			FilmData a = new FilmData();
 			a.setTitle("Peli"+i);
@@ -75,7 +116,7 @@ public class FilmListUI extends JFrame{
 		}
 		flData.setFilmList(fl);
 		flData.setName("A1");
-		FilmListUI ui = new FilmListUI(flData);
+		FilmListUI ui = new FilmListUI(flData, e);
 		
 		ui.setVisible(true);
 	}

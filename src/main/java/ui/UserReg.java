@@ -102,7 +102,7 @@ public class UserReg extends JFrame {
 				sendRegistration(username,password,username,email);
 				dispose();
 				UserData us = new UserData();
-				UserUI u = new UserUI(us);
+				UserUI u = new UserUI(us, controller);
 				u.setSize(500, 350);
 				u.setVisible(true);
 			}

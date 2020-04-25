@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+import client.EasyFilmController;
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
@@ -43,9 +44,11 @@ public class FilmUI extends JFrame{
 	private JLabel lblNewLabel;
 	private FilmData film;
 
+	private EasyFilmController controller;
 	
-	public FilmUI(FilmData film) {
+	public FilmUI(FilmData film, EasyFilmController controller) {
 		this.film = film;
+		this.controller = controller;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(650,450);
 		setLocation(600,175);
@@ -70,7 +73,7 @@ public class FilmUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				UserUI ui = new UserUI(null);
+				UserUI ui = new UserUI(null, controller);
 				ui.setVisible(true);
 			}
 		});
@@ -172,7 +175,8 @@ public class FilmUI extends JFrame{
 	}
 	public static void main(String[] args) {
 		FilmData f = new FilmData();
-		FilmUI fu = new FilmUI(f);
+		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
+		FilmUI fu = new FilmUI(f, e);
 		fu.setVisible(true);
 	}
 }

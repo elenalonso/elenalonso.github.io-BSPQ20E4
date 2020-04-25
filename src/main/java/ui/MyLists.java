@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JList;
 
+import client.EasyFilmController;
 import easyFilminData.User;
 import serialization.UserData;
 
@@ -15,7 +16,9 @@ import javax.swing.JComboBox;
 
 public class MyLists extends JFrame{
 	private JButton btnNewButton;
-	public MyLists() {
+	private EasyFilmController controller;
+	public MyLists(EasyFilmController cont) {
+		this.controller = cont;
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(500,450);
 		setLocation(600,175);
@@ -34,7 +37,7 @@ public class MyLists extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				UserData usData = new UserData();
-				UserUI u = new UserUI(usData);
+				UserUI u = new UserUI(usData, cont);
 				u.setVisible(true);
 			}
 		});
@@ -50,8 +53,9 @@ public class MyLists extends JFrame{
 	}
 	
 	public static void main(String[] args) {
-		
-		MyLists ui = new MyLists();
+		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
+
+		MyLists ui = new MyLists(e);
 		ui.setVisible(true);
 	}
 
