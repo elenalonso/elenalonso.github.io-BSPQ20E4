@@ -10,9 +10,6 @@ public class EasyFilmin {
 		e.registerUser("egui2", "src/img/jimmy.jpg", "11111@opendeusto.es","1234"); 
 		e.registerUser("Marcos", "Image3", "33333@opendeusto.es","1235");
 		
-		// Is this after or before registering users?
-		EasyFilminJDO prueba= new EasyFilminJDO();
-		prueba.startBD();
 		
 		UserLog u = new UserLog(args[0], args[1]);
 		u.setVisible(true);

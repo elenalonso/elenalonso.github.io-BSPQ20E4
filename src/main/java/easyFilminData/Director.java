@@ -29,6 +29,9 @@ public class Director {
 	        this.pic=pic;
 	        this.bday=bday;
 	    }
+	    public Director(String name) {
+	    	this.name = name;
+	    }
 
 	    public String getName()
 	    {

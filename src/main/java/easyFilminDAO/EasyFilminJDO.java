@@ -15,6 +15,8 @@ import javax.jdo.Transaction;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import easyFilminData.Actor;
@@ -30,9 +32,7 @@ import ui.FilmListUI;
 public class EasyFilminJDO implements IEasyFilminDAO{
 	
 	private PersistenceManagerFactory pmf = null;
-	private ArrayList<Actor> actores;
-	private ArrayList<Director> directores;
-	static int contVueltas =0;
+
 	static Logger logger = Logger.getLogger(FilmListUI.class.getName());
 	/**
 	 * Initializes the attribute pmf (PersistenceManagerFactory).
@@ -307,8 +307,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		 */
 			
 		try {
-			
-			CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\films.csv")).withSkipLines(1).build(); 
+						
+			CSVReader readFilms = new CSVReaderBuilder(new FileReader("src\\main\\resources\\filmsPRUEBA.csv")).withSkipLines(1).build(); 
 			CSVReader readActors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\actors.csv")).withSkipLines(1).build();
 			CSVReader readDirectors = new CSVReaderBuilder(new FileReader("src\\main\\resources\\directors.csv")).withSkipLines(1).build(); 
 			 
@@ -318,69 +318,66 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			String[] values = null;
 		    try {
-		    	logger.warn("We need to FIX this method");
-				while ((values = readActors.readNext()) != null&&contVueltas<10){
-					String name =values[0];
-					String bday = values[1];
-					
-					System.out.println("Name:" +name+", bday:"+bday);
-					
-					actors.add(new Actor(name, null, null));
-					for (Actor actor : actors) {
-						saveActor(actor);
-						contVueltas++;	
+				//Read ACTORS from CSV
+				while ((values = readActors.readNext()) != null){
+					if(values.length==2) {
+						String name =values[0];
+						String bday = values[1];
+						
+						System.out.println("Name:" +name+", bday:"+bday);
+						
+						actors.add(new Actor(name, bday));
 					}
-					
-					
 				}
-				contVueltas =0;
-				while ((values = readDirectors.readNext()) != null&&contVueltas<10){
-					String name =values[0];
-					String bday = values[1];
-					
-					directors.add(new Director(name,null,bday));
-					for (Director director : directors) {
-						saveDirector(director);
+				//Save Actors in BD
+				for (Actor actor : actors) {
+					saveActor(actor);
+				}		
+				//Read DIRECTORS from CSV
+				while ((values = readDirectors.readNext()) != null){
+					if(values.length==2) {
+						String name =values[0];
+						String bday = values[1];
+						
+						directors.add(new Director(name,null,bday));
 					}
-					contVueltas++;
-				} 
-				contVueltas = 0;
-				while ((values = readFilms.readNext()) != null&&contVueltas<10){
-					actores =null;
-					directores=null;
-					String title =values[0];
-					//This doesnt work
-					logger.warn("VALUES from FILMS in BD are not well retrieved");
-//					String year = values[2];
-//					String desc = values[3];
-//					int dur = Integer.parseInt(values[4]);
-//					String gen = values[5];
-					Genre g = null;
-					double rate = 2.5;
-					String[] ac = {" ",""};
-					String[] dr = {" ",""};
-//					Genre g= new Genre(gen);
-//					double rate = Double.parseDouble(values[6]);
-//					String[] ac = values[7].toString().split("|");
-//					for (String a : ac) {
-//						actores.add(new Actor(a,null,null));
-//					}
-//					String[] dr =values[8].toString().split("|");
-//					for (String d : dr) {
-//						directores.add(new Director(d,null,null));
-//					}
-					//Uncomment when fixed 
-					
-//					films.add(new Film(title, null,year,desc,dur,g,rate,actores,directores));
-					films.add(new Film(title, null,null,null,1,null,rate,null,null));
-					for (Film film : films) {
-						saveFilm(film);
+				}
+				//Save Directors in BD
+				for (Director director : directors) {
+					saveDirector(director);
+				}
 				
+				//Read FILMS from CSV
+				ArrayList<Actor> actores =new ArrayList<>();
+				ArrayList<Director> directores =new ArrayList<>();
+				while ((values = readFilms.readNext()) != null){
+					if(values.length==9) {
+						logger.info("LONGITUD de values: "+values.length);
+						String title =values[0];
+						String pic = values[1];
+						String year = values[2];
+						String desc = values[3];
+						int dur = Integer.parseInt(values[4]);
+						String gen = values[5];
+						Genre g= new Genre(gen);
+						double rate = Double.parseDouble(values[6]);
+						String[] ac = values[7].toString().split("|");
+						for (String a : ac) {
+							actores.add(new Actor(a));
+						}	
+						String[] dr =values[8].toString().split("|");
+						for (String d : dr) {
+							directores.add(new Director(d));
+						}
+						
+						films.add(new Film(title, pic,year,desc,dur,g,rate,actores,directores));
 					}
-					logger.error("Without this cuentavueltas goes into an infinite loop");
-					contVueltas++;
 				}
-				contVueltas =0;
+				//Save Films to BD
+				for (Film film : films) {
+					saveFilm(film);			
+				}
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

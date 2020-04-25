@@ -27,6 +27,15 @@ public class Actor {
 	        this.pic=pic;
 	        this.bday=bday;
 	    }
+	    public Actor(String name, String bday)
+	    {
+	        this.name = name;
+	        this.bday=bday;
+	    }
+	    public Actor(String name) {
+	    	this.name = name;
+	    }
+	    
 
 	    public String getName()
 	    {
