@@ -18,7 +18,7 @@
 		<server.port>8080</server.port>
 	</properties>
 
-	<dependencies>
+	<dependencies><!-- Dependencies for Jersey -->
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -80,9 +80,7 @@
 		
 		
 		
-		
-		
-        <dependency>
+        <dependency><!-- Dependency for Log4J -->
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>[1.2.17, )</version>
@@ -142,7 +140,7 @@
 				<version>9.4.19.v20190610</version>
             </plugin>
             
-            <plugin>
+            <plugin> <!-- Plugin to use Jacoco -->
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.2</version>
@@ -171,7 +169,7 @@
 				</configuration>
 			</plugin>
 			
-			<plugin>
+			<plugin> <!-- Plugin to use DataNucleus -->
 				<groupId>org.datanucleus</groupId>
 				<artifactId>datanucleus-maven-plugin</artifactId>
 				<version>5.2.1</version>
