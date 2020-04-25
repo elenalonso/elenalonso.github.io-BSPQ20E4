@@ -3,6 +3,7 @@ package ui;
 import javax.swing.JFrame;
 import javax.swing.JLabel;import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,10 +16,12 @@ import client.EasyFilmController;
 import easyFilminData.Actor;
 import easyFilminData.Director;
 import easyFilminData.Film;
+import easyFilminData.FilmList;
 import serialization.FilmData;
 
 import javax.swing.JList;
 import java.awt.Font;
+import javax.swing.JComboBox;
 
 public class FilmUI extends JFrame{
 	/**
@@ -39,10 +42,12 @@ public class FilmUI extends JFrame{
 	private JLabel watched;
 	private JButton post;
 	private JList list;
+	private JButton addToList;
 	private JTextField textField;
 	private JButton upbtn;
 	private JButton downbtn;
 	private JLabel lblNewLabel;
+	private JComboBox<FilmList> listSelection;
 	private FilmData film;
 
 	private EasyFilmController controller;
@@ -50,9 +55,14 @@ public class FilmUI extends JFrame{
 	public FilmUI(FilmData film, EasyFilmController controller) {
 		this.film = film;
 		this.controller = controller;
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
+		
+		/** This is the information of the creation of the window
+		 * 
+		 */
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(650,450);
 		setLocation(600,175);
+		setResizable(false);
 		
 		getContentPane().setLayout(null);
 		
@@ -66,30 +76,21 @@ public class FilmUI extends JFrame{
 		//poster.setIcon(new ImageIcon(film.getPoster()));
 		getContentPane().add(poster);
 		
+		/** This is the part that allows the control of the window to exit an go back
+		 * 
+		 */
+		
 		backbtn = new JButton("<-");
 		backbtn.setBounds(10, 10, 30, 25);
 		getContentPane().add(backbtn);
-		backbtn.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				UserUI ui = new UserUI(null, controller);
-				ui.setVisible(true);
-			}
-		});
 		
 		exitbtn = new JButton("x");
 		exitbtn.setBounds(601, 10, 30, 25);
 		getContentPane().add(exitbtn);
-		exitbtn.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
-			}
-		});
+		
+		/** This part is where all the info related to the film is displayed
+		 * 
+		 */
 		
 		titleLabel = new JLabel("Title:");
 		titleLabel.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -138,6 +139,11 @@ public class FilmUI extends JFrame{
 		actorName.setBounds(220, 96, 285, 13);
 		getContentPane().add(actorName);
 		
+		/** This is the part that implements a button to add films to a Watchlist
+		 * And an icon that shows if the film has been watched or not
+		 * 
+		 */
+		
 		addWatchlist = new JButton("");
 		addWatchlist.setIcon(new ImageIcon("src\\main\\resources\\Watchlist.png")); 
 		addWatchlist.setBounds(165, 229, 35, 35);
@@ -147,6 +153,10 @@ public class FilmUI extends JFrame{
 		watched.setIcon(new ImageIcon("src\\main\\resources\\Watch.png"));
 		watched.setBounds(220, 229, 35, 35);
 		getContentPane().add(watched);
+		
+		/**This part implements a way to write, post and read comments
+		 * 
+		 */
 		
 		textField = new JTextField();
 		textField.setBounds(10, 300, 575, 30);
@@ -158,8 +168,12 @@ public class FilmUI extends JFrame{
 		getContentPane().add(list);
 		
 		post = new JButton("");
-		post.setBounds(600, 300, 25, 21);
+		post.setBounds(600, 300, 25, 25);
 		getContentPane().add(post);
+		
+		/** This is the part that allows the user to rate films
+		 * 
+		 */
 		
 		upbtn = new JButton(">");
 		upbtn.setBounds(10, 270, 30, 25);
@@ -172,6 +186,41 @@ public class FilmUI extends JFrame{
 		downbtn = new JButton("<");
 		downbtn.setBounds(50, 270, 30, 25);
 		getContentPane().add(downbtn);
+		
+		/** This part allows the user to add films to the selected list
+		 * 
+		 */
+		
+		addToList = new JButton("");
+		addToList.setBounds(590, 230, 35, 35);
+		getContentPane().add(addToList);
+		
+		listSelection = new JComboBox<FilmList>();
+		listSelection.setBounds(350, 230, 225, 35);
+		getContentPane().add(listSelection);
+		
+		/** This part is the one that implements the listeners of the different buttons
+		 * 
+		 */
+		
+		exitbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				
+			}
+		});
+		
+		backbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				UserUI ui = new UserUI(null, controller);
+				ui.setVisible(true);
+			}
+		});
 		
 		//Action Listeners Watchlist / Watched
 		addWatched.addActionListener(new ActionListener() {
