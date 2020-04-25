@@ -77,7 +77,7 @@ public class User {
 	 * 
 	 * @param movie: the film is removed from a list when clicking 'Remove' button
 	 */
-	public void removeMovie(Film movie) { 
+	public void removeWatchedMovie(Film movie) { 
 		movies.remove(movie);
 	}
 	public ArrayList<Film> getMovies() { //will be replaced by Watched/WatchList

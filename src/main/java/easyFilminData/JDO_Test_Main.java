@@ -1,6 +1,7 @@
 package easyFilminData;
 
 import java.sql.Date;
+
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -9,18 +10,23 @@ import javax.jdo.Extent;
 import javax.jdo.Query;
 import javax.jdo.JDOHelper;
 import javax.jdo.Transaction;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class JDO_Test_Main {
+	
+static Logger logger = Logger.getLogger(JDO_Test_Main.class.getName());
 
 	@SuppressWarnings("unchecked")
 	public static void main(String args[])
     {
+		
     	System.out.println("Starting ....");
         // Create a PersistenceManagerFactory for this datastore
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
-        System.out.println("DataNucleus AccessPlatform with JDO");
-        System.out.println("===================================");
+        logger.debug("DataNucleus AccessPlatform with JDO");
+        logger.debug("===================================");
 
         // Persistence of a Product and a Book.
         PersistenceManager pm = pmf.getPersistenceManager();
@@ -28,14 +34,14 @@ public class JDO_Test_Main {
         try
         {
             tx.begin();
-            System.out.println("Persisting actors");
+            logger.debug("Persisting actors");
        
 			Actor actor = new Actor("Ac1", "z", "04-10-2014");
       
             pm.makePersistent(actor);
  
             tx.commit();
-            System.out.println("Actor has been persisted");
+            logger.debug("Actor has been persisted");
         }
         finally
         {
@@ -45,10 +51,8 @@ public class JDO_Test_Main {
             }
             pm.close();
         }
-        System.out.println("");
-
-        System.out.println("");
-        System.out.println("End of Tutorial");
+       
+        logger.debug("End of Tutorial");
 		pmf.close();
     }
 

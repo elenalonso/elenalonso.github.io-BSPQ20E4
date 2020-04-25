@@ -48,7 +48,7 @@ public class Server {
 
 	private int cont = 0;
 	private IEasyFilminDAO iDAO = null;
-	private Logger logger = Logger.getLogger(EasyFilmController.class.getName());
+	private Logger logger = Logger.getLogger(Server.class.getName());
 
 	public Server() {
 		this.iDAO = new EasyFilminJDO();
@@ -68,7 +68,7 @@ public class Server {
 		
 		if (user != null && us.getPassword().equals(user.getPassword())) {
 			cont++;
-			System.out.println(" * Client number: " + cont);
+			logger.debug(" * Client number: " + cont);
 			return Response.ok("Login OK").build();
 		} else {
 			return Response.status(Status.BAD_REQUEST).entity("Login details supplied for message delivery are not correct").build();
@@ -102,7 +102,7 @@ public class Server {
 		User user = null;
 		user = iDAO.loadUser(login);
 				
-		System.out.println(" * Client number: " + cont);
+		logger.debug(" * Client number: " + cont);
 		UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
 		return usData;
 	}
@@ -122,7 +122,7 @@ public class Server {
 			logger.debug("Exception retrieving film "+f.getTitle());
 			logger.debug("Possibly "+f.getTitle()+" is not on the DB");
 		}
-		System.out.println(" * Client number: " + cont);
+		logger.debug(" * Client number: " + cont);
 		
 		FilmData fData = new FilmData(f);
 		return fData;

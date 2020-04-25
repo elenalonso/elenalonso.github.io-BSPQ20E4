@@ -50,7 +50,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert users in the DB");			
+			logger.debug("Insert users in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -63,21 +63,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
@@ -91,7 +91,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("- Retrieving users");			
+			logger.info("- Retrieving users");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -111,7 +111,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			return user;
 		} catch (Exception ex) {
-			System.err.println(" $ Error retrieving users using a 'Query': " + ex.getMessage());
+			logger.error(" $ Error retrieving users using a 'Query': " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -132,7 +132,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert actors in the DB");			
+			logger.debug("Insert actors in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -144,21 +144,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 						
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
@@ -172,7 +172,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("- Retrieving actors");			
+			logger.info("- Retrieving actors");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -275,7 +275,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			return film;
 		} catch (Exception ex) {
-			System.err.println(" $ Error retrieving films using a 'Query': " + ex.getMessage());
+			logger.error(" $ Error retrieving films using a 'Query': " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -324,8 +324,6 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 						String name =values[0];
 						String bday = values[1];
 						
-						System.out.println("Name:" +name+", bday:"+bday);
-						
 						actors.add(new Actor(name, bday));
 					}
 				}
@@ -350,9 +348,10 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				//Read FILMS from CSV
 				ArrayList<Actor> actores =new ArrayList<>();
 				ArrayList<Director> directores =new ArrayList<>();
+				
 				while ((values = readFilms.readNext()) != null){
 					if(values.length==9) {
-						logger.info("LONGITUD de values: "+values.length);
+						logger.info("VALUES LENGTH: "+values.length);
 						String title =values[0];
 						String pic = values[1];
 						String year = values[2];
@@ -403,7 +402,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert directors in the DB");			
+			logger.debug("Insert directors in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -416,21 +415,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
@@ -445,7 +444,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("- Retrieving directors");			
+			logger.info("- Retrieving directors");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -465,7 +464,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			return director;
 		} catch (Exception ex) {
-			System.err.println(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
+			logger.error(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -486,7 +485,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				Transaction tx = null;
 				
 				try {
-					System.out.println("- Retrieving watched");			
+					logger.info("- Retrieving watched");			
 					//Get the Persistence Manager
 					pm = pmf.getPersistenceManager();
 					//Obtain the current transaction
@@ -506,7 +505,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					
 					return watched;
 				} catch (Exception ex) {
-					System.err.println(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
+					logger.error(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
 				} finally {
 					if (tx != null && tx.isActive()) {
 						tx.rollback();
@@ -528,7 +527,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert watched in the DB");			
+			logger.debug("Insert watched in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -541,21 +540,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
@@ -569,7 +568,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				Transaction tx = null;
 				
 				try {
-					System.out.println("- Retrieving WatchList");			
+					logger.info("- Retrieving WatchList");			
 					//Get the Persistence Manager
 					pm = pmf.getPersistenceManager();
 					//Obtain the current transaction
@@ -589,7 +588,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 					
 					return watchlist;
 				} catch (Exception ex) {
-					System.err.println(" $ Error retrieving WatchList using a 'Query': " + ex.getMessage());
+					logger.error(" $ Error retrieving WatchList using a 'Query': " + ex.getMessage());
 				} finally {
 					if (tx != null && tx.isActive()) {
 						tx.rollback();
@@ -611,7 +610,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert watchlist in the DB");			
+			logger.debug("Insert watchlist in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -624,21 +623,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}

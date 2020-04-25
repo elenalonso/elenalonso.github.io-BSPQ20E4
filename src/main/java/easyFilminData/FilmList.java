@@ -2,6 +2,8 @@ package easyFilminData;
 
 import javax.jdo.annotations.PersistenceCapable;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -20,6 +22,8 @@ import javax.jdo.annotations.InheritanceStrategy;
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 
 public class FilmList {
+	
+	static Logger logger = Logger.getLogger(FilmList.class.getName());
 
 	/**
 	 * This variable represents the name of the FilmList
@@ -66,7 +70,7 @@ public class FilmList {
 			}
 			
 		}
-		System.out.println("The film trying to be removed could not be found");
+		logger.error("The film trying to be removed could not be found");
 	}
 	
 	/**

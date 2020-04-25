@@ -1,6 +1,7 @@
 package client;
 
 import javax.ws.rs.client.Client;
+
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
@@ -26,7 +27,7 @@ public class EasyFilmController {
 
 	private Client client; 
 	private WebTarget webTarget; 
-	private Logger logger = Logger.getLogger(EasyFilmController.class.getName());
+	private static Logger logger = Logger.getLogger(EasyFilmController.class.getName());
 
 	public EasyFilmController(String hostname, String port) { 
 		client = ClientBuilder.newClient();
@@ -50,9 +51,9 @@ public class EasyFilmController {
 		userData.setIcon(icon);
 		Response response = invocationBuilder.post(Entity.entity(userData, MediaType.APPLICATION_JSON));
 		if (response.getStatus() != Status.OK.getStatusCode()) {
-			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+			logger.error("Error connecting with the server. Code: " + response.getStatus());
 		} else {
-			System.out.println("User correctly registered");
+			logger.info("User correctly registered");
 		}
 	}
 
@@ -72,11 +73,11 @@ public class EasyFilmController {
 		Response response = invocationBuilder.post(Entity.entity(userData, MediaType.APPLICATION_JSON));
 		if(response.getStatus() == Status.BAD_REQUEST.getStatusCode()) {
 			String responseMessage2 = response.readEntity(String.class);
-			System.out.println("* ERROR: '" + responseMessage2 + "'");
+			logger.error("* ERROR: '" + responseMessage2 + "'");
 			return false;
 			
 		}else if (response.getStatus() != Status.OK.getStatusCode()) {
-			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+			logger.error("Error connecting with the server. Code: " + response.getStatus());
 			return false;
 			
 		}else {
@@ -128,9 +129,9 @@ public class EasyFilmController {
 		Invocation.Builder invocationBuilder = addToListWebTarget.request(MediaType.APPLICATION_JSON);
 		Response response = invocationBuilder.post(Entity.entity(listName, MediaType.APPLICATION_JSON));
 		if (response.getStatus() != Status.OK.getStatusCode()) {
-			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+			logger.error("Error connecting with the server. Code: " + response.getStatus());
 		} else {
-			System.out.println("User correctly registered");
+			logger.info("Film correctly added");
 		}
 
 	}
@@ -138,7 +139,7 @@ public class EasyFilmController {
 	
 	public static void main(String[] args) {
 		if (args.length != 2) {
-			System.out.println("Use: java Client.Client [host] [port]");
+			logger.info("Use: java Client.Client [host] [port]");
 			System.exit(0);
 		}
 
