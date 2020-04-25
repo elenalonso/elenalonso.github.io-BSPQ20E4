@@ -118,9 +118,10 @@ public class EasyFilmController {
 		return film;
 	}
 
-	/**
+	/** This methods adds a given film to a list unless this list is already in the list
+	 * or if that film is in watchList and we are adding to watched, this will delete the movie from
+	 * watchList
 	 * @param filmTitle - title of the film to add
-	 * @return confirmation that it has been successfully added or not
 	 */
 	public void addToList(String listName, String filmTitle) {
 		WebTarget addToListWebTarget = webTarget.path("server/addToList"+"/"+filmTitle); 
