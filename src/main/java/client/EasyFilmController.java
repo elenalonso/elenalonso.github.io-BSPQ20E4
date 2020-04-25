@@ -16,12 +16,17 @@ import serialization.MessageData;
 import serialization.FilmData;
 import serialization.FilmListData;
 import serialization.UserData;
+import ui.FilmListUI;
 import ui.UserUI;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 public class EasyFilmController {
 
 	private Client client; 
 	private WebTarget webTarget; 
+	private Logger logger = Logger.getLogger(EasyFilmController.class.getName());
 
 	public EasyFilmController(String hostname, String port) { 
 		client = ClientBuilder.newClient();
@@ -117,12 +122,16 @@ public class EasyFilmController {
 	 * @param filmTitle - title of the film to add
 	 * @return confirmation that it has been successfully added or not
 	 */
-	public boolean addToList(String listName, String filmTitle) {
+	public void addToList(String listName, String filmTitle) {
 		WebTarget addToListWebTarget = webTarget.path("server/addToList"+"/"+filmTitle); 
 		Invocation.Builder invocationBuilder = addToListWebTarget.request(MediaType.APPLICATION_JSON);
 		Response response = invocationBuilder.post(Entity.entity(listName, MediaType.APPLICATION_JSON));
-		
-		return true;
+		if (response.getStatus() != Status.OK.getStatusCode()) {
+			System.out.println("Error connecting with the server. Code: " + response.getStatus());
+		} else {
+			System.out.println("User correctly registered");
+		}
+
 	}
 
 	

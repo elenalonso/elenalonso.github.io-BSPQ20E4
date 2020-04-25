@@ -61,7 +61,7 @@ public class FilmListUI extends JFrame{
 		dlmFilms = new DefaultListModel<>();
 		liFilms = new JList<String>(dlmFilms);
 		if(!filmList.getFilmList().isEmpty()) {
-			for(FilmData f: filmList.getFilmList()) dlmFilms.addElement(f.getTitle());		
+			for(String f: filmList.getFilmList()) dlmFilms.addElement(f);		
 			logger.debug("Displaying FILMS of FilmList "+filmList.getName() );
 		}else {
 			//This logger doesnt work yet
@@ -106,13 +106,11 @@ public class FilmListUI extends JFrame{
 	public static void main(String[] args) {
 		
 		FilmListData flData = new FilmListData();
-		ArrayList<FilmData> fl = new ArrayList<>();
+		ArrayList<String> fl = new ArrayList<>();
 		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
 
 		for(int i=0;i<5;i++) {
-			FilmData a = new FilmData();
-			a.setTitle("Peli"+i);
-			fl.add(a);
+			fl.add("Peli"+i);
 		}
 		flData.setFilmList(fl);
 		flData.setName("A1");

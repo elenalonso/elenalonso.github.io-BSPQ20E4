@@ -3,6 +3,9 @@ package server;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
+
+import java.util.ArrayList;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.Transaction;
 
@@ -29,6 +32,12 @@ import easyFilminData.User;
 import easyFilminData.WatchList;
 import easyFilminData.Watched;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+import client.EasyFilmController;
+
+
 /**
  * This class is in charge of handling the calls from the controller and cast them to the Data Access Layer
  *
@@ -39,9 +48,11 @@ public class Server {
 
 	private int cont = 0;
 	private IEasyFilminDAO iDAO = null;
+	private Logger logger = Logger.getLogger(EasyFilmController.class.getName());
 
 	public Server() {
 		this.iDAO = new EasyFilminJDO();
+		
 	}
 
 
@@ -53,7 +64,6 @@ public class Server {
 	@Path("/login")
 	public Response login(UserData us) {
 		User user = null;
-		//IEasyFilminDAO iDAO = new EasyFilminJDO();
 		user = iDAO.loadUser(us.getLogin());
 		
 		if (user != null && us.getPassword().equals(user.getPassword())) {
@@ -76,7 +86,6 @@ public class Server {
 		
 		User user = null;
 		user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
-		//IEasyFilminDAO iDAO = new EasyFilminJDO();
 		iDAO.saveUser(user);
 		return Response.ok().build();	
                 
@@ -92,10 +101,10 @@ public class Server {
 	public UserData login(@PathParam("nick") String login) {
 		User user = null;
 		user = iDAO.loadUser(login);
-					
-			System.out.println(" * Client number: " + cont);
-			UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
-			return usData;
+				
+		System.out.println(" * Client number: " + cont);
+		UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
+		return usData;
 	}
 
 	/** GETs a particular film by title 
@@ -107,14 +116,16 @@ public class Server {
 	@Produces(MediaType.APPLICATION_JSON)
 	public FilmData getFilm(@PathParam("name") String name) {
 		Film f = null;
-		//f = iDAO.loadFilm(name);
-					
-			System.out.println(" * Client number: " + cont);
-			FilmData fData = null;
-			//Uncomment when is possible to get the film 
-			//Constructor is needed, and think about how to pass this Data
-			//fData =	new FilmData(name, f.getActors(), f.getDirector(), f.getPoster());
-			return fData;
+		try {
+			f = iDAO.loadFilm(name);
+		}catch(Exception e) {
+			logger.debug("Exception retrieving film "+f.getTitle());
+			logger.debug("Possibly "+f.getTitle()+" is not on the DB");
+		}
+		System.out.println(" * Client number: " + cont);
+		
+		FilmData fData = new FilmData(f);
+		return fData;
 	}
 
 	/** GETs a particular filmlist by name
@@ -127,13 +138,12 @@ public class Server {
 	public FilmListData getFilmList(@PathParam("name") String name) {
 		FilmList fl = null;
 		//fl = iDAO.loadFilmList(name);
-					
-			System.out.println(" * Client number: " + cont);
-			FilmListData flData = null;
-			//Uncomment when is possible to get the film 
-			//Constructor is needed, and think about how to pass this Data
-			//flData =	new FilmListData(name, fl.getFilms());
-			return flData;
+		System.out.println(" * Client number: " + cont);
+		//Constructor is needed, and think about how to pass this Data
+		ArrayList<String> nameList = new ArrayList<>();
+		for(Film f : fl.getFilmList()) nameList.add(f.getTitle());
+		FilmListData flData = new FilmListData(name, nameList);
+		return flData;
 	}
 
 
@@ -177,6 +187,7 @@ public class Server {
 				}
 				iDAO.saveWatched(w);
 			}
+			//UNCOMMENT when we have loadFilmList()
 			//		else {
 			//			FilmList fl = iDAO.loadFilmList(listName);
 			//		}	      

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import easyFilminData.Actor;
 import easyFilminData.Director;
+import easyFilminData.Film;
 import easyFilminData.Genre;
 
 public class FilmData {
@@ -25,6 +26,17 @@ public class FilmData {
 	public FilmData() {
 
 		
+	}
+	public FilmData(Film f) {
+		this.title = f.getTitle();
+		this.poster = f.getPoster();
+		this.release = f.getRelease();
+		this.description = f.getDescription();
+		this.genre = f.getGenre();
+		this.rating = f.getRating();
+		this.actors = f.getActors();
+		this.director = f.getDirector();
+		this.dur = f.getDur();
 	}
 	
 	
