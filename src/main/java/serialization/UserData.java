@@ -40,6 +40,11 @@ public class UserData {
 		this.password = password;
 		this.icon = null; //CHANGE WHEN WE HAVE A WAY TO INSERT PROFILE IMAGES
 		this.email = email;
+//		lists = new ArrayList<>();
+//		for(FilmList f : u.getLists()) {
+//			this.lists.add(f.getName()); 
+//		}
+
 	}
     public String getLogin() {
         return this.login;

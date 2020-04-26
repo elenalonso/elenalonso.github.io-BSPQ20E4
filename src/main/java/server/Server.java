@@ -107,7 +107,7 @@ public class Server {
 		user = iDAO.loadUser(login);
 				
 		logger.debug(" * Client number: " + cont);
-		UserData usData = new UserData(user.getNickname(), user.getPassword(), user.getIcon(),user.getEmail());
+		UserData usData = new UserData(user);
 		return usData;
 	}
 
