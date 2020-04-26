@@ -213,7 +213,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("Insert films in the DB");			
+			logger.debug("Insert films in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -226,21 +226,21 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			
 			//End the transaction
 			tx.commit();
-			System.out.println("Changes committed");
+			logger.debug("Changes committed");
 			
 		} catch (Exception ex) {
-			System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
 			ex.printStackTrace();
 		
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				System.out.println("Changes rollbacked");
+				logger.debug("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
 				pm.close();
-				System.out.println("Closing the connection");
+				logger.debug("Closing the connection");
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
@@ -255,7 +255,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			System.out.println("- Retrieving films");			
+			logger.info("- Retrieving films");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
