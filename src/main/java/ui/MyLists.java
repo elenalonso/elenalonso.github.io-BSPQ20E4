@@ -2,34 +2,53 @@ package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JPanel;
 
 import client.EasyFilmController;
 import easyFilminData.FilmList;
 import easyFilminData.User;
+import serialization.FilmListData;
 import serialization.UserData;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 public class MyLists extends JFrame{
 	private EasyFilmController controller;
-	private JButton exit;
 	private JButton back;
-	private JList list;
-	private JLabel info;
-	private JComboBox<FilmList> filmList;
 	
-	public MyLists(EasyFilmController cont) {
+	private JLabel info;
+	private JList<String> list;
+	public static DefaultListModel<String> dlmLists;
+	
+	private int editionPos;
+	private int selectPos;
+	
+	static Logger logger = Logger.getLogger(MyLists.class.getName());
+	
+	/** This ui class displays all the different lists of a user
+	 * @param usData - user
+	 * @param lists - lists of that user
+	 * @param cont - controller 
+	 */
+	public MyLists(UserData usData, ArrayList<String> lists, EasyFilmController cont) {
 		this.controller = cont;
 		
 		/** This is the part that contains the info of the window
 		 * 
 		 */
-		
+		logger.warn("This lists parameter should be a ArrayList<FilmListData>, but we are now simplifying things");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(500,450);
 		setLocation(600,175);
@@ -43,50 +62,65 @@ public class MyLists extends JFrame{
 		/** This is the list and combobox that allows to select and visualize the lists
 		 * 
 		 */
-		
+		dlmLists = new DefaultListModel<>();
+		list = new JList<String>(dlmLists);
+		if(!lists.isEmpty()) {
+			for(String s: lists) dlmLists.addElement(s);		
+			logger.info("Displaying Lists of User "+usData.getLogin() );
+		}else {
+			//This logger doesnt work yet
+			logger.info("No Lists yet");
+		}
+
 		list = new JList();
-		list.setBounds(40, 75, 400, 300);
-		getContentPane().add(list);
+		list.setBounds(220,200,100,100);
+		JPanel pCentral = new JPanel();
+		pCentral.add(list);
 		
 		info = new JLabel("My Lists:");
-		info.setBounds(40, 52, 45, 13);
+		info.setBounds(40, 52, 70, 13);
 		getContentPane().add(info);
 		
-		filmList = new JComboBox<FilmList>();
-		filmList.setBounds(220, 44, 220, 21);
-		getContentPane().add(filmList);
 		
 		/** This buttons allow to control the window
 		 * 
 		 */
 		
-		exit = new JButton("");
-		exit.setBounds(461, 10, 25, 25);
-		getContentPane().add(exit);
-		
 		back = new JButton("");
 		back.setBounds(10, 10, 25, 25);
 		getContentPane().add(back);
 		
+		
+		getContentPane().add(pCentral);
+		
 		/** This part contains the different listeners of the window
 		 * 
 		 */
-		
-		exit.addActionListener(new ActionListener() {
+		list.addMouseListener(new MouseAdapter() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount()==1){
+					editionPos = list.locationToIndex(e.getPoint());
+				}
+				if (e.getClickCount()==2){
+					if (list.getSelectedIndex()!= -1) {
+						dispose();
+						selectPos = list.locationToIndex(e.getPoint());
+						FilmListData fl = controller.getFilmList(dlmLists.get(selectPos));
+						FilmListUI f = new FilmListUI(usData, fl,controller);
+						f.setVisible(true);
+						
+					}
+				}
 			}
+
 		});
-		
+	
 		back.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				UserData usData = new UserData();
 				UserUI u = new UserUI(usData, cont);
 				u.setVisible(true);
 			}
@@ -96,8 +130,13 @@ public class MyLists extends JFrame{
 	
 	public static void main(String[] args) {
 		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
-
-		MyLists ui = new MyLists(e);
+		UserData u = new UserData();
+		u.setLogin("nickPrueba");
+		ArrayList<String> a = new ArrayList<String>();
+		for(int i = 0; i<5;i++) {
+			a.add("Lista"+i);	
+		}
+		MyLists ui = new MyLists(u,a,e);
 		ui.setVisible(true);
 	}
 

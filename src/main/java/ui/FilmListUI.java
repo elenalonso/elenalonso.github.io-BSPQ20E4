@@ -15,6 +15,7 @@ import javax.swing.text.Position;
 
 import serialization.FilmData;
 import serialization.FilmListData;
+import serialization.UserData;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -37,7 +38,7 @@ public class FilmListUI extends JFrame{
 
 	static Logger logger = Logger.getLogger(FilmListUI.class.getName());
 
-	public FilmListUI(FilmListData flData, EasyFilmController controller) {
+	public FilmListUI(UserData us, FilmListData flData, EasyFilmController controller) {
 		this.filmList = flData;
 		this.setTitle(flData.getName());
 		this.controller = controller;
@@ -108,13 +109,13 @@ public class FilmListUI extends JFrame{
 		FilmListData flData = new FilmListData();
 		ArrayList<String> fl = new ArrayList<>();
 		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
-
+		UserData u = new UserData();
 		for(int i=0;i<5;i++) {
 			fl.add("Peli"+i);
 		}
 		flData.setFilmList(fl);
 		flData.setName("A1");
-		FilmListUI ui = new FilmListUI(flData, e);
+		FilmListUI ui = new FilmListUI(u, flData, e);
 		
 		ui.setVisible(true);
 	}

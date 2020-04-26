@@ -28,7 +28,7 @@ public class User {
 	ArrayList<Comment> comments = new ArrayList<>();
 	
 	//AQUÍ HAY QUE METER LAS LISTAS + WATCHLIST y WATCHED
-	ArrayList<FilmList> lists = null;
+	ArrayList<FilmList> lists = new ArrayList<>();
 	Watched watched = new Watched("Watched");
 	WatchList watchList = new WatchList("WatchList");
 	
@@ -36,12 +36,16 @@ public class User {
 	public User(String nickname, String password) {
 		this.nickname = nickname;
 		this.password = password;
+		lists.add(watched);
+		lists.add(watchList);
 	}
 	public User(String nickname,String icon, String email, String password) {
 		this.nickname = nickname;
 		this.icon = icon;
 		this.email = email;
 		this.password = password;
+		lists.add(watched);
+		lists.add(watchList);
 	}
 	
 	public void addMessage(Message message) {
@@ -121,7 +125,13 @@ public class User {
 		this.email = email;
 	}
 	
-	 public Set<Message> getMessages() {return this.messages;}
+	 public ArrayList<FilmList> getLists() {
+		return lists;
+	}
+	public void setLists(ArrayList<FilmList> lists) {
+		this.lists = lists;
+	}
+	public Set<Message> getMessages() {return this.messages;}
 	 
 	 public String toString() {
 		StringBuffer messagesStr = new StringBuffer();

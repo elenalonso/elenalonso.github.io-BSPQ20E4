@@ -26,6 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 
 
 public class UserUI extends JFrame{
@@ -81,7 +82,8 @@ public class UserUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				MyLists u = new MyLists(controller);
+
+				MyLists u = new MyLists(user,user.getLists(),controller);
 				u.setVisible(true);
 			}
 		});
@@ -113,10 +115,11 @@ public class UserUI extends JFrame{
 		
 	}
 	public static void main(String[] args) {
-		UserData u = new UserData();
+		User u = new User("nick","1234");
 		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
-
-		UserUI ui = new UserUI(u, e);
+		UserData uD = new UserData(u);
+		
+		UserUI ui = new UserUI(uD, e);
 		ui.setVisible(true);
 	}
 	
