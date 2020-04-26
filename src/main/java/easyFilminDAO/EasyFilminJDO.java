@@ -5,8 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -37,6 +39,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	private PersistenceManagerFactory pmf = null;
 
 	static Logger logger = Logger.getLogger(EasyFilminJDO.class.getName());
+
+	private ArrayList<Film>  allFilms;
 	/**
 	 * Initializes the attribute pmf (PersistenceManagerFactory).
 	 * It is necessary in order to execute all the operations related to a JDO Database.
@@ -691,6 +695,76 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		return null;
 		
 	}
+	
+
+	public List<Film> getAllFilms(){
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		
+		try {
+			logger.info("- Retrieving all films stored");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			
+			Query<Film> query = pm.newQuery(Film.class);
+		
+			@SuppressWarnings("unchecked")
+			List<Film> allFilms = (List<Film>) query.execute();
+			
+			
+			/* ANOTHER WAYS IT COULD BE DONE
+
+			 Extent<Film> e = pm.getExtent(Film.class, true); 
+			 
+			 //An Extent is a collection of objects of a particular 
+			  * type of object that have been persisted.
+			  * 
+			    Iterator<Film> iter=e.iterator();
+			    while (iter.hasNext())*/
+			/*    {
+			        Film film=(Film)iter.next();*/
+			
+			
+			
+		//	 allFilms.add(film);
+			
+			
+		/*	Query<Film> query = pm.newQuery(Film.class);
+			
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			Film film = (Film) query.execute();
+			users = (List<User>) query.execute();*/
+
+			//End the transaction
+			tx.commit();
+			
+			
+			return  allFilms;
+			  
+		} catch (Exception ex) {
+			logger.error(" $ Error retrieving all films: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		return null;
+	}
+	
+	
+	
 
 
 	@Override
@@ -772,6 +846,48 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
+		
+	}
+
+
+	@Override
+	public ArrayList<FilmList> getUserLists(String username) {
+		// TODO Auto-generated method stub
+		
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Retrieving lists created by this user");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+
+			Query<User> query = pm.newQuery(User.class);
+			query.setFilter("nickname == '" + username+ "'"); 
+			@SuppressWarnings("unchecked")
+			ArrayList<FilmList> userLists = (ArrayList<FilmList>) query.execute();
+
+			//End the transaction
+			tx.commit();
+			
+			
+			return userLists;
+		} catch (Exception ex) {
+			logger.error(" $ Error retrieving this user's film lists: " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		return null;
 		
 	}
 }

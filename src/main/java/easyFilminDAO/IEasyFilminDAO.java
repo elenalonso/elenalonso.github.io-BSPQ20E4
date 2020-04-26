@@ -124,15 +124,26 @@ public interface IEasyFilminDAO {
 	 * Returns all the comments associated with a film 
 	 * @param filmTitle String with the title of the film whose comments will be returned
 	 * @return ArrayList of comments from the selected film
-	 * @see Comment
 	 */
 	public List<Comment> loadComments(String filmTitle);
+	
+	/**
+	 *
+	 * @return all films stored in the DB
+	 */
+	public List<Film> getAllFilms();
+	
+	/**
+	 * 
+	 * @param username String with the name of the user whose lists we want to get
+	 * @return all filmsLists (both watched and watchlist)created by the user
+	 */
+	public ArrayList<FilmList> getUserLists(String username);
+	
 	
 	/**
 	 * Loads the DB initially with predetermined data.
 	 * This data mainly consists in Actors, Films and Directors.
 	 */
 	public void startBD();
-	
-
 }
