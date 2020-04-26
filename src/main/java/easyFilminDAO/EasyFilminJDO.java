@@ -372,9 +372,12 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 						films.add(new Film(title, pic,year,desc,dur,g,rate,actores,directores));
 					}
 				}
-				//Save Films to BD
+				//Save Films to DB -- we only save films that are not in the DB
 				for (Film film : films) {
-					saveFilm(film);			
+					if (loadFilm(film.getTitle()) == null ) {
+					saveFilm(film);	
+						
+				}
 				}
 
 			} catch (IOException e) {
