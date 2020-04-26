@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
@@ -20,8 +21,10 @@ import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import easyFilminData.Actor;
+import easyFilminData.Comment;
 import easyFilminData.Director;
 import easyFilminData.Film;
+import easyFilminData.FilmList;
 import easyFilminData.Genre;
 import easyFilminData.User;
 import easyFilminData.WatchList;
@@ -644,5 +647,129 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
 			}
 		}
+	}
+
+
+	@Override
+	public List<Comment> loadComments(String filmTitle) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Retrieving directors");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+
+			Query<Comment> query = pm.newQuery(Comment.class);
+			query.setFilter("filmTitle == '" + filmTitle + "'"); 
+			@SuppressWarnings("unchecked")
+			List<Comment> comments = (List<Comment>) query.execute();
+
+			//End the transaction
+			tx.commit();
+			
+			
+			return comments;
+		} catch (Exception ex) {
+			logger.error(" $ Error retrieving comments using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		return null;
+		
+	}
+
+
+	@Override
+	public FilmList loadFilmList(String listName) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Retrieving FilmList");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+
+			Query<FilmList> query = pm.newQuery(FilmList.class);
+			query.setFilter("name == '" + listName + "'"); 
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			FilmList filmlist = (FilmList) query.execute();
+
+			//End the transaction
+			tx.commit();
+			
+			
+			return filmlist;
+		} catch (Exception ex) {
+			logger.error(" $ Error retrieving WatchList using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		return null;
+	}
+
+
+	@Override
+	public void saveComment(Comment comment) {
+		// TODO Auto-generated method stub
+		PersistenceManager pm = null;
+		Transaction tx = null;
+				
+		try {
+			logger.debug("Insert comment in the DB");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+					
+			pm.makePersistent(comment);
+					
+					
+			//End the transaction
+			tx.commit();
+			logger.debug("Changes committed");
+					
+		} catch (Exception ex) {
+			logger.error(" $ Error storing objects in the DB: " + ex.getMessage());
+			ex.printStackTrace();
+				
+		}finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+				logger.debug("Changes rollbacked");
+			}
+					
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				logger.debug("Closing the connection");
+				// ATTENTION -  Datanucleus detects that the objects in memory were changed and they are flushed to DB
+			}
+		}
+		
 	}
 }
