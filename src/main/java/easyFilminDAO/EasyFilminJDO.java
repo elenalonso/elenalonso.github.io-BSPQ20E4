@@ -36,7 +36,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	
 	private PersistenceManagerFactory pmf = null;
 
-	static Logger logger = Logger.getLogger(FilmListUI.class.getName());
+	static Logger logger = Logger.getLogger(EasyFilminJDO.class.getName());
 	/**
 	 * Initializes the attribute pmf (PersistenceManagerFactory).
 	 * It is necessary in order to execute all the operations related to a JDO Database.
@@ -657,7 +657,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			logger.info("- Retrieving directors");			
+			logger.info("- Retrieving comments");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
