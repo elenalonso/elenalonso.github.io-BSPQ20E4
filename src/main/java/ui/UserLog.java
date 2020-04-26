@@ -16,14 +16,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 
 public class UserLog extends JFrame{
-	private EasyFilmController controller;
+	private EasyFilmController control;
 	private JTextField textField;
 	private JButton btnNewButton;
 	private JPasswordField passwordField;
 	private JButton btnCreate;
-	public UserLog(String hostname, String port) {
+	public UserLog(EasyFilmController controller) {
 		
-		controller = new EasyFilmController(hostname, port);
+		this.control = controller;
 		
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
@@ -86,7 +86,7 @@ public class UserLog extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				UserReg u = new UserReg(hostname,port);
+				UserReg u = new UserReg(controller);
 				u.setVisible(true);
 				setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			}

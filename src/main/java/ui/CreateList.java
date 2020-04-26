@@ -2,12 +2,15 @@ package ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JTextField;
 
 import client.EasyFilmController;
 import serialization.UserData;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,10 +20,13 @@ public class CreateList extends JFrame {
 	private JButton exit;
 	private JButton removeFilm;
 	private JButton back;
-	private JList list;
-	private JList filmList;
+	private JList<String> list;
+	private DefaultListModel<String> dlmList;
+	private JList<String> filmList;
+	private DefaultListModel<String> dlmFilms;
 	private JLabel available;
 	private JLabel newList;
+	private JTextField listName;
 	
 	public CreateList(UserData user, EasyFilmController controller) {
 		

@@ -355,7 +355,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				while ((values = readFilms.readNext()) != null){
 					if(values.length==9) {
 						logger.info("VALUES LENGTH: "+values.length);
-						String title =values[0];
+						String title = values[0];
 						String pic = values[1];
 						String year = values[2];
 						String desc = values[3];
@@ -363,11 +363,13 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 						String gen = values[5];
 						Genre g= new Genre(gen);
 						double rate = Double.parseDouble(values[6]);
-						String[] ac = values[7].toString().split("|");
+						
+						String[] ac = values[7].split("[|]");
 						for (String a : ac) {
+							logger.info("String que se guarda como actor: "+a);
 							actores.add(new Actor(a));
 						}	
-						String[] dr =values[8].toString().split("|");
+						String[] dr =values[8].split("[|]");
 						for (String d : dr) {
 							directores.add(new Director(d));
 						}
@@ -378,7 +380,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 				//Save Films to DB -- we only save films that are not in the DB
 				for (Film film : films) {
 					if (loadFilm(film.getTitle()) == null ) {
-					saveFilm(film);	
+						saveFilm(film);	
 						
 				}
 				}

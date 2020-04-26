@@ -64,7 +64,7 @@ public class MyLists extends JFrame{
 		 */
 		dlmLists = new DefaultListModel<>();
 		list = new JList<String>(dlmLists);
-		if(!lists.isEmpty()) {
+		if(lists != null && !lists.isEmpty()) {
 			for(String s: lists) dlmLists.addElement(s);		
 			logger.info("Displaying Lists of User "+usData.getLogin() );
 		}else {

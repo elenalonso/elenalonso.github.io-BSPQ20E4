@@ -28,7 +28,7 @@ public class User {
 	ArrayList<Comment> comments = new ArrayList<>();
 	
 	//AQUÍ HAY QUE METER LAS LISTAS + WATCHLIST y WATCHED
-	ArrayList<FilmList> lists = new ArrayList<>();
+	ArrayList<FilmList> lists;
 	Watched watched = new Watched("Watched");
 	WatchList watchList = new WatchList("WatchList");
 	
@@ -36,6 +36,7 @@ public class User {
 	public User(String nickname, String password) {
 		this.nickname = nickname;
 		this.password = password;
+		lists = new ArrayList<>();
 		lists.add(watched);
 		lists.add(watchList);
 	}
@@ -44,6 +45,7 @@ public class User {
 		this.icon = icon;
 		this.email = email;
 		this.password = password;
+		lists = new ArrayList<>();
 		lists.add(watched);
 		lists.add(watchList);
 	}

@@ -27,14 +27,14 @@ public class UserReg extends JFrame {
 	
 	private JTextField textField;
 	private WebTarget webtarget; 
-	private JButton btnNewButton;
-	private JPasswordField passwordField;
+	private JButton bBack;
 	private JButton bRegister;
+	private JPasswordField passwordField;
 	private Client client;
 	private JLabel lblEmail;
 	private JTextField textField_1;
-	public UserReg(String hostname, String port) {
-		controller = new EasyFilmController(hostname, port);
+	public UserReg(EasyFilmController controller) {
+		this.controller = controller;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,325);
 		setLocation(600,175);
@@ -62,22 +62,21 @@ public class UserReg extends JFrame {
 		passwordField.setBounds(162, 108, 267, 22);
 		getContentPane().add(passwordField);
 		
-		btnNewButton = new JButton();
-		btnNewButton.setText("Create");
-		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnNewButton.setBounds(376, 208, 100, 30);
-		getContentPane().add(btnNewButton);
+		bBack = new JButton();
+		bBack.setText("Create");
+		bBack.setFont(new Font("Verdana", Font.BOLD, 12));
+		bBack.setBounds(100, 208, 100, 30);
+		getContentPane().add(bBack);
 		
-//		btnNewButton.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				UserLog u = new UserLog();
-//				u.setSize(500, 350);
-//				u.setVisible(true);
-//			}
-//		});
+		bBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				UserLog u = new UserLog(controller);
+				u.setVisible(true);
+			}
+		});
 			
 		bRegister = new JButton("X");
 		bRegister.setFont(new Font("Tahoma", Font.PLAIN, 5));
@@ -99,7 +98,7 @@ public class UserReg extends JFrame {
 				String username = textField.getText();
 				String password = passwordField.getSelectedText();
 				String email = textField_1.getText();
-				sendRegistration(username,password,username,email);
+				controller.registerUser(username,password,username,email);
 				dispose();
 				UserData us = new UserData();
 				UserUI u = new UserUI(us, controller);
@@ -107,16 +106,6 @@ public class UserReg extends JFrame {
 				u.setVisible(true);
 			}
 		});
-		
-	}
-	public void sendRegistration(String username, String password, String icon, String email) {
-		WebTarget registerTarget = webtarget.path("server/register");
-		Invocation.Builder invocationBuilder = registerTarget.request(MediaType.APPLICATION_JSON);
-
-		controller.registerUser(username, password, icon, email);
-		
-//		UserData userdata = new UserData();
-//		Response response = invocationBuilder.post(Entity.entity(userdata, MediaType.APPLICATION_JSON));
-		
+				
 	}
 }

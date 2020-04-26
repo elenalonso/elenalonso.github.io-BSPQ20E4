@@ -83,12 +83,16 @@ public class Server {
 	@POST
 	@Path("/register")
 	public Response registerUser(UserData userData) {
-		
+		logger.warn("THIS METHOD SHOULD CHECK WITH METHOD");
 		User user = null;
-		user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
-		iDAO.saveUser(user);
-		return Response.ok().build();	
-                
+//		try {
+//			iDAO.loadUser(userData.getLogin());
+//		}catch(Exception e) {
+			user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
+			iDAO.saveUser(user);
+			return Response.ok().build();				
+//		}
+//        return Response.status(Status.BAD_REQUEST).entity("This user name is invalid").build();      
 	}
 	
 	/** GETs a particular User by its nick
