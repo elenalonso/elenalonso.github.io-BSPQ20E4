@@ -2,8 +2,8 @@ package serialization;
 
 import java.util.ArrayList;
 
-import easyFilminData.FilmList;
-import easyFilminData.User;
+import server.easyFilminData.FilmList;
+import server.easyFilminData.User;
 
 public class UserData {
 
@@ -24,8 +24,10 @@ public class UserData {
 		this.email = u.getEmail();
 		//We add the names of the lists of the user to the userData
 		lists = new ArrayList<>();
-		for(FilmList f : u.getLists()) {
-			this.lists.add(f.getName()); 
+		if(u.getLists()!= null){
+			for(FilmList f : u.getLists()) {
+				this.lists.add(f.getName()); 
+			}
 		}
     }
 

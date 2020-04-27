@@ -1,17 +1,16 @@
-package easyFilminDAO;
+package server.easyFilminDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-import easyFilminData.Actor;
-import easyFilminData.Comment;
-import easyFilminData.Director;
-import easyFilminData.Film;
-import easyFilminData.FilmList;
-import easyFilminData.User;
-import easyFilminData.WatchList;
-import easyFilminData.Watched;
+import server.easyFilminData.Actor;
+import server.easyFilminData.Comment;
+import server.easyFilminData.Director;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
+import server.easyFilminData.User;
+import server.easyFilminData.WatchList;
+import server.easyFilminData.Watched;
 
 public interface IEasyFilminDAO {
 	

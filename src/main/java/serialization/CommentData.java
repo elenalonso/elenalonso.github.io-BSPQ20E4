@@ -1,7 +1,8 @@
 package serialization;
 
 import java.util.Date;
-import easyFilminData.Comment;
+
+import server.easyFilminData.Comment;
 
 public class CommentData {
 	

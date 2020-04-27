@@ -282,7 +282,7 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<configuration>
-							<mainClass>client.EasyFilminAdmin</mainClass>
+							<mainClass>client.main.EasyFilminAdmin</mainClass>
 							<arguments>
 								<argument>${server.hostname}</argument>
 								<argument>${server.port}</argument>
@@ -304,7 +304,7 @@
 						<artifactId>exec-maven-plugin</artifactId>
 						<version>1.2.1</version>
 						<configuration>
-							<mainClass>client.EasyFilmin</mainClass>
+							<mainClass>client.main.EasyFilmin</mainClass>
 							<arguments>
 								<argument>${server.hostname}</argument>
 								<argument>${server.port}</argument>

@@ -1,4 +1,6 @@
-package client;
+package client.controller;
+
+import java.util.ArrayList;
 
 import javax.ws.rs.client.Client;
 
@@ -11,17 +13,18 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import easyFilminDAO.EasyFilminJDO;
-import easyFilminData.User;
 import serialization.MessageData;
 import serialization.FilmData;
 import serialization.FilmListData;
 import serialization.UserData;
-import ui.FilmListUI;
-import ui.UserUI;
+import server.easyFilminDAO.EasyFilminJDO;
+import server.easyFilminData.User;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+
+import client.ui.FilmListUI;
+import client.ui.UserUI;
 
 public class EasyFilmController {
 
@@ -96,6 +99,18 @@ public class EasyFilmController {
 		UserData usData = getUserWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		return usData;
 		}
+	
+	/** RETRIEVES an ArrayList of all the lists for a given User (FilmListData)
+	 * @param userNick - user nick 
+	 * @return lists - all film lists from a given user
+	 */
+	public ArrayList<FilmListData> getAllLists(String userNick) {
+		WebTarget getAllListsTarget = webTarget.path("server/getAllLists"+"/"+userNick);
+		GenericType<ArrayList<FilmListData>> genericType = new GenericType<ArrayList<FilmListData>>() {};
+		ArrayList<FilmListData> lists = getAllListsTarget.request(MediaType.APPLICATION_JSON).get(genericType);
+		return lists;
+		}
+
 	
 	/** RETRIEVES a FilmData object from the server
 	 * @param name - title of the film

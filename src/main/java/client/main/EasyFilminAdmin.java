@@ -1,8 +1,9 @@
-package client;
+package client.main;
 
-import easyFilminDAO.EasyFilminJDO;
-import ui.AdminUI;
-import ui.UserLog;
+import client.controller.EasyFilmController;
+import client.ui.AdminUI;
+import client.ui.UserLog;
+import server.easyFilminDAO.EasyFilminJDO;
 
 public class EasyFilminAdmin {
 	public static void main(String[] args) {

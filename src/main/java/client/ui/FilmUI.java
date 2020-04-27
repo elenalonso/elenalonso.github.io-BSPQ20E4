@@ -1,4 +1,4 @@
-package ui;
+package client.ui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;import java.awt.Component;
@@ -12,12 +12,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import client.EasyFilmController;
-import easyFilminData.Actor;
-import easyFilminData.Director;
-import easyFilminData.Film;
-import easyFilminData.FilmList;
+import client.controller.EasyFilmController;
 import serialization.FilmData;
+import server.easyFilminData.Actor;
+import server.easyFilminData.Director;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
 
 import javax.swing.JList;
 import java.awt.Font;

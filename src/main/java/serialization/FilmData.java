@@ -2,10 +2,10 @@ package serialization;
 
 import java.util.ArrayList;
 
-import easyFilminData.Actor;
-import easyFilminData.Director;
-import easyFilminData.Film;
-import easyFilminData.Genre;
+import server.easyFilminData.Actor;
+import server.easyFilminData.Director;
+import server.easyFilminData.Film;
+import server.easyFilminData.Genre;
 
 public class FilmData {
 

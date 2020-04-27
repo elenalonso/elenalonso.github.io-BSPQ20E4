@@ -2,9 +2,9 @@ package serialization;
 
 import java.util.ArrayList;
 
-import easyFilminData.Comment;
-import easyFilminData.Film;
-import easyFilminData.User;
+import server.easyFilminData.Comment;
+import server.easyFilminData.Film;
+import server.easyFilminData.User;
 
 public class UserProfile { //this class displays both user's movielist and published comments
 //	private String nickname;

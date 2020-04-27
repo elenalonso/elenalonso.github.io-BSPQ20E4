@@ -1,7 +1,7 @@
-package easyFilminData;
-	
-import javax.jdo.annotations.PersistenceCapable;
+package server.easyFilminData;
 
+
+import javax.jdo.annotations.PersistenceCapable;
 
 
 import java.util.Date;
@@ -9,12 +9,10 @@ import java.util.Date;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 
-
+	
 	@PersistenceCapable
 	@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-
-public class Director {
-
+public class Actor {
 	    protected String name;
 
 	    protected String pic=null;
@@ -23,15 +21,21 @@ public class Director {
 
 	   
 
-	    public Director(String name, String pic, String bday)
+	    public Actor(String name, String pic, String bday)
 	    {
 	        this.name = name;
 	        this.pic=pic;
 	        this.bday=bday;
 	    }
-	    public Director(String name) {
+	    public Actor(String name, String bday)
+	    {
+	        this.name = name;
+	        this.bday=bday;
+	    }
+	    public Actor(String name) {
 	    	this.name = name;
 	    }
+	    
 
 	    public String getName()
 	    {
@@ -62,7 +66,7 @@ public class Director {
 	    {
 	        this.pic = pic;
 	    }
-	}
+
 	  
 	
-
+}

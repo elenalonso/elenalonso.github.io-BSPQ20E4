@@ -1,4 +1,4 @@
-package ui;
+package client.ui;
 
 import javax.swing.JFrame;
 import javax.swing.BorderFactory;
@@ -6,9 +6,9 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
-import client.EasyFilmController;
-import easyFilminData.User;
+import client.controller.EasyFilmController;
 import serialization.UserData;
+import server.easyFilminData.User;
 
 import javax.swing.JLabel;
 import javax.swing.JComboBox;

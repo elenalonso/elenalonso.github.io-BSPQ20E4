@@ -1,14 +1,13 @@
-package ui;
+package client.ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-import client.EasyFilmController;
-import easyFilminData.FilmList;
-import easyFilminData.User;
 import serialization.FilmListData;
 import serialization.UserData;
+import server.easyFilminData.FilmList;
+import server.easyFilminData.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +22,8 @@ import javax.swing.JComboBox;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+
+import client.controller.EasyFilmController;
 
 public class MyLists extends JFrame{
 	private EasyFilmController controller;

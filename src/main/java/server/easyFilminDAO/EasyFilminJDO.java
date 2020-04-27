@@ -1,4 +1,4 @@
-package easyFilminDAO;
+package server.easyFilminDAO;
 
 import java.io.FileNotFoundException;
 
@@ -22,16 +22,17 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import easyFilminData.Actor;
-import easyFilminData.Comment;
-import easyFilminData.Director;
-import easyFilminData.Film;
-import easyFilminData.FilmList;
-import easyFilminData.Genre;
-import easyFilminData.User;
-import easyFilminData.WatchList;
-import easyFilminData.Watched;
-import ui.FilmListUI;
+
+import client.ui.FilmListUI;
+import server.easyFilminData.Actor;
+import server.easyFilminData.Comment;
+import server.easyFilminData.Director;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
+import server.easyFilminData.Genre;
+import server.easyFilminData.User;
+import server.easyFilminData.WatchList;
+import server.easyFilminData.Watched;
 
 
 public class EasyFilminJDO implements IEasyFilminDAO{

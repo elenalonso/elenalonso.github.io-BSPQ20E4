@@ -1,6 +1,6 @@
 package serialization;
 
-import easyFilminData.Actor;
+import server.easyFilminData.Actor;
 
 public class ActorData {
 

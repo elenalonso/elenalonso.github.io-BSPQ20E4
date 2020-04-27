@@ -1,6 +1,6 @@
 package serialization;
 
-import easyFilminData.Director;
+import server.easyFilminData.Director;
 
 public class DirectorData {
 	protected String name;

@@ -1,4 +1,4 @@
-package easyFilminData;
+package server.easyFilminData;
 
 
 

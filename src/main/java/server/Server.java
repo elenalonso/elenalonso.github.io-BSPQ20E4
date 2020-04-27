@@ -13,6 +13,14 @@ import serialization.FilmData;
 import serialization.FilmListData;
 import serialization.MessageData;
 import serialization.UserData;
+import server.easyFilminDAO.EasyFilminJDO;
+import server.easyFilminDAO.IEasyFilminDAO;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
+import server.easyFilminData.Message;
+import server.easyFilminData.User;
+import server.easyFilminData.WatchList;
+import server.easyFilminData.Watched;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -23,19 +31,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import easyFilminDAO.EasyFilminJDO;
-import easyFilminDAO.IEasyFilminDAO;
-import easyFilminData.Film;
-import easyFilminData.FilmList;
-import easyFilminData.Message;
-import easyFilminData.User;
-import easyFilminData.WatchList;
-import easyFilminData.Watched;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import client.EasyFilmController;
+import client.controller.EasyFilmController;
 
 
 /**
@@ -111,6 +110,26 @@ public class Server {
 		return usData;
 	}
 
+	/** GETs a list of all lists for a given user
+	 * @param login - nick of the given user
+	 * @return listsData - ArrayList of FilmListData
+	 */
+	@GET
+	@Path("/getAllLists/{nick}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<FilmListData> getAllLists(@PathParam("nick") String login) {
+		User user = null;
+		user = iDAO.loadUser(login);
+		
+		ArrayList<FilmList> lists = user.getLists();
+		ArrayList<FilmListData> listsData = new ArrayList<FilmListData>();
+		for(FilmList f : lists) {
+			listsData.add(new FilmListData(f));
+		}
+		return listsData;
+	}
+
+
 	/** GETs a particular film by title 
 	 * @param name - title of the film
 	 * @return fData - film (serialized)
@@ -160,6 +179,7 @@ public class Server {
 	@Path("/addToList/{title}")
 	public Response addToList(String listName, @PathParam("title") String filmTitle) {
 		boolean repeated = false;
+		Film film = iDAO.loadFilm(filmTitle);
 		if(listName.contentEquals("watchlist")) {
 			WatchList w = iDAO.loadWatchList("watchlist");
 			for(Film f : w.getFilmList()) {
@@ -168,7 +188,7 @@ public class Server {
 					break;
 				}
 			}
-			if(!repeated) w.addFilm(iDAO.loadFilm(filmTitle));
+			if(!repeated) w.addFilm(film);
 			iDAO.saveWatchList(w);
 
 		} else if(listName.contentEquals("watched")) {
@@ -180,7 +200,7 @@ public class Server {
 					break;
 				}
 				if(!repeated) {
-					w.addFilm(iDAO.loadFilm(filmTitle)); //If not repeated we add it to watched
+					w.addFilm(film); //If not repeated we add it to watched
 					WatchList wl = iDAO.loadWatchList("watchlist");
 					for(Film fl : wl.getFilmList()) {
 						if (fl.getTitle().contentEquals(filmTitle)){ 
@@ -191,10 +211,12 @@ public class Server {
 				}
 				iDAO.saveWatched(w);
 			}
-			//UNCOMMENT when we have loadFilmList()
-			//		else {
-			//			FilmList fl = iDAO.loadFilmList(listName);
-			//		}	      
+		} else {
+			FilmList fl = iDAO.loadFilmList(listName);
+			fl.addFilm(film);
+			//saveList() method?
+			//iDAO.saveList();
+						      
 		}
 		if(!repeated) return Response.ok().build();
 		else return Response.status(Status.BAD_REQUEST).entity("This film is already on your filmList").build();

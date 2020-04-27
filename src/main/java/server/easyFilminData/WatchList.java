@@ -1,4 +1,4 @@
-package easyFilminData;
+package server.easyFilminData;
 
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;

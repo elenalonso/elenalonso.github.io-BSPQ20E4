@@ -1,10 +1,10 @@
-package ui;
+package client.ui;
 
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JTextField;
 
-import client.EasyFilmController;
+import client.controller.EasyFilmController;
 import serialization.UserData;
 
 import javax.swing.JLabel;

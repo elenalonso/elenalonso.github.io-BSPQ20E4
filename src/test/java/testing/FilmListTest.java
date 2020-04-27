@@ -5,12 +5,12 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 
 import junit.framework.JUnit4TestAdapter;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
+
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import easyFilminData.Film;
-import easyFilminData.FilmList;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 

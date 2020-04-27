@@ -1,9 +1,9 @@
-package ui;
+package client.ui;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import client.EasyFilmController;
+import client.controller.EasyFilmController;
 
 import javax.swing.JButton;
 import java.awt.Font;

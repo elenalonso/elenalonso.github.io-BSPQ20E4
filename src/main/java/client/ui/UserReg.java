@@ -1,4 +1,4 @@
-package ui;
+package client.ui;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -17,9 +17,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import client.EasyFilmController;
-import easyFilminData.User;
+import client.controller.EasyFilmController;
 import serialization.UserData;
+import server.easyFilminData.User;
 
 public class UserReg extends JFrame {
 	

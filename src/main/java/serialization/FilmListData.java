@@ -2,7 +2,8 @@ package serialization;
 
 import java.util.ArrayList;
 
-import easyFilminData.Film;
+import server.easyFilminData.Film;
+import server.easyFilminData.FilmList;
 
 public class FilmListData {
 	
@@ -13,6 +14,18 @@ public class FilmListData {
 	public FilmListData() {
 		
 	}
+
+	/** Constructor of a FilmListData given a FilmList Object
+	 * @param fl - FilmList 
+	 */
+	public FilmListData(FilmList fl) {
+		this.name = fl.getName();
+		this.filmList = new ArrayList<>();
+		for(Film f: fl.getFilmList()) {
+			filmList.add(f.getTitle());
+		}
+	}
+
 	public FilmListData(String name, ArrayList<String> filmList) {
 		this.name = name;
 		this.filmList = filmList;

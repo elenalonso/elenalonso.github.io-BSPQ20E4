@@ -1,4 +1,4 @@
-package ui;
+package client.ui;
 
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
@@ -20,7 +20,7 @@ import serialization.UserData;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import client.EasyFilmController;
+import client.controller.EasyFilmController;
 
 public class FilmListUI extends JFrame{
 
