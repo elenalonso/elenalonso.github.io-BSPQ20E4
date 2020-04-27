@@ -230,6 +230,14 @@ public class Server {
 		return Response.ok("Hola. Mensaje desde el servidor").build();
 	}
 	
+	public static void main(String[] args) {
+		
+		Server s1 = new Server();
+		User u = new User("Marcos3", "123");
+		UserData us = new UserData(u);
+		s1.registerUser(us);
+		s1.login(us);
+	}
 }
 
 
