@@ -20,6 +20,8 @@ import server.easyFilminData.Film;
 import server.easyFilminData.FilmList;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JComboBox;
 
@@ -206,6 +208,11 @@ public class FilmUI extends JFrame{
 		 * 
 		 */
 		
+		/* This buttons allows to control the app 
+		 * exitbtn allows to close the application 
+		 * backbtn allows to go to the previous application
+		 * */
+		
 		exitbtn.addActionListener(new ActionListener() {
 			
 			@Override
@@ -225,7 +232,11 @@ public class FilmUI extends JFrame{
 			}
 		});
 		
-		//Action Listeners Watchlist / Watched
+		/* This buttons allows to control and get info of your films
+		 * addWatched adds the film to the watched list of the user
+		 * addWatchlist adds the film to your personal Watchlist
+		 */
+		
 		addWatched.addActionListener(new ActionListener() {
 			
 			@Override
@@ -239,6 +250,58 @@ public class FilmUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				controller.addToList("watchlist", film.getTitle());
+				
+			}
+		});
+		
+		/* This buttons allows to control the rating of the film from the user
+		 * upbtn adds 1 to the number of the rating
+		 * downbtn substracts 1 to the number of the rating
+		 */
+		
+		upbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String s_number = lblNewLabel.getText();
+				int i_number = Integer.parseInt(s_number);
+			if (i_number < 5) {
+				int n_number = (i_number + 1);
+				String sn_number = String.valueOf(n_number);
+				lblNewLabel.setText(sn_number);
+			}
+			
+			else 
+				JOptionPane.showMessageDialog(null, "El numero es mayor que 5 no se puede aumentar mas la nota");
+
+			}
+		});
+		
+		downbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String s_number1 = lblNewLabel.getText();
+				int i_number1 = Integer.parseInt(s_number1);
+			if(i_number1 > 1) {
+				int n_number1 = (i_number1 + 1);
+				String sn_number1 = String.valueOf(n_number1);
+				lblNewLabel.setText(sn_number1);
+			}
+			else
+				JOptionPane.showMessageDialog(null, "El numero es menor que 1 no se puede disminuir mas la nota");
+			}
+		});
+		
+		/* This buttons allows the user to post comments
+		 * post adds the comment of the user to the list of comments of the film 
+		 */
+		
+		post.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String comment = textField.getText();
 				
 			}
 		});

@@ -28,6 +28,7 @@ public class CreateList extends JFrame {
 	private JLabel newList;
 	private JButton save;
 	private JTextField listName;
+	private JTextField textField;
 	
 	public CreateList(UserData user, EasyFilmController controller) {
 		
@@ -36,7 +37,7 @@ public class CreateList extends JFrame {
 		 */
 		 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		setSize(550,400);
+		setSize(550,430);
 		setLocation(600,175);
 		setResizable(false);
 		getContentPane().setLayout(null);
@@ -98,6 +99,11 @@ public class CreateList extends JFrame {
 		exit.setBounds(500, 11, 25, 25);
 		getContentPane().add(exit);
 		
+		textField = new JTextField();
+		textField.setBounds(40, 362, 473, 30);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
 //		btnNewButton_3.addActionListener(new ActionListener() {
 //			
 //			@Override
@@ -111,7 +117,12 @@ public class CreateList extends JFrame {
 		/** This part contains the different listeners of the window
 		 * 
 		 */
-				
+		
+		/* This buttons allows to control the app 
+		 * exitbtn allows to close the application 
+		 * backbtn allows to go to the previous application
+		 * */
+		
 		exit.addActionListener(new ActionListener() {
 			
 			@Override
@@ -128,6 +139,42 @@ public class CreateList extends JFrame {
 				dispose();
 				UserUI ui = new UserUI(null, controller);
 				ui.setVisible(true);
+			}
+		});
+		
+		/* This buttons allows to control the app 
+		 * saves the list with the selected name
+		 * */
+		
+		save.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String listname = textField.getName();
+				
+			}
+		});
+		
+		/* This buttons move films to one side to the other
+		 * addFilm allows move a film from the full list of films to the one of the list 
+		 * removeFilm allows to remove a film from the list
+		 * */
+		
+		addFilm.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		removeFilm.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
 			}
 		});
 		
