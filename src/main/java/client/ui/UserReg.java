@@ -28,9 +28,11 @@ public class UserReg extends JFrame {
 	private JTextField textField;
 	private WebTarget webtarget; 
 	private JButton bBack;
-	private JButton bRegister;
+	private JButton bexit;
 	private JPasswordField passwordField;
 	private Client client;
+	private JLabel lblUser;
+	private JLabel lblpass;
 	private JLabel lblEmail;
 	private JTextField textField_1;
 	public UserReg(EasyFilmController controller) {
@@ -42,12 +44,12 @@ public class UserReg extends JFrame {
 
 		getContentPane().setLayout(null);
 		
-		JLabel lblUser = new JLabel("Username");
+		lblUser = new JLabel("Username");
 		lblUser.setFont(new Font("Verdana", Font.BOLD, 12));
 		lblUser.setBounds(72, 73, 80, 23);
 		getContentPane().add(lblUser);
 		
-		JLabel lblpass = new JLabel("Password");
+		lblpass = new JLabel("Password");
 		lblpass.setFont(new Font("Verdana", Font.BOLD, 12));
 		lblpass.setBounds(72, 106, 80, 23);
 		getContentPane().add(lblpass);
@@ -56,7 +58,6 @@ public class UserReg extends JFrame {
 		textField.setBounds(162, 72, 267, 23);
 		getContentPane().add(textField);
 		textField.setColumns(10);
-		
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(162, 108, 267, 22);
@@ -67,21 +68,11 @@ public class UserReg extends JFrame {
 		bBack.setFont(new Font("Verdana", Font.BOLD, 12));
 		bBack.setBounds(100, 208, 100, 30);
 		getContentPane().add(bBack);
-		
-		bBack.addActionListener(new ActionListener() {
 			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				UserLog u = new UserLog(controller);
-				u.setVisible(true);
-			}
-		});
-			
-		bRegister = new JButton("X");
-		bRegister.setFont(new Font("Tahoma", Font.PLAIN, 5));
-		bRegister.setBounds(441, 10, 35, 35);
-		getContentPane().add(bRegister);
+		bexit = new JButton("X");
+		bexit.setFont(new Font("Tahoma", Font.PLAIN, 5));
+		bexit.setBounds(441, 10, 35, 35);
+		getContentPane().add(bexit);
 		
 		lblEmail = new JLabel("Email");
 		lblEmail.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -92,6 +83,21 @@ public class UserReg extends JFrame {
 		textField_1.setColumns(10);
 		textField_1.setBounds(162, 140, 267, 23);
 		getContentPane().add(textField_1);
+		
+		/** This part is the one that implements the listeners of the different buttons
+		 * 
+		 */
+		
+		bBack.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				UserLog u = new UserLog(controller);
+				u.setVisible(true);
+			}
+		});
+		
 		bRegister.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

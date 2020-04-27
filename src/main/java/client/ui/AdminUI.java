@@ -36,6 +36,7 @@ public class AdminUI extends JFrame {
 		fileName.setColumns(10);
 		
 		addArchive = new JButton("Add File");
+		addArchive.setFont(new Font("Tahoma", Font.BOLD, 10));
 		addArchive.setBounds(50, 75, 150, 30);
 		getContentPane().add(addArchive);
 		

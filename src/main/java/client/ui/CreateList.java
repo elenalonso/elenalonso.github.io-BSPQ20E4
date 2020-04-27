@@ -26,6 +26,7 @@ public class CreateList extends JFrame {
 	private DefaultListModel<String> dlmFilms;
 	private JLabel available;
 	private JLabel newList;
+	private JButton save;
 	private JTextField listName;
 	
 	public CreateList(UserData user, EasyFilmController controller) {
@@ -53,7 +54,7 @@ public class CreateList extends JFrame {
 		getContentPane().add(list);
 		
 		available = new JLabel("Available Films");
-		available.setFont(new Font("Verdana", Font.BOLD, 12));
+		available.setFont(new Font("Tahoma", Font.BOLD, 10));
 		available.setBounds(40, 10, 200, 20);
 		getContentPane().add(available);
 		
@@ -66,7 +67,7 @@ public class CreateList extends JFrame {
 		getContentPane().add(filmList);
 		
 		newList = new JLabel("Your New List");
-		newList.setFont(new Font("Verdana", Font.BOLD, 12));
+		newList.setFont(new Font("Tahoma", Font.BOLD, 10));
 		newList.setBounds(311, 10, 200, 20);
 		getContentPane().add(newList);
 		
@@ -75,16 +76,19 @@ public class CreateList extends JFrame {
 		 */
 		
 		addFilm = new JButton(">");
+		addFilm.setFont(new Font("Tahoma", Font.BOLD, 10));
 		addFilm.setBounds(255, 130, 39, 39);
 		getContentPane().add(addFilm);
 		
 		removeFilm = new JButton("<");
+		removeFilm.setFont(new Font("Tahoma", Font.BOLD, 10));
 		removeFilm.setBounds(255, 179, 39, 39);
 		getContentPane().add(removeFilm);
 		
-		JButton btnNewButton_2 = new JButton("SAVE");
-		btnNewButton_2.setBounds(245, 310, 60, 30);
-		getContentPane().add(btnNewButton_2);
+		save = new JButton("SAVE");
+		save.setFont(new Font("Tahoma", Font.BOLD, 10));
+		save.setBounds(245, 310, 60, 30);
+		getContentPane().add(save);
 		
 		back = new JButton("");
 		back.setBounds(10, 10, 25, 25);

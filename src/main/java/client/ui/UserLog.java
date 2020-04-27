@@ -18,27 +18,36 @@ import javax.swing.JButton;
 public class UserLog extends JFrame{
 	private EasyFilmController control;
 	private JTextField textField;
-	private JButton btnNewButton;
+	private JButton btnLogin;
 	private JPasswordField passwordField;
 	private JButton btnCreate;
+	private JLabel lblUser;
+	private JLabel lblpass;
 	public UserLog(EasyFilmController controller) {
 		
 		this.control = controller;
 		
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
+		/** This is the part where the information of the window is shown
+		 * 
+		 */
 		setSize(500,350);
 		setLocation(600,175);
 		setResizable(false);
 		getContentPane().setLayout(null);
 		
-		JLabel lblUser = new JLabel("Username");
-		lblUser.setFont(new Font("Verdana", Font.BOLD, 12));
+		/** This part allows the user to enter the username and password
+		 * 
+		 */
+		
+		lblUser = new JLabel("Username");
+		lblUser.setFont(new Font("Tahoma", Font.BOLD, 10));
 		lblUser.setBounds(72, 73, 80, 23);
 		getContentPane().add(lblUser);
 		
-		JLabel lblpass = new JLabel("Password");
-		lblpass.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblpass = new JLabel("Password");
+		lblpass.setFont(new Font("Tahoma", Font.BOLD, 10));
 		lblpass.setBounds(72, 139, 80, 23);
 		getContentPane().add(lblpass);
 		
@@ -51,12 +60,24 @@ public class UserLog extends JFrame{
 		passwordField.setBounds(162, 139, 267, 22);
 		getContentPane().add(passwordField);
 		
-		btnNewButton = new JButton();
-		btnNewButton.setText("Login");
-		btnNewButton.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnNewButton.setBounds(329, 247, 100, 30);
-		getContentPane().add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		btnLogin = new JButton();
+		btnLogin.setText("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 10));
+		btnLogin.setBounds(329, 247, 100, 30);
+		getContentPane().add(btnLogin);
+		
+		
+		btnCreate = new JButton();
+		btnCreate.setText("Register");
+		btnCreate.setFont(new Font("Tahoma", Font.BOLD, 10));
+		btnCreate.setBounds(40, 247, 100, 30);
+		getContentPane().add(btnCreate);
+		
+		/** This part is the one that implements the listeners of the different buttons
+		 * 
+		 */
+		
+		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// FUNCTIONALITY not implemented yet 
@@ -76,12 +97,6 @@ public class UserLog extends JFrame{
 
 			}
 		});
-		
-		btnCreate = new JButton();
-		btnCreate.setText("Register");
-		btnCreate.setFont(new Font("Verdana", Font.BOLD, 12));
-		btnCreate.setBounds(40, 247, 100, 30);
-		getContentPane().add(btnCreate);
 		btnCreate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

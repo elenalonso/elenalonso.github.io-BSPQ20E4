@@ -98,6 +98,7 @@ public class FilmUI extends JFrame{
 		getContentPane().add(titleLabel);
 		
 		titleName = new JLabel("Inglorious Basterds");
+		titleName.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		titleName.setBounds(220, 50, 285, 13);
 		getContentPane().add(titleName);
 		
@@ -117,6 +118,7 @@ public class FilmUI extends JFrame{
 //			}
 //		}		
 //		directorName = new JLabel(directors);
+		directorName.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		directorName.setBounds(220, 73, 285, 13);
 		getContentPane().add(directorName);
 		
@@ -136,6 +138,7 @@ public class FilmUI extends JFrame{
 //			}
 //		}		
 //		actorName = new JLabel(actors);
+		actorName.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		actorName.setBounds(220, 96, 285, 13);
 		getContentPane().add(actorName);
 		

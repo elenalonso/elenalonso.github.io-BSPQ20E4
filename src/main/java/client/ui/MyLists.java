@@ -9,6 +9,7 @@ import serialization.UserData;
 import server.easyFilminData.FilmList;
 import server.easyFilminData.User;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -79,6 +80,7 @@ public class MyLists extends JFrame{
 		pCentral.add(list);
 		
 		info = new JLabel("My Lists:");
+		info.setFont(new Font("Tahoma", Font.BOLD, 10));
 		info.setBounds(40, 52, 70, 13);
 		getContentPane().add(info);
 		
