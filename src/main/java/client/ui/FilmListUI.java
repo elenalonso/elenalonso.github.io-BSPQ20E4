@@ -1,6 +1,8 @@
 package client.ui;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -75,6 +77,23 @@ public class FilmListUI extends JFrame{
 		
 		getContentPane().add(pCentral);
 	
+		backbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				logger.info("This could be a util method to have in a util class");
+				ArrayList<String> lists = new ArrayList<>();
+				ArrayList<FilmListData> fl = controller.getAllLists(us.getLogin());
+				for(int i=0; i<fl.size();i++) {
+					lists.add(fl.get(i).getName());
+				}
+				
+				MyLists u = new MyLists(us,lists,controller);
+				u.setVisible(true);
+
+			}
+		});
 		liFilms.addMouseListener(new MouseAdapter() {
 			
 			public void mouseClicked(MouseEvent e) {
