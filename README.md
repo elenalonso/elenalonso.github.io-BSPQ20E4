@@ -16,7 +16,7 @@ EasyFilmin is a platform where film lovers can share their taste in films. Users
 - [MySQL Workbench](https://www.mysql.com/products/workbench/)
 - [Maven](https://maven.apache.org/download.cgi)
 
-🠮Also the following libraries should be added to *pom.xml* file for the project to work: **JUnit, OpenCSV, Datanucleus, Log4J, Jersey, Jacoco.**
+🠮Also the following libraries should be added to *pom.xml* file for the project to work: **JUnit, OpenCSV, Datanucleus, Log4J, Jersey, Jacoco,ContiPerf.**
 
 # Building and running the project
 These are the steps that must be followed in order to succesfully build and run the project:
@@ -39,6 +39,13 @@ Click on the thunder icon
 ```mvn exec:java -Pclient``` 
 
 It executes Client's main and the Register/Login window will show up.
+
+### 7- Run Unit Tests:
+```mvn test``` 
+
+To check *Jacoco results*: go to ***target\site\jacoco\index.html***
+To check *ContiPerf results*: go to ***target\contiperf-report\index.html***
+
 
 # Authors
 - **Ander Eguiluz:** [eguiwow](https://github.com/eguiwow)
