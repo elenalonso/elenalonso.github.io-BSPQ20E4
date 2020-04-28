@@ -169,26 +169,18 @@ public class Server {
 	@Produces(MediaType.APPLICATION_JSON)
 	public FilmListData getFilmList(@PathParam("user") String nick, @PathParam("name") String name) {
 		FilmList fl = null;
-		logger.info("Problem Before loadUser()");
-		logger.info("user nick "+ nick);
+		logger.info("User nick "+ nick);
 		User u = iDAO.loadUser(nick);
-		logger.info("Problem in u.getLists() AGAIN??");
 		ArrayList<FilmList> arrFl =u.getLists();
-		logger.info("Ufffff...");
 		int temp = -1;
 		for(int i = 0;i<arrFl.size();i++) {
-			logger.info("Problem in user retrieved from loadUser()");	
 			if(arrFl.get(i).getName().equals(name)) temp = i; 
 		}
 		if(temp>0) {
-			logger.info("Problem in getLists().get(temp)");
 			fl = u.getLists().get(temp);	
 		}else {
 			logger.info("NO HAY UNA LISTA CON EL MISMO NOMBRE");
 		}
-		logger.info("Problem is in loadFilmList()");
-		//fl = iDAO.loadFilmList(name); USE THIS IF THE loadUser() DOESNT WORK
-		logger.info("Problem is in FLData constructor");
 		
 		FilmListData flData = new FilmListData(fl);
 		
