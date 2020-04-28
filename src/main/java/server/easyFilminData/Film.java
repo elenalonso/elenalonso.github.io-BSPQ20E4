@@ -3,10 +3,17 @@ package server.easyFilminData;
 
 import javax.jdo.annotations.PersistenceCapable;
 
+import org.apache.log4j.Logger;
+
+import client.ui.MyLists;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.util.ArrayList;
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
+
 
 
 /**
@@ -77,7 +84,11 @@ public class Film implements Comparable<Film> {
 	 */
 	private int nReviews=0;
 	
+	private ArrayList<Comment> comments;
 	
+	static Logger logger = Logger.getLogger(Film.class.getName());
+
+
 	/**
 	 * Constructor for the Film class. Initializes an "empty" Film instance.
 	 */
@@ -304,8 +315,8 @@ public class Film implements Comparable<Film> {
 	 * @param f Film to which the current Film object will be compared to.
 	 * @return returns 0 if both title are the same, -1 if it is before in the alphabet and 1 if it is later.
 	 */
+	
 	public int compareTo(Film f) {
-		
 		int i = this.title.compareTo(f.getTitle());
 		
 		if(i == 0) {
@@ -317,5 +328,17 @@ public class Film implements Comparable<Film> {
 		}
 		
 	}
+		
+	public ArrayList<Comment> getComments() {
+		return comments;
+	}
+
+
+
+
+	public void setComments(ArrayList<Comment> comments) {
+		this.comments = comments;
+	}
+
 }
 

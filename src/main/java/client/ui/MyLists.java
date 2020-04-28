@@ -3,6 +3,7 @@ package client.ui;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import serialization.FilmListData;
 import serialization.UserData;
@@ -77,8 +78,9 @@ public class MyLists extends JFrame{
 			logger.info("No Lists yet");
 		}
 		list.setBounds(220,200,100,100);
+		JScrollPane scrollPane = new JScrollPane(list);
 		JPanel pCentral = new JPanel();
-		pCentral.add(list);
+		pCentral.add(scrollPane);
 		
 		getContentPane().add(pCentral, "Center");
 		

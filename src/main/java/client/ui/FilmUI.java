@@ -4,9 +4,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.List;
+import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,13 +17,17 @@ import javax.swing.JTextField;
 
 import client.controller.EasyFilmController;
 import serialization.FilmData;
+import serialization.UserData;
 import server.easyFilminData.Actor;
+import server.easyFilminData.Comment;
 import server.easyFilminData.Director;
 import server.easyFilminData.Film;
 import server.easyFilminData.FilmList;
 
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -41,9 +48,9 @@ public class FilmUI extends JFrame{
 	private JLabel actorName;
 	private JButton addWatchlist;
 	private JButton addWatched;
-	private JLabel watched;
 	private JButton post;
-	private JList list;
+	private JList<String> list;
+	private DefaultListModel<String> dlmComments;
 	private JButton addToList;
 	private JTextField textField;
 	private JButton upbtn;
@@ -54,7 +61,7 @@ public class FilmUI extends JFrame{
 
 	private EasyFilmController controller;
 	
-	public FilmUI(FilmData film, EasyFilmController controller) {
+	public FilmUI(UserData us, FilmData film, EasyFilmController controller) {
 		this.film = film;
 		this.controller = controller;
 		
@@ -83,11 +90,11 @@ public class FilmUI extends JFrame{
 		 */
 		
 		backbtn = new JButton("<-");
-		backbtn.setBounds(10, 10, 30, 25);
+		backbtn.setBounds(10, 10, 45, 25);
 		getContentPane().add(backbtn);
 		
 		exitbtn = new JButton("x");
-		exitbtn.setBounds(601, 10, 30, 25);
+		exitbtn.setBounds(585, 10, 45, 25);
 		getContentPane().add(exitbtn);
 		
 		/** This part is where all the info related to the film is displayed
@@ -148,17 +155,17 @@ public class FilmUI extends JFrame{
 		 * And an icon that shows if the film has been watched or not
 		 * 
 		 */
-		
+
+		addWatched = new JButton("");
+		addWatched.setIcon(new ImageIcon("src\\main\\resources\\Watch.png")); 
+		addWatched.setBounds(220, 229, 35, 35);
+		getContentPane().add(addWatched);
+
 		addWatchlist = new JButton("");
 		addWatchlist.setIcon(new ImageIcon("src\\main\\resources\\Watchlist.png")); 
 		addWatchlist.setBounds(165, 229, 35, 35);
 		getContentPane().add(addWatchlist);
-		
-		watched = new JLabel("");
-		watched.setIcon(new ImageIcon("src\\main\\resources\\Watch.png"));
-		watched.setBounds(220, 229, 35, 35);
-		getContentPane().add(watched);
-		
+				
 		/**This part implements a way to write, post and read comments
 		 * 
 		 */
@@ -168,9 +175,18 @@ public class FilmUI extends JFrame{
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		list = new JList();
+		
+		/* COMMENTS - JList of comments that stores the comments 
+		 * 
+		 */
+		dlmComments = new DefaultListModel();
+		list = new JList(dlmComments);
+		JScrollPane spComments = new JScrollPane(list);
 		list.setBounds(10, 335, 615, 75);
-		getContentPane().add(list);
+		for(Comment c: film.getComments()) {
+			dlmComments.addElement(c.getText());	
+		}
+		getContentPane().add(spComments);
 		
 		post = new JButton("");
 		post.setBounds(600, 300, 25, 25);
@@ -191,6 +207,7 @@ public class FilmUI extends JFrame{
 		downbtn = new JButton("<");
 		downbtn.setBounds(50, 270, 30, 25);
 		getContentPane().add(downbtn);
+		
 		
 		/** This part allows the user to add films to the selected list
 		 * 
@@ -265,17 +282,17 @@ public class FilmUI extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				String s_number = lblNewLabel.getText();
 				int i_number = Integer.parseInt(s_number);
-			if (i_number < 5) {
-				int n_number = (i_number + 1);
-				String sn_number = String.valueOf(n_number);
-				lblNewLabel.setText(sn_number);
-			}
-			
-			else 
-				JOptionPane.showMessageDialog(null, "El numero es mayor que 5 no se puede aumentar mas la nota");
-
-			}
-		});
+				if (i_number < 5) {
+					int n_number = (i_number + 1);
+					String sn_number = String.valueOf(n_number);
+					lblNewLabel.setText(sn_number);
+				}
+				
+				else 
+					JOptionPane.showMessageDialog(null, "El numero es mayor que 5 no se puede aumentar mas la nota");
+	
+				}
+			});
 		
 		downbtn.addActionListener(new ActionListener() {
 			
@@ -310,7 +327,14 @@ public class FilmUI extends JFrame{
 	public static void main(String[] args) {
 		FilmData f = new FilmData();
 		EasyFilmController e = new EasyFilmController("127.0.0.1","8080");
-		FilmUI fu = new FilmUI(f, e);
+		UserData u = new UserData();
+		u.setLogin("nickPrueba");
+		ArrayList<String> a = new ArrayList<String>();
+		for(int i = 0; i<5;i++) {
+			a.add("Lista"+i);	
+		}
+
+		FilmUI fu = new FilmUI(u, f, e);
 		fu.setVisible(true);
 	}
 }
