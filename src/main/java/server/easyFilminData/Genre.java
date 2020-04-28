@@ -7,7 +7,7 @@ package server.easyFilminData;
 	import javax.jdo.annotations.InheritanceStrategy;
 
 
-		@PersistenceCapable
+		@PersistenceCapable(detachable = "true")
 		@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 
 	public class Genre {

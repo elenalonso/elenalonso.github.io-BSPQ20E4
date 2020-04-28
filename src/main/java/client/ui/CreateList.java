@@ -20,13 +20,13 @@ public class CreateList extends JFrame {
 	private JButton exit;
 	private JButton removeFilm;
 	private JButton back;
+	private JButton save;
 	private JList<String> list;
-	private DefaultListModel<String> dlmList;
 	private JList<String> filmList;
+	private DefaultListModel<String> dlmList;
 	private DefaultListModel<String> dlmFilms;
 	private JLabel available;
 	private JLabel newList;
-	private JButton save;
 	private JTextField listName;
 	private JTextField textField;
 	
@@ -91,8 +91,8 @@ public class CreateList extends JFrame {
 		save.setBounds(245, 310, 60, 30);
 		getContentPane().add(save);
 		
-		back = new JButton("");
-		back.setBounds(10, 10, 25, 25);
+		back = new JButton("<-");
+		back.setBounds(10, 10, 45, 25);
 		getContentPane().add(back);
 		
 		exit = new JButton("");
@@ -103,17 +103,7 @@ public class CreateList extends JFrame {
 		textField.setBounds(40, 362, 473, 30);
 		getContentPane().add(textField);
 		textField.setColumns(10);
-		
-//		btnNewButton_3.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				dispose();
-//				UserUI u = new UserUI();
-//				u.setVisible(true);
-//			}
-//		});
-		
+				
 		/** This part contains the different listeners of the window
 		 * 
 		 */
@@ -137,7 +127,7 @@ public class CreateList extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				UserUI ui = new UserUI(null, controller);
+				UserUI ui = new UserUI(user, controller);
 				ui.setVisible(true);
 			}
 		});

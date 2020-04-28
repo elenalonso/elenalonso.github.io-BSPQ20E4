@@ -61,6 +61,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			logger.debug("Insert users in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
+			pm.getFetchPlan().setMaxFetchDepth(4);
 			//Obtain the current transaction
 			tx = pm.currentTransaction();		
 			//Start the transaction
@@ -102,6 +103,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			logger.info("- Retrieving users");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
+			pm.getFetchPlan().setMaxFetchDepth(4);
 			//Obtain the current transaction
 			tx = pm.currentTransaction();		
 			//Start the transaction
@@ -114,6 +116,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			User user = (User) query.execute();
 
 			//End the transaction
+			user.getWatched();
+			user.getWatchList();
 			tx.commit();
 			
 			
@@ -867,7 +871,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			//Start the transaction
 			tx.begin();
 
-			Query<User> query = pm.newQuery(User.class);
+			Query<FilmList> query = pm.newQuery(FilmList.class);
 			query.setFilter("nickname == '" + username+ "'"); 
 			@SuppressWarnings("unchecked")
 			ArrayList<FilmList> userLists = (ArrayList<FilmList>) query.execute();

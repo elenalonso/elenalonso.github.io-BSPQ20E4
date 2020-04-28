@@ -37,7 +37,8 @@ public class UserData {
 	 * @param icon - icon of the user
 	 * @param email - email of the user
 	 */
-	public UserData(String login, String password, String icon, String email) {
+	//	public UserData(String login, String password, String icon, String email) {
+	public UserData(String login, String password, String email) {
 		this.login = login;
 		this.password = password;
 		this.icon = null; //CHANGE WHEN WE HAVE A WAY TO INSERT PROFILE IMAGES

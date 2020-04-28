@@ -9,6 +9,7 @@ import serialization.UserData;
 import server.easyFilminData.FilmList;
 import server.easyFilminData.User;
 
+import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -55,46 +56,48 @@ public class MyLists extends JFrame{
 		setSize(500,450);
 		setLocation(600,175);
 		setResizable(false);
-		getContentPane().setLayout(null);
+		//getContentPane().setLayout(null);
+		getContentPane().setLayout(new BorderLayout());
 		
 		/** This window allows the user to see all his/her lists
  		 * 
 		 */
-		
-		/** This is the list and combobox that allows to select and visualize the lists
-		 * 
-		 */
+				
 		dlmLists = new DefaultListModel<>();
 		list = new JList<String>(dlmLists);
 		if(lists != null && !lists.isEmpty()) {
-			for(String s: lists) dlmLists.addElement(s);		
+			for(int i=0; i<lists.size();i++) dlmLists.addElement(lists.get(i));		
 			logger.info("Displaying Lists of User "+usData.getLogin() );
+			logger.info("Lists of User: ");
+			for(int e = 0; e<5;e++) {
+				logger.info(lists.get(e));	
+			}
 		}else {
 			//This logger doesnt work yet
 			logger.info("No Lists yet");
 		}
-
-		list = new JList();
 		list.setBounds(220,200,100,100);
 		JPanel pCentral = new JPanel();
 		pCentral.add(list);
 		
+		getContentPane().add(pCentral, "Center");
+		
 		info = new JLabel("My Lists:");
 		info.setFont(new Font("Tahoma", Font.BOLD, 10));
 		info.setBounds(40, 52, 70, 13);
-		getContentPane().add(info);
+
+		back = new JButton("<-");
+		back.setBounds(10, 10, 45, 25);
+
+		JPanel pSuperior = new JPanel();
+		pSuperior.add(back);
+		pSuperior.add(info);
 		
-		
+		getContentPane().add(pSuperior, "North");
 		/** This buttons allow to control the window
 		 * 
 		 */
 		
-		back = new JButton("");
-		back.setBounds(10, 10, 25, 25);
-		getContentPane().add(back);
-		
-		
-		getContentPane().add(pCentral);
 		
 		/** This part contains the different listeners of the window
 		 * 

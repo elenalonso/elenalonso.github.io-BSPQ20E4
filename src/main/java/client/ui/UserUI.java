@@ -6,7 +6,11 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
+import org.apache.log4j.PropertyConfigurator;
+import org.apache.log4j.Logger;
+
 import client.controller.EasyFilmController;
+import serialization.FilmListData;
 import serialization.UserData;
 import server.easyFilminData.User;
 
@@ -38,6 +42,9 @@ public class UserUI extends JFrame{
 	private JButton nuevaLista;
 	private JButton misListas;
 	private EasyFilmController controller;
+	
+	static Logger logger = Logger.getLogger(UserUI.class.getName());
+	
 	public UserUI(UserData user, EasyFilmController controller) {
 		this.setTitle( "EasyFilmin User");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
@@ -82,8 +89,14 @@ public class UserUI extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-
-				MyLists u = new MyLists(user,user.getLists(),controller);
+				logger.info("This could be a util method to have in a util class");
+				ArrayList<String> lists = null;
+				ArrayList<FilmListData> fl = controller.getAllLists(user.getLogin());
+				for(int i=0; i<fl.size();i++) {
+					lists.add(fl.get(i).getName());
+				}
+				
+				MyLists u = new MyLists(user,lists,controller);
 				u.setVisible(true);
 			}
 		});

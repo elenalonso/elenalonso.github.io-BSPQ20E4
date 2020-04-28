@@ -13,7 +13,7 @@ import javax.jdo.annotations.InheritanceStrategy;
  * @version 1.0
  * @since 2020-04-26
  */
-@PersistenceCapable
+@PersistenceCapable(detachable = "true")
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 public class Comment {
 

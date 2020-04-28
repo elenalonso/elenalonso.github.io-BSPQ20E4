@@ -15,7 +15,7 @@ import javax.jdo.annotations.InheritanceStrategy;
  * @version 1.1
  * @since 2020-04-14
  */
-@PersistenceCapable
+@PersistenceCapable(detachable = "true")
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)	
 public class Film implements Comparable<Film> {
 	

@@ -10,7 +10,7 @@ import javax.jdo.annotations.PersistenceCapable;
  * @version 1.0
  * @since 2020-04-16
  */
-@PersistenceCapable
+@PersistenceCapable(detachable = "true")
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 public class Watched extends FilmList {
 

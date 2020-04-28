@@ -7,13 +7,19 @@ import java.util.Set;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.FetchGroup;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.Persistent;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
-@PersistenceCapable
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+import client.ui.MyLists;
+
+@PersistenceCapable(detachable = "true")
 public class User {
 	@PrimaryKey
 	String nickname=null;
@@ -21,7 +27,8 @@ public class User {
 	String email;
 	String password=null;
 	
-	@Persistent(mappedBy="user", dependentElement="true")
+	
+	@Persistent(defaultFetchGroup="true", mappedBy="user", dependentElement="true")
 	@Join
 	Set<Message> messages = new HashSet<Message>();
 	ArrayList<Film> favMovies = new ArrayList<>();
@@ -29,14 +36,17 @@ public class User {
 	
 	//AQUÍ HAY QUE METER LAS LISTAS + WATCHLIST y WATCHED
 	ArrayList<FilmList> lists ;
-	Watched watched = new Watched("Watched");
-	WatchList watchList = new WatchList("WatchList");
+	Watched watched;
+	WatchList watchList;
 	
+	static Logger logger = Logger.getLogger(User.class.getName());
 	
 	public User(String nickname, String password) {
 		this.nickname = nickname;
 		this.password = password;
 		lists = new ArrayList<>();
+		watched = new Watched("Watched");
+		watchList = new WatchList("WatchList");
 		lists.add(watched);
 		lists.add(watchList);
 	}
@@ -45,6 +55,8 @@ public class User {
 		this.icon = icon;
 		this.email = email;
 		this.password = password;
+		watched = new Watched("Watched");
+		watchList = new WatchList("WatchList");
 		lists = new ArrayList<>();
 		lists.add(watched);
 		lists.add(watchList);
@@ -128,11 +140,30 @@ public class User {
 	}
 	
 	 public ArrayList<FilmList> getLists() {
+		logger.info("THIS IS NOT SUPPOSED TO BE DONE HERE I THINK");
 		return lists;
+	}
+	public FilmList getWatched() {
+		return watched;
+	}
+	public void setWatched(Watched watched) {
+		this.watched = watched;
+	}
+	public FilmList getWatchList() {
+		return watchList;
+	}
+
+	public void setWatchList(WatchList watchList) {
+		this.watchList = watchList;
 	}
 	public void setLists(ArrayList<FilmList> lists) {
 		this.lists = lists;
 	}
+	
+	public void createFilmList(String listName) {
+		FilmList f = new FilmList(listName);
+	}
+	
 	public Set<Message> getMessages() {return this.messages;}
 	 
 	 public String toString() {

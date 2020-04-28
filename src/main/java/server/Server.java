@@ -87,6 +87,7 @@ public class Server {
 //		try {
 //			iDAO.loadUser(userData.getLogin());
 //		}catch(Exception e) {
+			//Works good creating its 2 default lists (watchlist, watched)
 			user = new User(userData.getLogin(), userData.getIcon(), userData.getEmail(),userData.getPassword());
 			iDAO.saveUser(user);
 			return Response.ok().build();				
@@ -120,12 +121,21 @@ public class Server {
 	public ArrayList<FilmListData> getAllLists(@PathParam("nick") String login) {
 		User user = null;
 		user = iDAO.loadUser(login);
-		
-		ArrayList<FilmList> lists = user.getLists();
+		ArrayList<FilmList> lists = user.getLists(); //Método persistente de JDO
+		//ArrayList<FilmList> lists = iDAO.getUserLists(user.getNickname()); // Método de Elena
 		ArrayList<FilmListData> listsData = new ArrayList<FilmListData>();
-		for(FilmList f : lists) {
-			listsData.add(new FilmListData(f));
+		int i = 0;
+		logger.info("Lists that will be passed to the client: ");
+		logger.error("CONFIRMAMOS QUE PETA lists PORQUE NO LAS COGE BIEN");
+		if(lists!=null) {
+			for(FilmList f : lists) {
+				listsData.add(new FilmListData(f));
+				//logger.info(lists.get(i).getName());
+				i++;
+			}
+			
 		}
+		
 		return listsData;
 	}
 
