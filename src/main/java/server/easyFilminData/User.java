@@ -35,8 +35,12 @@ public class User {
 	ArrayList<Comment> comments = new ArrayList<>();
 	
 	//AQUÍ HAY QUE METER LAS LISTAS + WATCHLIST y WATCHED
+	@Persistent(defaultFetchGroup="true")
+	@Join
 	ArrayList<FilmList> lists ;
+	@Persistent(defaultFetchGroup="true")
 	Watched watched;
+	@Persistent(defaultFetchGroup="true")
 	WatchList watchList;
 	
 	static Logger logger = Logger.getLogger(User.class.getName());

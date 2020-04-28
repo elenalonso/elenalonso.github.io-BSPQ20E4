@@ -130,7 +130,7 @@ public class Server {
 		if(lists!=null) {
 			for(FilmList f : lists) {
 				listsData.add(new FilmListData(f));
-				//logger.info(lists.get(i).getName());
+				logger.info(lists.get(i).getName());
 				i++;
 			}
 			

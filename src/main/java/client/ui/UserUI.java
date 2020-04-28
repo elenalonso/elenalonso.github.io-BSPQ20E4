@@ -90,7 +90,7 @@ public class UserUI extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				logger.info("This could be a util method to have in a util class");
-				ArrayList<String> lists = null;
+				ArrayList<String> lists = new ArrayList<>();
 				ArrayList<FilmListData> fl = controller.getAllLists(user.getLogin());
 				for(int i=0; i<fl.size();i++) {
 					lists.add(fl.get(i).getName());

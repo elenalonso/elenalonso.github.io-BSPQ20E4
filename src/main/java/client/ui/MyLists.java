@@ -70,9 +70,8 @@ public class MyLists extends JFrame{
 			for(int i=0; i<lists.size();i++) dlmLists.addElement(lists.get(i));		
 			logger.info("Displaying Lists of User "+usData.getLogin() );
 			logger.info("Lists of User: ");
-			for(int e = 0; e<5;e++) {
-				logger.info(lists.get(e));	
-			}
+			for(int i=0; i<lists.size();i++)logger.info(lists.get(i));	
+
 		}else {
 			//This logger doesnt work yet
 			logger.info("No Lists yet");

@@ -1,6 +1,7 @@
 package server.easyFilminData;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
 import org.apache.log4j.Logger;
 
@@ -32,6 +33,7 @@ public class FilmList {
 	/**
 	 * This variable represents the list of the film. It stores objects of the Film class
 	 */
+	@Persistent(defaultFetchGroup="true")
 	private ArrayList<Film> filmList;
 	
 	

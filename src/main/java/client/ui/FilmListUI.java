@@ -84,7 +84,7 @@ public class FilmListUI extends JFrame{
 				if (e.getClickCount()==2){
 					if (liFilms.getSelectedIndex()!= -1) {
 						selectPos = liFilms.locationToIndex(e.getPoint());
-						toFilmUI();			
+						toFilmUI(us);			
 					}
 				}
 			}
@@ -95,12 +95,12 @@ public class FilmListUI extends JFrame{
 	/** Calls the controller to open a FilmUI window with the info of this list
 	 * 
 	 */
-	private void toFilmUI() {
+	private void toFilmUI(UserData us) {
 
 		if (dlmFilms.getElementAt(selectPos) != null){
 			String title = dlmFilms.getElementAt(selectPos);
 			FilmData f = controller.getFilm(title);
-			FilmUI u = new FilmUI(f, controller);
+			FilmUI u = new FilmUI(us, f, controller);
 		}
 		
 	}

@@ -116,12 +116,11 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			User user = (User) query.execute();
 
 			//End the transaction
-			user.getWatched();
-			user.getWatchList();
+			User duser = pm.detachCopy(user);
 			tx.commit();
 			
 			
-			return user;
+			return duser;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving users using a 'Query': " + ex.getMessage());
 		} finally {
