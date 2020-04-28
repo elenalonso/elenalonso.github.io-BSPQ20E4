@@ -97,5 +97,12 @@ public class FilmListTest {
 		assertEquals(list1.getFilmList(), list2.getFilmList());
 		logger.debug("Sort Film tested");
 	}
+	
+	@Test
+	public void testSetName() {
+		list2.setName("MyFilmList");
+		assertEquals(list2.getName(), "MyFilmList");
+		logger.debug("Set Name tested");
+	}
 
 }

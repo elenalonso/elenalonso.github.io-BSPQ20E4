@@ -46,6 +46,11 @@ public class UserUI extends JFrame{
 	static Logger logger = Logger.getLogger(UserUI.class.getName());
 	
 	public UserUI(UserData user, EasyFilmController controller) {
+		
+		/** This is the information of the creation of the window
+		 * 
+		 */
+		
 		this.setTitle( "EasyFilmin User");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución	
 		setSize(740,480);
@@ -71,35 +76,11 @@ public class UserUI extends JFrame{
 		nuevaLista = new JButton("New List");
 		nuevaLista.setFont(new Font("Arial", Font.PLAIN, 15));
 		getContentPane().add(nuevaLista);
-		nuevaLista.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				CreateList u = new CreateList(user, controller);
-				u.setVisible(true);
-			}
-		});
+		
 		
 		misListas = new JButton("My Lists");
 		misListas.setBounds(100, 242, 150, 30);
 		getContentPane().add(misListas);
-		misListas.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				logger.info("This could be a util method to have in a util class");
-				ArrayList<String> lists = new ArrayList<>();
-				ArrayList<FilmListData> fl = controller.getAllLists(user.getLogin());
-				for(int i=0; i<fl.size();i++) {
-					lists.add(fl.get(i).getName());
-				}
-				
-				MyLists u = new MyLists(user,lists,controller);
-				u.setVisible(true);
-			}
-		});
 		
 		// Bottom panel 
 		JPanel pCentral = new JPanel();
@@ -125,6 +106,36 @@ public class UserUI extends JFrame{
 		pCentral.add(pOpt, "East");
 		getContentPane().add(pCentral, "Center");
 		
+		/** This part is the one that implements the listeners of the different buttons
+		 * 
+		 */
+		
+		nuevaLista.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				CreateList u = new CreateList(user, controller);
+				u.setVisible(true);
+			}
+		});
+		
+		misListas.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				logger.info("This could be a util method to have in a util class");
+				ArrayList<String> lists = new ArrayList<>();
+				ArrayList<FilmListData> fl = controller.getAllLists(user.getLogin());
+				for(int i=0; i<fl.size();i++) {
+					lists.add(fl.get(i).getName());
+				}
+				
+				MyLists u = new MyLists(user,lists,controller);
+				u.setVisible(true);
+			}
+		});
 		
 	}
 	public static void main(String[] args) {

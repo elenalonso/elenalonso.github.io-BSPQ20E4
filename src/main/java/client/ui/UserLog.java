@@ -29,9 +29,11 @@ public class UserLog extends JFrame{
 		
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
+		
 		/** This is the part where the information of the window is shown
 		 * 
 		 */
+		
 		setSize(500,350);
 		setLocation(600,175);
 		setResizable(false);
@@ -60,12 +62,19 @@ public class UserLog extends JFrame{
 		passwordField.setBounds(162, 139, 267, 22);
 		getContentPane().add(passwordField);
 		
+		/** This button allows the user to login into his/her account 
+		 * 
+		 */
+		
 		btnLogin = new JButton();
 		btnLogin.setText("Login");
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnLogin.setBounds(329, 247, 100, 30);
 		getContentPane().add(btnLogin);
 		
+		/** If no account is owned, with this button the user will be redirected to the registration window 
+		 * 
+		 */
 		
 		btnCreate = new JButton();
 		btnCreate.setText("Register");

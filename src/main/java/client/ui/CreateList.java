@@ -86,10 +86,18 @@ public class CreateList extends JFrame {
 		removeFilm.setBounds(255, 179, 39, 39);
 		getContentPane().add(removeFilm);
 		
+		/** This button saves the list created by the user with the desired name
+		 * 
+		 */
+		
 		save = new JButton("SAVE");
 		save.setFont(new Font("Tahoma", Font.BOLD, 10));
 		save.setBounds(245, 310, 60, 30);
 		getContentPane().add(save);
+		
+		/** This is the part that allows the control of the window to exit an go back
+		 * 
+		 */
 		
 		back = new JButton("<-");
 		back.setBounds(10, 10, 45, 25);

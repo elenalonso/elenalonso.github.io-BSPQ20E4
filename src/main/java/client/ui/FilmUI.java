@@ -68,6 +68,7 @@ public class FilmUI extends JFrame{
 		/** This is the information of the creation of the window
 		 * 
 		 */
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(650,450);
 		setLocation(600,175);
@@ -78,6 +79,7 @@ public class FilmUI extends JFrame{
 		/** Creates an UI to be able to see every film available in our DB
 		 * 
 		 */
+		
 		poster = new JLabel();
 		poster.setBounds(10, 50, 145, 200);
 		poster.setIcon(new ImageIcon("src\\main\\resources\\inglorious_basterds.png")); //Example

@@ -52,6 +52,7 @@ public class MyLists extends JFrame{
 		/** This is the part that contains the info of the window
 		 * 
 		 */
+		
 		logger.warn("This lists parameter should be a ArrayList<FilmListData>, but we are now simplifying things");
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setSize(500,450);
@@ -86,6 +87,10 @@ public class MyLists extends JFrame{
 		info = new JLabel("My Lists:");
 		info.setFont(new Font("Tahoma", Font.BOLD, 10));
 		info.setBounds(40, 52, 70, 13);
+		
+		/** This button allows the user to go to the previous window
+		 * 
+		 */
 
 		back = new JButton("<-");
 		back.setBounds(10, 10, 45, 25);
@@ -103,6 +108,7 @@ public class MyLists extends JFrame{
 		/** This part contains the different listeners of the window
 		 * 
 		 */
+		
 		list.addMouseListener(new MouseAdapter() {
 			
 			public void mouseClicked(MouseEvent e) {

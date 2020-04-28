@@ -37,6 +37,11 @@ public class UserReg extends JFrame {
 	private JLabel lblEmail;
 	public UserReg(EasyFilmController controller) {
 		this.controller = controller;
+		
+		/** This is the information of the creation of the window
+		 * 
+		 */
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(500,325);
 		setLocation(600,175);
@@ -44,7 +49,10 @@ public class UserReg extends JFrame {
 
 		getContentPane().setLayout(null);
 		
-		//Label configuration
+		/** Here the user is informed with all the information he needs to provide
+		 * 
+		 */
+		
 		lblUser = new JLabel("Username");
 		lblUser.setFont(new Font("Verdana", Font.BOLD, 12));
 		lblUser.setBounds(72, 73, 80, 23);
@@ -60,7 +68,10 @@ public class UserReg extends JFrame {
 		lblEmail.setBounds(72, 141, 80, 23);
 		getContentPane().add(lblEmail);
 
-		//TextField & Password Field configuration
+		/** Here the user is able to enter the information for the registration
+		 * 
+		 */
+
 		tfUser = new JTextField();
 		tfUser.setBounds(162, 72, 267, 23);
 		getContentPane().add(tfUser);
@@ -75,12 +86,20 @@ public class UserReg extends JFrame {
 		tfEmail.setBounds(162, 140, 267, 23);
 		getContentPane().add(tfEmail);
 		
-		//Button configuration
+		/** This button allows the user to revert to the previous window
+		 * 
+		 */
+		
+		
 		bBack = new JButton();
 		bBack.setText("<-");
 		bBack.setFont(new Font("Verdana", Font.BOLD, 12));
 		bBack.setBounds(100, 208, 100, 30);
 		getContentPane().add(bBack);
+		
+		/** With this button the user is able to register 
+		 * 
+		 */
 		
 		bRegister = new JButton();
 		bRegister.setText("Create");

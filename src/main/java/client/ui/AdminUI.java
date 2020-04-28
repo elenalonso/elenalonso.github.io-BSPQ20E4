@@ -20,14 +20,17 @@ public class AdminUI extends JFrame {
 	private EasyFilmController controller;
 	public AdminUI(EasyFilmController e) {
 		this.controller = e;
-		// Formato de la ventana
+		
+		/** This is the information of the creation of the window
+		 * 
+		 */
+		
 		this.setTitle( "EasyFilmin Login");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(600,250);
 		setLocation(600,175);
 		setResizable(false);
 
-		
 		getContentPane().setLayout(null);
 		
 		fileName = new JTextField();

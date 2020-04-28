@@ -44,6 +44,11 @@ public class FilmListUI extends JFrame{
 		this.filmList = flData;
 		this.setTitle(flData.getName());
 		this.controller = controller;
+		
+		/** This is the information of the creation of the window
+		 * 
+		 */
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // cierra la ventana y se para la ejecución
 		setSize(640,380);
 		setLocation(600,175);
