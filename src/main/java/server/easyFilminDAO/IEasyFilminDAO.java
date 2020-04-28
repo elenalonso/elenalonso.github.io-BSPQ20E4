@@ -30,6 +30,12 @@ public interface IEasyFilminDAO {
 	public User loadUser(String username);
 	
 	/**
+	 * Deletes a user from the DataBase
+	 * @param username The username that matches the user wished to be deleted
+	 */
+	public void deleteUser(String username);
+	
+	/**
 	 * Stores the actor received in a Database. 
 	 * The type of storage may differ depending on the instance of this interface created.
 	 * @param actor the actor object whose data will be stored.

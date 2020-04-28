@@ -58,7 +58,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			logger.debug("Insert users in the DB");			
+			logger.info("Insert users in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			pm.getFetchPlan().setMaxFetchDepth(4);
@@ -81,7 +81,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		}finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				logger.debug("Changes rollbacked");
+				logger.info("Changes rollbacked");
 			}
 			
 			if (pm != null && !pm.isClosed()) {
@@ -119,7 +119,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			User duser = pm.detachCopy(user);
 			tx.commit();
 			
-			
+			//System.out.println("username " + duser.getIcon()); //??? What is going on here
 			return duser;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving users using a 'Query': " + ex.getMessage());
@@ -134,6 +134,47 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		}
 		
 		return null;
+	}
+	
+	@Override
+	public void deleteUser(String username) {
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Deleting users");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//pm.getFetchPlan().setMaxFetchDepth(4);
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			Query<User> query = pm.newQuery(User.class);
+			query.setFilter("nickname == '" + username + "'"); //we find the user by his username
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			User user = (User) query.execute();
+
+			//End the transaction
+			pm.deletePersistent(user);
+			tx.commit();
+			
+			
+			
+		} catch (Exception ex) {
+			logger.error(" $ Error deleting users using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		
 	}
 
 	@Override
