@@ -113,7 +113,7 @@ public class MyLists extends JFrame{
 					if (list.getSelectedIndex()!= -1) {
 						dispose();
 						selectPos = list.locationToIndex(e.getPoint());
-						FilmListData fl = controller.getFilmList(dlmLists.get(selectPos));
+						FilmListData fl = controller.getFilmList(usData, dlmLists.get(selectPos));
 						FilmListUI f = new FilmListUI(usData, fl,controller);
 						f.setVisible(true);
 						

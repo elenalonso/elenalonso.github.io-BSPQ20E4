@@ -127,8 +127,10 @@ public class EasyFilmController {
 	 * @param name -name of the filmList
 	 * @return list - list of films (serialized) FilmListData
 	 */
-	public FilmListData getFilmList(String name) {
-		WebTarget getFilmListWebTarget = webTarget.path("server/getFilmList"+"/"+name); 
+	public FilmListData getFilmList(UserData userData, String name) {
+		WebTarget getFilmListWebTarget = webTarget.path("server/getFilmList"+"/"+userData.getLogin()+"/"+name);
+		logger.warn(userData.getLogin());
+
 		GenericType<FilmListData> genericType = new GenericType<FilmListData>() {};
 		FilmListData film = getFilmListWebTarget.request(MediaType.APPLICATION_JSON).get(genericType);
 		return film;

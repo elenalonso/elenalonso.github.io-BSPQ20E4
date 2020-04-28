@@ -122,7 +122,6 @@ public class Server {
 		User user = null;
 		user = iDAO.loadUser(login);
 		ArrayList<FilmList> lists = user.getLists(); //Método persistente de JDO
-		//ArrayList<FilmList> lists = iDAO.getUserLists(user.getNickname()); // Método de Elena
 		ArrayList<FilmListData> listsData = new ArrayList<FilmListData>();
 		int i = 0;
 		logger.info("Lists that will be passed to the client: ");
@@ -166,16 +165,33 @@ public class Server {
 	 * @return flData - filmListData (serialized)
 	 */
 	@GET
-	@Path("/getFilmList/{name}")
+	@Path("/getFilmList/{user}/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public FilmListData getFilmList(@PathParam("name") String name) {
+	public FilmListData getFilmList(@PathParam("user") String nick, @PathParam("name") String name) {
 		FilmList fl = null;
-		//fl = iDAO.loadFilmList(name);
-		System.out.println(" * Client number: " + cont);
-		//Constructor is needed, and think about how to pass this Data
-		ArrayList<String> nameList = new ArrayList<>();
-		for(Film f : fl.getFilmList()) nameList.add(f.getTitle());
-		FilmListData flData = new FilmListData(name, nameList);
+		logger.info("Problem Before loadUser()");
+		logger.info("user nick "+ nick);
+		User u = iDAO.loadUser(nick);
+		logger.info("Problem in u.getLists() AGAIN??");
+		ArrayList<FilmList> arrFl =u.getLists();
+		logger.info("Ufffff...");
+		int temp = -1;
+		for(int i = 0;i<arrFl.size();i++) {
+			logger.info("Problem in user retrieved from loadUser()");	
+			if(arrFl.get(i).getName().equals(name)) temp = i; 
+		}
+		if(temp>0) {
+			logger.info("Problem in getLists().get(temp)");
+			fl = u.getLists().get(temp);	
+		}else {
+			logger.info("NO HAY UNA LISTA CON EL MISMO NOMBRE");
+		}
+		logger.info("Problem is in loadFilmList()");
+		//fl = iDAO.loadFilmList(name); USE THIS IF THE loadUser() DOESNT WORK
+		logger.info("Problem is in FLData constructor");
+		
+		FilmListData flData = new FilmListData(fl);
+		
 		return flData;
 	}
 
