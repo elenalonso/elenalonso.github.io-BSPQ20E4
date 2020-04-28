@@ -67,7 +67,6 @@ public class FilmList {
 			
 			if(f.getTitle().equals(title)) {
 				itr.remove();
-				System.out.println("Film removed");
 				return;
 			}
 			

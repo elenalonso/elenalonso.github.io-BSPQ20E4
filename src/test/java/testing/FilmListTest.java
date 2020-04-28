@@ -10,9 +10,13 @@ import server.easyFilminData.FilmList;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.databene.contiperf.PerfTest;
+import org.databene.contiperf.Required;
+import org.databene.contiperf.junit.ContiPerfRule;
 
 
 public class FilmListTest {
@@ -27,7 +31,8 @@ public class FilmListTest {
 	private static FilmList list3;
 	
 	static Logger logger = Logger.getLogger(FilmListTest.class.getName());
-	
+	@Rule
+	public ContiPerfRule i = new ContiPerfRule();
 	
 	public static junit.framework.Test suite() {
 		return new JUnit4TestAdapter(FilmListTest.class);
@@ -51,14 +56,18 @@ public class FilmListTest {
 		list3.setFilmList(films2);
 		logger.info("Set up before class finished");
 	}
+	/*
 	@Before
 	public void setUp() throws Exception {
 		list2 = new FilmList("Favourite films");
 		logger.info("Set up finished");
 	}
-
+	*/
 	@Test
+	@PerfTest(invocations = 1000)
+	@Required(max = 1500)
 	public void testAddFilm() {
+		list2 = new FilmList("Favourite films");
 		list2.addFilm(film3);
 		list2.addFilm(film4);
 		assertEquals(list1.getFilmList(), list2.getFilmList());
@@ -66,7 +75,10 @@ public class FilmListTest {
 	}
 	
 	@Test
+	@PerfTest(invocations = 1000)
+	@Required(average = 70)
 	public void testRemoveFilm() {
+		list2 = new FilmList("Favourite films");
 		list2.addFilm(film3);
 		list2.addFilm(film4);
 		list2.removeFilm("Counter");
@@ -75,7 +87,10 @@ public class FilmListTest {
 	}
 	
 	@Test
+	@PerfTest(duration = 5000)
+	@Required(throughput = 10)
 	public void testSortFilmList() {
+		list2 = new FilmList("Favourite films");
 		list2.addFilm(film4);
 		list2.addFilm(film3);
 		list2.sortFilmList();
