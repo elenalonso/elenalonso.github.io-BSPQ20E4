@@ -1027,46 +1027,46 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		}
 		
 	}
-
-
-	@Override
-	public ArrayList<FilmList> getUserLists(String username) {
-		// TODO Auto-generated method stub
-		
-		PersistenceManager pm = null;
-		Transaction tx = null;
-		
-		try {
-			logger.info("- Retrieving lists created by this user");			
-			//Get the Persistence Manager
-			pm = pmf.getPersistenceManager();
-			//Obtain the current transaction
-			tx = pm.currentTransaction();		
-			//Start the transaction
-			tx.begin();
-
-			Query<FilmList> query = pm.newQuery(FilmList.class);
-			query.setFilter("nickname == '" + username+ "'"); 
-			@SuppressWarnings("unchecked")
-			ArrayList<FilmList> userLists = (ArrayList<FilmList>) query.execute();
-
-			//End the transaction
-			tx.commit();
-			
-			
-			return userLists;
-		} catch (Exception ex) {
-			logger.error(" $ Error retrieving this user's film lists: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-			
-			if (pm != null && !pm.isClosed()) {
-				pm.close();
-			}
-		}
-		return null;
-		
-	}
 }
+//
+//	@Override
+//	public ArrayList<FilmList> getUserLists(String username) {
+//		// TODO Auto-generated method stub
+//		
+//		PersistenceManager pm = null;
+//		Transaction tx = null;
+//		
+//		try {
+//			logger.info("- Retrieving lists created by this user");			
+//			//Get the Persistence Manager
+//			pm = pmf.getPersistenceManager();
+//			//Obtain the current transaction
+//			tx = pm.currentTransaction();		
+//			//Start the transaction
+//			tx.begin();
+//
+//			Query<FilmList> query = pm.newQuery(FilmList.class);
+//			query.setFilter("nickname == '" + username+ "'"); 
+//			@SuppressWarnings("unchecked")
+//			ArrayList<FilmList> userLists = (ArrayList<FilmList>) query.execute();
+//
+//			//End the transaction
+//			tx.commit();
+//			
+//			
+//			return userLists;
+//		} catch (Exception ex) {
+//			logger.error(" $ Error retrieving this user's film lists: " + ex.getMessage());
+//		} finally {
+//			if (tx != null && tx.isActive()) {
+//				tx.rollback();
+//			}
+//			
+//			if (pm != null && !pm.isClosed()) {
+//				pm.close();
+//			}
+//		}
+//		return null;
+//		
+//	}
+//}

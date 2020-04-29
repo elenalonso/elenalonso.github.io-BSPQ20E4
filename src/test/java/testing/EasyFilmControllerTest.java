@@ -14,6 +14,7 @@ import org.junit.Test;
 import client.controller.EasyFilmController;
 import client.main.EasyFilmin;
 import junit.framework.JUnit4TestAdapter;
+import server.JettyServer;
 import server.easyFilminData.User;
 
 public class EasyFilmControllerTest {
@@ -30,23 +31,21 @@ public class EasyFilmControllerTest {
 		return new JUnit4TestAdapter(EasyFilmControllerTest.class);
 		}
 	
-	@BeforeClass static public void setUp() {
+	@BeforeClass static public void setUp() throws Exception {
 		//Launch the jetty server
-		
-	}
-	
-	@Test public void testConnection() {
-		try {
-			EasyFilmController ec = new EasyFilmController(arg[0], arg[1]);
-			
-			
-		}catch(Exception e) {
-			System.err.println(" # Exception: " + e.getMessage());
-			e.printStackTrace();
-			System.exit(-1);
-		}
-		assertTrue(true);
-			
+//		JettyServer jettyServer = new JettyServer();
+//		jettyServer.start();
+//		}
+//	
+//	
+//	@Test public void testConnection() {
+//		String url = "http://localhost:8090/status";
+//		HttpClient client = HttpClientBuilder.create().build();
+//		HttpGet request = new HttpGet(url);
+//		 
+//		HttpResponse response = client.execute(request);
+//		  
+//		assertThat(response.getStatusLine().getStatusCode()).isEqualTo(200);	
 	}
 	
 	@Test

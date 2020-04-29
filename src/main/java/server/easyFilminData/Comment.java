@@ -36,40 +36,35 @@ public class Comment {
 	 * @param date -represents the date when the comment was posted. It takes system's date
 	 */
 	
-public Comment(String filmTitle, String text, LocalDate date) {
-	
-	this.filmTitle=filmTitle;
-	this.text=text;
-	this.date=date;
+	public Comment(String filmTitle, String text, LocalDate date) {
+		
+		this.filmTitle=filmTitle;
+		this.text=text;
+		this.date=date;
+		}
+	public String getText()
+	{
+	    return text;
 	}
-public String getText()
-{
-    return text;
-}
-
-public String getFilmTitle()
-{
-    return filmTitle;
-}
-
-public LocalDate getDate()
-{
-    return date;
-}
-
-public void setText(String text)
-{
-    this.text = text;
-}
-
-public void setFilm(String filmTitle)
-{
-    this.filmTitle = filmTitle;
-}
-
-
-
-
-
+	
+	public String getFilmTitle()
+	{
+	    return filmTitle;
+	}
+	
+	public LocalDate getDate()
+	{
+	    return date;
+	}
+	
+	public void setText(String text)
+	{
+	    this.text = text;
+	}
+	
+	public void setFilm(String filmTitle)
+	{
+	    this.filmTitle = filmTitle;
+	}
 
 }

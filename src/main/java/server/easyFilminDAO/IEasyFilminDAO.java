@@ -136,14 +136,16 @@ public interface IEasyFilminDAO {
 	 * @return all films stored in the DB
 	 */
 	public List<Film> getAllFilms();
-	
-	/**
-	 * 
-	 * @param username String with the name of the user whose lists we want to get
-	 * @return all filmsLists (both watched and watchlist)created by the user
-	 */
-	public ArrayList<FilmList> getUserLists(String username);
-	
+
+// 
+//	/** COMMENTED METHOD BECAUSE WE DO THIS WITH ANOTHER APPROACH RIGHT NOW
+//	 * 
+//	 * @param username String with the name of the user whose lists we want to get
+//	 * @return all filmsLists (both watched and watchlist)created by the user
+//	 */
+//	public ArrayList<FilmList> getUserLists(String username);
+//	
+
 /**
  * THESE DETELING METHODS ARE ONLY CREATED FOR JUNIT
  */
