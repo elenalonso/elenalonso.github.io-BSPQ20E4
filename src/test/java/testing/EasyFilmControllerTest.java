@@ -14,7 +14,7 @@ import org.junit.Test;
 import client.controller.EasyFilmController;
 import client.main.EasyFilmin;
 import junit.framework.JUnit4TestAdapter;
-import server.JettyServer;
+//import server.JettyServer;
 import server.easyFilminData.User;
 
 public class EasyFilmControllerTest {
