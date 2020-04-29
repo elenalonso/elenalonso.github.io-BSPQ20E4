@@ -1,6 +1,7 @@
 package serialization;
 
 import java.util.Date;
+import java.time.LocalDate;
 
 import server.easyFilminData.Comment;
 
@@ -8,7 +9,7 @@ public class CommentData {
 	
 	private String filmTitle;
 	private String text;
-	private Date date;
+	private LocalDate date;
 
 	public CommentData(Comment c) {
 		this.filmTitle = c.getFilmTitle();
@@ -25,7 +26,7 @@ public class CommentData {
         this.text = text;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return this.date;
     }
 
