@@ -17,15 +17,15 @@ public class Message {
 		this.timestamp = System.currentTimeMillis();
     }
 
-	public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String toString() {
-        return "Message: message --> " + this.text + ", timestamp -->  " + new Date(this.timestamp);
-    }
+//	public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//    public String toString() {
+//        return "Message: message --> " + this.text + ", timestamp -->  " + new Date(this.timestamp);
+//    }
 }
