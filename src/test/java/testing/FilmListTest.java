@@ -99,7 +99,10 @@ public class FilmListTest {
 	}
 	
 	@Test
+	@PerfTest(invocations = 1000)
+	@Required(throughput = 10)
 	public void testSetName() {
+		list2 = new FilmList("Favourite films");
 		list2.setName("MyFilmList");
 		assertEquals(list2.getName(), "MyFilmList");
 		logger.debug("Set Name tested");

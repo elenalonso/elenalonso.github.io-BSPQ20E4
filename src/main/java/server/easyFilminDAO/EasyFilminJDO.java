@@ -184,6 +184,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	 * THE FOLLOWING DELETING METHODS ARE CREATED ONLY FOR JUNIT TESTING PORPUSES
 	 * SO THAT WE DO NOT HAVE USELESS TEST OBJECTS
 	 * ----NOT VERY LIKELY TO DELETE MOVIES AND SO FROM OUR EASYFILMIN DATABSE
+	 * @param moviename String with the name of the movie wished to be deleted
 	 */
 	public void deleteFilm(String moviename) {
 
@@ -374,9 +375,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			Actor actor = (Actor) query.execute();
 
 			//End the transaction
-			
+			Actor dactor = pm.detachCopy(actor);
 			tx.commit();
-			return actor;
+			return dactor;
 		} catch (Exception ex) {
 			System.err.println(" $ Error retrieving actors using a 'Query': " + ex.getMessage());
 			
@@ -458,9 +459,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 
 			//End the transaction
 			
-			
+			Film dfilm = pm.detachCopy(film);
 			tx.commit();
-			return film;
+			return dfilm;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving films using a 'Query': " + ex.getMessage());
 		} finally {
@@ -651,9 +652,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			Director director = (Director) query.execute();
 
 			//End the transaction
-			
+			Director ddirector = pm.detachCopy(director);
 			tx.commit();
-			return director;
+			return ddirector;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving directors using a 'Query': " + ex.getMessage());
 		} finally {
