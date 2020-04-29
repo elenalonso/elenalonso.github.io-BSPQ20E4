@@ -2,6 +2,7 @@ package server.easyFilminData;
 import javax.jdo.annotations.PersistenceCapable;
 
 import java.util.Date;
+import java.time.LocalDate
 
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
@@ -19,7 +20,7 @@ public class Comment {
 
 	protected String filmTitle;
 	protected String text;
-	protected Date date;
+	protected LocalDate date;
 
 	public Comment() {
 		
@@ -35,7 +36,7 @@ public class Comment {
 	 * @param date -represents the date when the comment was posted. It takes system's date
 	 */
 	
-public Comment(String filmTitle, String text, Date date) {
+public Comment(String filmTitle, String text, LocalDate date) {
 	
 	this.filmTitle=filmTitle;
 	this.text=text;
@@ -51,7 +52,7 @@ public String getFilmTitle()
     return filmTitle;
 }
 
-public Date getDate()
+public LocalDate getDate()
 {
     return date;
 }
