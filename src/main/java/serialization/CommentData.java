@@ -17,6 +17,9 @@ public class CommentData {
         this.date = c.getDate();
        
     }
+	 public String getFilmTitle() {
+	        return this.filmTitle;
+	    }
 
     public String getText() {
         return this.text;
