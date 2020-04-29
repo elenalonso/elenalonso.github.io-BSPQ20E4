@@ -2,7 +2,7 @@ package server.easyFilminData;
 import javax.jdo.annotations.PersistenceCapable;
 
 import java.util.Date;
-import java.time.LocalDate
+import java.time.LocalDate;
 
 import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
@@ -29,10 +29,10 @@ public class Comment {
 		this.date=null;
 		}
 	
-	/**
+	/** Constructor of Comment
 	 * 
-	 * @param film: references the film on which the user is commenting
-	 * @param text: data that contains what the message says
+	 * @param filmTitle - references the film on which the user is commenting
+	 * @param text - data that contains what the message says
 	 * @param date -represents the date when the comment was posted. It takes system's date
 	 */
 	

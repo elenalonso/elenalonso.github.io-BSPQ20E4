@@ -117,7 +117,7 @@ public class FilmListUI extends JFrame{
 	}
 	
 	/** Calls the controller to open a FilmUI window with the info of this list
-	 * 
+	 * @param us - Data of the User to be stored when returning to the profile
 	 */
 	private void toFilmUI(UserData us) {
 

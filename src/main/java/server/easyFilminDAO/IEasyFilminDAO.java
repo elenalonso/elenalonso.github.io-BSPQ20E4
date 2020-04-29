@@ -105,8 +105,7 @@ public interface IEasyFilminDAO {
 	/**
 	 * Stores the watchList received in a Database. 
 	 * The type of storage may differ depending on the instance of this interface created.
-	 * @param watchList the watchList object whose data will be stored.
-	 * @see WatchList
+	 * @param watchlist the watchList object whose data will be stored.
 	 */
 	public void saveWatchList(WatchList watchlist);
 	
@@ -145,11 +144,21 @@ public interface IEasyFilminDAO {
 	 */
 	public ArrayList<FilmList> getUserLists(String username);
 	
-	/**
-	 * THESE DETELING METHODS ARE ONLY CREATED FOR JUNIT
+/**
+ * THESE DETELING METHODS ARE ONLY CREATED FOR JUNIT
+ */
+	
+	/** Deleting a movie 
+	 * @param moviename - name of the movie to be removed
 	 */
 	public void deleteFilm(String moviename);
+	/** Deleting an actor
+	 * @param name - name of the actor to be removed
+	 */
 	public void deleteActor(String name);
+	/** Deleting a director
+	 * @param director - name of the director to be removed
+	 */
 	public void deleteDirector(String director);
 	
 	

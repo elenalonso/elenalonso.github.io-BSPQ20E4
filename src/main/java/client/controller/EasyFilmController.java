@@ -124,7 +124,8 @@ public class EasyFilmController {
 	}
 
 	/** RETRIEVES a FilmListData object from the server
-	 * @param name -name of the filmList
+	 * @param userData - serialized data of the user who stores the list
+	 * @param name - name of the filmList
 	 * @return list - list of films (serialized) FilmListData
 	 */
 	public FilmListData getFilmList(UserData userData, String name) {
@@ -139,6 +140,7 @@ public class EasyFilmController {
 	/** This methods adds a given film to a list unless this list is already in the list
 	 * or if that film is in watchList and we are adding to watched, this will delete the movie from
 	 * watchList
+	 * @param listName - name of the list for the film to be added
 	 * @param filmTitle - title of the film to add
 	 */
 	public void addToList(String listName, String filmTitle) {
@@ -152,7 +154,6 @@ public class EasyFilmController {
 		}
 
 	}
-
 	
 	public static void main(String[] args) {
 		if (args.length != 2) {

@@ -161,6 +161,7 @@ public class Server {
 	}
 
 	/** GETs a particular filmlist by name
+	 * @param nick - nick of the user which stores this particular filmList
 	 * @param name - name of the filmlist
 	 * @return flData - filmListData (serialized)
 	 */

@@ -34,7 +34,6 @@ public class UserData {
 	/** Constructor to use in the server 
 	 * @param login -login of the user
 	 * @param password - pass of the user
-	 * @param icon - icon of the user
 	 * @param email - email of the user
 	 */
 	//	public UserData(String login, String password, String icon, String email) {
