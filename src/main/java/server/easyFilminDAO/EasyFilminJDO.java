@@ -123,6 +123,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			return duser;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving users using a 'Query': " + ex.getMessage());
+			
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -138,6 +139,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 	
 	@Override
 	public void deleteUser(String username) {
+
 		PersistenceManager pm = null;
 		Transaction tx = null;
 		
@@ -176,6 +178,139 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		}
 		
 	}
+	
+	
+	/**
+	 * THE FOLLOWING DELETING METHODS ARE CREATED ONLY FOR JUNIT TESTING PORPUSES
+	 * SO THAT WE DO NOT HAVE USELESS TEST OBJECTS
+	 * ----NOT VERY LIKELY TO DELETE MOVIES AND SO FROM OUR EASYFILMIN DATABSE
+	 */
+	public void deleteFilm(String moviename) {
+
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Deleting film");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//pm.getFetchPlan().setMaxFetchDepth(4);
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			Query<Film> query = pm.newQuery(Film.class);
+			query.setFilter("title == '" + moviename + "'"); //we find the user by his username
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			Film film = (Film) query.execute();
+
+			//End the transaction
+			pm.deletePersistent(film);
+			tx.commit();
+			
+			
+			
+		} catch (Exception ex) {
+			logger.error(" $ Error deleting movie using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		
+	}
+	public void deleteActor(String name) {
+
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Deleting actor");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//pm.getFetchPlan().setMaxFetchDepth(4);
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			Query<Actor> query = pm.newQuery(Actor.class);
+			query.setFilter("name == '" + name + "'"); //we find the user by his username
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			Actor actor = (Actor) query.execute();
+
+			//End the transaction
+			pm.deletePersistent(actor);
+			tx.commit();
+			
+			
+			
+		} catch (Exception ex) {
+			logger.error(" $ Error deleting actor using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		
+	}
+	
+	public void deleteDirector(String name) {
+
+		PersistenceManager pm = null;
+		Transaction tx = null;
+		
+		try {
+			logger.info("- Deleting director");			
+			//Get the Persistence Manager
+			pm = pmf.getPersistenceManager();
+			//pm.getFetchPlan().setMaxFetchDepth(4);
+			//Obtain the current transaction
+			tx = pm.currentTransaction();		
+			//Start the transaction
+			tx.begin();
+			
+			Query<Director> query = pm.newQuery(Director.class);
+			query.setFilter("name == '" + name + "'"); //we find the user by his username
+			query.setUnique(true);
+			@SuppressWarnings("unchecked")
+			Director director = (Director) query.execute();
+
+			//End the transaction
+			pm.deletePersistent(director);
+			tx.commit();
+			
+			
+			
+		} catch (Exception ex) {
+			logger.error(" $ Error deleting director using a 'Query': " + ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+			
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		
+	}
+	
+	
+	
+
+	
 
 	@Override
 	public void saveActor(Actor actor) {
@@ -184,7 +319,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			logger.debug("Insert actors in the DB");			
+			logger.info("Insert actors in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -239,12 +374,12 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			Actor actor = (Actor) query.execute();
 
 			//End the transaction
+			
 			tx.commit();
-			
-			
 			return actor;
 		} catch (Exception ex) {
 			System.err.println(" $ Error retrieving actors using a 'Query': " + ex.getMessage());
+			
 		} finally {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
@@ -265,7 +400,7 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 		Transaction tx = null;
 		
 		try {
-			logger.debug("Insert films in the DB");			
+			logger.info("Insert films in the DB");			
 			//Get the Persistence Manager
 			pm = pmf.getPersistenceManager();
 			//Obtain the current transaction
@@ -322,9 +457,9 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			Film film = (Film) query.execute();
 
 			//End the transaction
+			
+			
 			tx.commit();
-			
-			
 			return film;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving films using a 'Query': " + ex.getMessage());
@@ -516,9 +651,8 @@ public class EasyFilminJDO implements IEasyFilminDAO{
 			Director director = (Director) query.execute();
 
 			//End the transaction
+			
 			tx.commit();
-			
-			
 			return director;
 		} catch (Exception ex) {
 			logger.error(" $ Error retrieving directors using a 'Query': " + ex.getMessage());

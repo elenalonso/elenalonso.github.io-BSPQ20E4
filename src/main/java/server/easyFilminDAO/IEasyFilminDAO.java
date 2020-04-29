@@ -145,6 +145,13 @@ public interface IEasyFilminDAO {
 	 */
 	public ArrayList<FilmList> getUserLists(String username);
 	
+	/**
+	 * THESE DETELING METHODS ARE ONLY CREATED FOR JUNIT
+	 */
+	public void deleteFilm(String moviename);
+	public void deleteActor(String name);
+	public void deleteDirector(String director);
+	
 	
 	/**
 	 * Loads the DB initially with predetermined data.
