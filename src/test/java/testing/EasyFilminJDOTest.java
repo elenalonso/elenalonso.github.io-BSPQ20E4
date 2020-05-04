@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -24,6 +25,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import junit.framework.JUnit4TestAdapter;
+import serialization.FilmListData;
 import server.easyFilminDAO.EasyFilminJDO;
 import server.easyFilminDAO.IEasyFilminDAO;
 import server.easyFilminData.Actor;
@@ -60,19 +62,24 @@ public class EasyFilminJDOTest {
 	
 	@Test
 	@PerfTest(invocations = 5)
-	@Required(max = 800)
+	@Required(max = 3000)
 	public void testSaveLoadUser() {
 		iDAO = new EasyFilminJDO();
 		User userLoaded = null;
 		iDAO.saveUser(user);
 		userLoaded = iDAO.loadUser("UserTest1");
-		iDAO.deleteUser("UserTest1");
-		//System.out.println("Icon " + userLoaded.getIcon()); //What is going on here??
+		iDAO.deleteUser("UserTest1"); 
 		assertEquals("UserTest1", userLoaded.getNickname());
-		//assertEquals("23", userLoaded.getIcon()); //What is going on here??
-		//assertEquals("test@opentest.test", userLoaded.getEmail());
-		//assertEquals("321", userLoaded.getPassword());
-		logger.debug("Save Load User tested");
+		assertEquals("23", userLoaded.getIcon()); 
+		assertEquals("test@opentest.test", userLoaded.getEmail());
+		assertEquals("321", userLoaded.getPassword());
+		assertEquals("Watched", userLoaded.getWatched().getName());
+		assertEquals("Watched", userLoaded.getLists().get(0).getName());
+		assertTrue(userLoaded.getLists().get(0).getFilmList().isEmpty());
+		FilmListData fg = new FilmListData(userLoaded.getLists().get(0));
+		assertEquals("Watched", fg.getName());
+		assertTrue(fg.getFilmList().isEmpty());
+		logger.error("Save Load User tested nuevo2354");
 
 	}
 	
@@ -176,7 +183,8 @@ public class EasyFilminJDOTest {
 //		Film prueba = new Film("prueba", "","","",1,new Genre("Drama"),2.5, null, null);
 //		prueba.setComments(comments);
 //	}
-
+	
+	/*
 	@Test
 	//@PerfTest(invocations = 15)
 	//@Required(max = 5000)
@@ -201,8 +209,8 @@ public class EasyFilminJDOTest {
 
 		logger.debug("get All Films tested");
 	}
-	
-
+	*/
+	/*
 	@Test
 	@PerfTest(invocations = 15)
 	@Required(max = 5000)
@@ -216,5 +224,5 @@ public class EasyFilminJDOTest {
 		logger.debug("loadFilmList test");
 		//logger.error("We need to fix the loadFilmList method in the first place");
 	}
-
+	*/
 }

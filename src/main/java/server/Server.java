@@ -122,12 +122,19 @@ public class Server {
 		User user = null;
 		user = iDAO.loadUser(login);
 		ArrayList<FilmList> lists = user.getLists(); //Método persistente de JDO
+		
 		ArrayList<FilmListData> listsData = new ArrayList<FilmListData>();
 		int i = 0;
 		logger.info("Lists that will be passed to the client: ");
-		logger.error("CONFIRMAMOS QUE PETA lists PORQUE NO LAS COGE BIEN");
+		logger.error(user.getNickname());
+		logger.error(user.getWatched().getName());
+		logger.error(user.getLists().get(0).getName());
+		logger.error(lists.get(0).getName());
 		if(lists!=null) {
 			for(FilmList f : lists) {
+				logger.error("entre en el loop");
+				logger.error(f.getName());
+				//logger.error(f.getFilmList().isEmpty());
 				listsData.add(new FilmListData(f));
 				logger.info(lists.get(i).getName());
 				i++;
